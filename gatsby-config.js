@@ -1,7 +1,7 @@
-const lost = require('lost')
-const pxtorem = require('postcss-pxtorem')
+const lost = require('lost');
+const pxtorem = require('postcss-pxtorem');
 
-const url = 'https://lumen.netlify.com'
+const url = 'https://merictaze.com';
 
 module.exports = {
   siteMetadata: {
@@ -27,7 +27,7 @@ module.exports = {
       linkedin: 'merictaze',
       twitter: '#',
       github: 'merictaze',
-      rss: '#',
+      rss: 'rss.xml',
       vk: '#',
     },
   },
@@ -124,7 +124,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
-      options: { trackingId: 'UA-73379983-2' },
+      options: { trackingId: 'UA-145118064-1' },
     },
     {
       resolve: 'gatsby-plugin-google-fonts',
