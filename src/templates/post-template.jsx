@@ -8,7 +8,7 @@ class PostTemplate extends React.Component {
   render() {
     const { title, subtitle } = this.props.data.site.siteMetadata
     const post = this.props.data.markdownRemark
-    const { title: postTitle, description: postDescription } = post.frontmatter
+    const { title: postTitle, description: postDescription, canonical: canonical } = post.frontmatter
     const description = postDescription !== null ? postDescription : subtitle
 
     return (
@@ -17,6 +17,7 @@ class PostTemplate extends React.Component {
           <Helmet>
             <title>{`${postTitle} - ${title}`}</title>
             <meta name="description" content={description} />
+            canonical && <link rel="canonical" href={canonical} />
           </Helmet>
           <PostTemplateDetails {...this.props} />
         </div>
@@ -54,6 +55,7 @@ export const pageQuery = graphql`
         tags
         date
         description
+        canonical
       }
     }
   }

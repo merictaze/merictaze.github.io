@@ -11,18 +11,8 @@
     "lint": "./node_modules/.bin/eslint --cache --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write './*.js' 'src/**/*.js' 'src/**/*.jsx'",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master"
   },
-  "repository": "git+https://github.com/alxshelepenok/gatsby-starter-lumen.git",
-  "keywords": [
-    "gatsby",
-    "blog",
-    "react",
-    "theme",
-    "starter"
-  ],
-  "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.1",
     "gatsby": "^2.0.22",
@@ -36,6 +26,7 @@
     "gatsby-plugin-sharp": "^2.0.6",
     "gatsby-plugin-sitemap": "^2.0.1",
     "gatsby-remark-copy-linked-files": "^2.0.5",
+    "gatsby-remark-embed-gist": "^1.1.9",
     "gatsby-remark-images": "^2.0.4",
     "gatsby-remark-prismjs": "^3.0.2",
     "gatsby-remark-responsive-iframe": "^2.0.5",

@@ -2,10 +2,20 @@
 @import "../../assets/scss/mixins";
 
 .post-single {
+    .gist {
+        max-width: $layout-post-single-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
     &__inner {
         max-width: $layout-post-single-max-width;
         padding: 0 15px;
         margin: 0 auto;
+    }
+    &__author {
+        max-width: $layout-post-single-width;
+        margin-left: auto;
+        margin-right: auto;
     }
     &__title {
         font-size: $typographic-base-font-size * 2;

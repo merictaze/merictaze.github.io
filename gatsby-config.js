@@ -7,9 +7,8 @@ module.exports = {
   siteMetadata: {
     url,
     siteUrl: url,
-    title: 'Blog by John Doe',
-    subtitle:
-      'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    title: 'Journal on Software',
+    subtitle: '',
     copyright: '© All rights reserved.',
     disqusShortname: '',
     menu: [
@@ -21,17 +20,13 @@ module.exports = {
         label: 'About me',
         path: '/about/',
       },
-      {
-        label: 'Contact me',
-        path: '/contact/',
-      },
     ],
     author: {
-      name: 'John Doe',
-      email: '#',
-      telegram: '#',
+      name: 'Meric Taze',
+      email: 'info@merictaze.com',
+      linkedin: 'merictaze',
       twitter: '#',
-      github: '#',
+      github: 'merictaze',
       rss: '#',
       vk: '#',
     },
@@ -63,6 +58,7 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
               allMarkdownRemark.edges.map(edge =>
                 Object.assign({}, edge.node.frontmatter, {
+                  canonical: edge.node.frontmatter.canonical,
                   description: edge.node.frontmatter.description,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.url + edge.node.fields.slug,
@@ -113,6 +109,10 @@ module.exports = {
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: { wrapperStyle: 'margin-bottom: 1.0725rem' },
+          },
+          {
+            resolve: 'gatsby-remark-embed-gist',
+            options: { includeDefaultCss: true, username: 'merictaze' },
           },
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
