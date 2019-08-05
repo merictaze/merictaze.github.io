@@ -12,6 +12,7 @@ tags:
   - "cloudformation"
 canonical: https://medium.com/@merictaze/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda-7f93f5db6277
 description: DynamoDB is Amazon’s NoSQL database which offers single-digit milliseconds latency. It is great for variety of use cases, but when you need to run complex search queries on your dataset, you quickly realise it is not designed for it.
+featuredImage: ./cover.jpeg
 ---
 
 ![](./cover.jpeg)

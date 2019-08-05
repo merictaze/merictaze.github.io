@@ -7,7 +7,7 @@ module.exports = {
   siteMetadata: {
     url,
     siteUrl: url,
-    title: 'Journal on Software',
+    title: 'MericTaze.com - Blog on Software Development',
     subtitle: '',
     copyright: '© All rights reserved.',
     disqusShortname: '',
@@ -23,7 +23,7 @@ module.exports = {
     ],
     author: {
       name: 'Meric Taze',
-      email: 'info@merictaze.com',
+      email: 'me@merictaze.com',
       linkedin: 'merictaze',
       twitter: '#',
       github: 'merictaze',
@@ -48,6 +48,9 @@ module.exports = {
               siteMetadata {
                 url
                 title
+                  author {
+                    email
+                  }
                 description: subtitle
               }
             }
@@ -55,17 +58,27 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge =>
+            serialize: ({ query: { site, allMarkdownRemark } }) => allMarkdownRemark.edges.map(edge =>
                 Object.assign({}, edge.node.frontmatter, {
-                  canonical: edge.node.frontmatter.canonical,
+                  title: edge.node.frontmatter.title,
                   description: edge.node.frontmatter.description,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.url + edge.node.fields.slug,
                   guid: site.siteMetadata.url + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
-                })
-              ),
+                  author: site.siteMetadata.author.email,
+                  enclosure: {
+                    'url'  : site.siteMetadata.url + edge.node.frontmatter.featuredImage.childImageSharp.fluid.src,
+                    'type' : 'image/jpeg'
+                  }
+                })),
+            setup: () => ({
+              title: 'MericTaze.com Blog Feed',
+              description: 'Blog on Software Development',
+              feed_url: url + '/rss.xml',
+              site_url: url,
+              language: 'en-us',
+            }),
             query: `
               {
                 allMarkdownRemark(
@@ -85,6 +98,13 @@ module.exports = {
                         layout
                         draft
                         description
+                        featuredImage {
+                          childImageSharp {
+                            fluid(maxWidth: 960) {
+                              src
+                            }
+                          }
+                        }
                       }
                     }
                   }

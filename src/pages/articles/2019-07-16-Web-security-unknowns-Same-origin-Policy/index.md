@@ -12,6 +12,7 @@ tags:
   - "http-request"
 canonical: https://medium.com/@merictaze/web-security-unknowns-same-origin-policy-9182639bdb5f
 description: Attacks like CSRF or XSS are still not clear to many of us. It is not because they are super hard to understand, but it requires some basic understanding of concepts like SOP, CORS, CSP, HTTPS. Let's start with what's Same-origin Policy
+featuredImage: ./cover.jpeg
 ---
 
 Attacks like CSRF or XSS are still not clear to many of us. It is not because they are super hard to understand, but it requires some basic understanding of concepts like SOP, CORS, CSP, HTTPS. In this series of posts, I’ll try to clear them up one-by-one, and next time you read about attacks, you’ll understand everything.

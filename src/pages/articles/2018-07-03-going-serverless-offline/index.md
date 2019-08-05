@@ -12,6 +12,7 @@ tags:
   - "api-gateway"
 canonical: https://medium.com/@merictaze/going-serverless-offline-8c8ecea7c65c
 description: In this post, we are going to setup an environment with API Gateway, Lambda and DynamoDB using serverless framework which can be deployed to AWS directly or run fully local.
+featuredImage: ./cover.jpeg
 ---
 
 ![](./cover.jpeg)
