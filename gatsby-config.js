@@ -66,7 +66,7 @@ module.exports = {
                   url: site.siteMetadata.url + edge.node.fields.slug,
                   guid: site.siteMetadata.url + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
-                  author: site.siteMetadata.author.email,
+                  author: site.siteMetadata.author.name,
                   enclosure: {
                     'url'  : site.siteMetadata.url + edge.node.frontmatter.featuredImage.childImageSharp.fluid.src,
                     'type' : 'image/jpeg'
