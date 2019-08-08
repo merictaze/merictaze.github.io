@@ -1,4 +1,241 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MericTaze.com Blog Feed]]></title><description><![CDATA[Blog on Software Development]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 05 Aug 2019 06:33:19 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[Web security unknowns: Same-origin Policy]]></title><description><![CDATA[Attacks like CSRF or XSS are still not clear to many of us. It is not because they are super hard to understand, but it requires some basic understanding of concepts like SOP, CORS, CSP, HTTPS. Let's start with what's Same-origin Policy]]></description><link>https://merictaze.com/posts/web-security-unknowns-same-origin-policy/</link><guid isPermaLink="false">https://merictaze.com/posts/web-security-unknowns-same-origin-policy/</guid><dc:creator><![CDATA[me@merictaze.com]]></dc:creator><pubDate>Tue, 16 Jul 2019 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/40ec2d50e0bcc2627cb6e147c427ad7a/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;Attacks like CSRF or XSS are still not clear to many of us. It is not because they are super hard to understand, but it requires some basic understanding of concepts like SOP, CORS, CSP, HTTPS. In this series of posts, I’ll try to clear them up one-by-one, and next time you read about attacks, you’ll understand everything.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MericTaze.com Blog Feed]]></title><description><![CDATA[Blog on Software Development]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 08 Aug 2019 03:16:04 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[What happens when you hit google.com using HTTPS]]></title><description><![CDATA[While making a simple request to https://google.com to see that simple search page, there are a lot of things going on behind the scenes to keep you secure. Understanding this flow will give you a lot of confidence in various topics like Digital Certificates and Signatures, Symmetric/Asymmetric key encryptions, Certificate Authorities and how they all work together to help you have secure communication.]]></description><link>https://merictaze.com/posts/what-happens-when-you-hit-google-com-using-https/</link><guid isPermaLink="false">https://merictaze.com/posts/what-happens-when-you-hit-google-com-using-https/</guid><pubDate>Wed, 07 Aug 2019 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/f6328ef7650fec9a02293761615e1188/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;h1&gt;What happens when you hit google.com using HTTPS&lt;/h1&gt;
+&lt;p&gt;While making a simple request to &lt;a href=&quot;https://google.com&quot;&gt;https://google.com&lt;/a&gt; to see that simple search page, there are a lot of things going on behind the scenes to keep you secure. Understanding this flow will give you a lot of confidence in various topics like Digital Certificates and Signatures, Symmetric/Asymmetric key encryptions, Certificate Authorities and how they all work together to help you have secure communication. Let’s start with some fundamental concepts that HTTPS relies on&lt;/p&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 64.61776859504133%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMBAgQF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAB/9oADAMBAAIQAxAAAAGHo0F8ssWf/8QAHBAAAgICAwAAAAAAAAAAAAAAAQIAAwQRIjJC/9oACAEBAAEFAqlE8tWd43SziCzT/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGRABAAIDAAAAAAAAAAAAAAAAAAEhETEy/9oACAEBAAY/AnKsoU2//8QAHBABAAIBBQAAAAAAAAAAAAAAAQARITFRYYGx/9oACAEBAAE/IQF69sS0ZXzDsoNiLFUeX1EMf//aAAwDAQACAAMAAAAQcx//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAeEAACAgICAwAAAAAAAAAAAAABEQAhMVFBYYGh0f/aAAgBAQABPxC8SpVCvWI/iFGCTBfPUESPQAwPMGScrbUWAvFl9jHVad+5/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;cover&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f6328ef7650fec9a02293761615e1188/b3ee8/cover.jpg&quot;
+        srcset=&quot;/static/f6328ef7650fec9a02293761615e1188/3bc27/cover.jpg 240w,
+/static/f6328ef7650fec9a02293761615e1188/98431/cover.jpg 480w,
+/static/f6328ef7650fec9a02293761615e1188/b3ee8/cover.jpg 960w,
+/static/f6328ef7650fec9a02293761615e1188/b97fe/cover.jpg 1440w,
+/static/f6328ef7650fec9a02293761615e1188/fb329/cover.jpg 1920w,
+/static/f6328ef7650fec9a02293761615e1188/051c3/cover.jpg 3872w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;figcaption&gt;Photo by &lt;a href=&quot;https://unsplash.com/@rubavi78&quot;&gt;Rubén Bagüés&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com&quot;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;&lt;/p&gt;
+&lt;h2&gt;Encryption Algorithms&lt;/h2&gt;
+&lt;p&gt;Encryption is needed to securely transfer/store the data in case malicious parties gain access to your data either in transit or at rest.&lt;/p&gt;
+&lt;h3&gt;Symmetric-Key Encryption&lt;/h3&gt;
+&lt;p&gt;You and your old friend Alice want to talk about some secret stuff via mail. Since it has secret stuff, you don’t want anyone else to read it. You go and buy a locker with two identical keys. You give one of them to Alice. You put your letters inside the locker, lock it with your key, and send it to Alice. Alice uses her key to unlock the locker and read the mail. Then, she puts her reply into the locker, locks it with her key and sends it back to you. This is similar to what happens with symmetric-key encryption.&lt;/p&gt;
+&lt;p&gt;The same key is used to both encrypt and decrypt the data. It’s not as mathematically complex as asymmetric keys, but it’s faster for the same reason.&lt;/p&gt;
+&lt;p&gt;After buying the locker with two identical keys, how would you give one of the keys to Alice securely? The biggest shortcoming of this type of algorithms is key distribution. It does not offer a secure way to send the key to the other party.&lt;/p&gt;
+&lt;h3&gt;Asymmetric-Key Encryption&lt;/h3&gt;
+&lt;p&gt;This time, you’re getting smarter. You buy a locker with a unique key for yourself. You send your locker to Alice and don’t send your key to anywhere and keep it somewhere secure. Alice puts her letter into your locker and puts the lock on, then sends it back to you. You use your key, the only key to open the locker, and unlock the locker. What if you need to send a letter to Alice? Then, she needs to buy her own locker with a unique key and send the locker to you. Voilà, the key distribution problem solved. This will give you an idea of how asymmetric-key encryption works.&lt;/p&gt;
+&lt;p&gt;Different keys are used to encrypt and decrypt the data, called public and private keys. While the public key(unlocked locker) can be shared with anyone, the private key(unique locker key) is kept as private. Anything encrypted with the public key can be decrypted by the private one, and vice versa.&lt;/p&gt;
+&lt;h3&gt;Hybrid Encryption&lt;/h3&gt;
+&lt;p&gt;This one tries to get the best of both algorithms above. It uses asymmetric-key encryption to achieve key distribution of the secret key and uses symmetric-key encryption(secret key) for the rest of the communication which is faster.&lt;/p&gt;
+&lt;p&gt;This time there are two things&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Your locker and your unique key (or Alice’s locker and her unique key)&lt;/li&gt;
+&lt;li&gt;A shared locker with two identical keys.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alice buys a shared locker with two identical keys. You send your locker to Alice. Alice puts one of the identical keys of the shared locker inside and sends it back to you. You unlock the locker with your unique key. You see that shiny key inside the locker. Congratulations, now you securely received one of the identical keys. Going forward, you only need the shared locker and the identical keys to communicate securely.&lt;/p&gt;
+&lt;p&gt;Yes, that’s what’s happening in hybrid encryption. It uses asymmetric-key encryption(public-private key) to securely transfer the symmetric key(secret key). Then both parties use the secret key to encrypt/decrypt the data. This is also what’s used in HTTPS as we’ll see in the next sections.&lt;/p&gt;
+&lt;h2&gt;Certificate Authority&lt;/h2&gt;
+&lt;p&gt;When you go to your bank, and say &lt;em&gt;“Hey, I’m John Doe, please give me some money from my account”&lt;/em&gt;, the first thing they do is asking a piece of Id. When you show your Gym membership card with your name on it, they’ll say &lt;em&gt;“Please show us a government-issued Id”&lt;/em&gt; as they don’t consider your Gym as a trusted authority. Once you show your government-issued Id, they believe you as they trust to the government and let you withdraw money.&lt;/p&gt;
+&lt;p&gt;Same story goes here. When you type &lt;a href=&quot;https://google.com&quot;&gt;https://google.com&lt;/a&gt; into your browser’s address bar, it gets a response saying that &lt;em&gt;“Hey, I’m Google, please send your username and password to me”&lt;/em&gt;. But how do you know it’s actually Google, but not someone else. You need an authority like the government to validate Google’s identity, and that’s exactly where CAs come into the picture. They’re the trusted authority and your browser uses CAs to make sure you’re talking to the correct website. If the certificate was issued by some other authority (like your Gym), browser will let you know saying something like “Your connection is not private: Attackers might be trying to steal your information … NET::ERR&lt;em&gt;CERT&lt;/em&gt;AUTHORITY_INVALID”.&lt;/p&gt;
+&lt;p&gt;While the government is the trusted authority in the country and you register yourself with them when you’re born and use your Id card to validate your identity wherever needed, CAs are the trusted authority for certificates and you register your website’s info with them and use your certificate to prove your website’s identity.&lt;/p&gt;
+&lt;h2&gt;Digital Certificate and Signature&lt;/h2&gt;
+&lt;p&gt;This time, you’re preparing documents for your passport application. Since you don’t have time to apply in person, you decided to send the documents via mail. But, just by looking at some document, how would government officials know it’s really sent by you. What if someone else filled the form with your info and asking the passport to be sent to his address once it’s ready?&lt;/p&gt;
+&lt;p&gt;To make sure it’s really you sending these documents, they require a notary public witnessing the signing of the documents and verifying their authenticity. So, you sign the document in front of a notary public and he certifies the document by signing and stamping it as well. He also keeps a copy of it in case later government needs to validate the copy they received is what certifier had certified.&lt;/p&gt;
+&lt;p&gt;The part they signed and stamped is the &lt;strong&gt;Signature&lt;/strong&gt; and the certified document which contains the initial info you provided and their signature is the &lt;strong&gt;Certificate&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Since it’s digital, things are slightly different. To make sure the info wasn’t altered, the certifier hashes the info. This hash can be called the data fingerprint as it uniquely identifies the info. If something changes in the info, the hash will change too. &lt;em&gt;“That’s great, but what if someone changes the info then puts the new hash for the new info, how you’d know it wasn’t altered?”&lt;/em&gt;. That’s a great point, that’s why just hashing is not enough. Certifier also encrypts the hash with his private key. And this encrypted hash (and some more metadata) is the &lt;strong&gt;Digital Signature&lt;/strong&gt;. Now put that digital signature into the initial info, and you get the &lt;strong&gt;Digital Certificate&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now whoever needs to validate the info, they can&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hash the info by themselves&lt;/li&gt;
+&lt;li&gt;Decrypt the digital signature with certifier’s public key to get the calculated hash by the certifier&lt;/li&gt;
+&lt;li&gt;Compare the two values if they’re the same&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Before going into the actual flow at the time you visit google.com, we’ll see how CAs and Google’s certificate was setup long before you visit Google in the first two sections.&lt;/p&gt;
+&lt;h2&gt;1. Registering Certificate Authorities&lt;/h2&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/40ed790d7e5acf4ece9b74ed8151a78a/932dd/ca-registration.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 33.49616189811584%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAHABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAAB15gri5//xAAZEAEAAgMAAAAAAAAAAAAAAAACAxEAARL/2gAIAQEAAQUChKI3dcyZ/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BR//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/AVf/xAAZEAABBQAAAAAAAAAAAAAAAAAAAhASMUH/2gAIAQEABj8CirGs/8QAGxAAAgIDAQAAAAAAAAAAAAAAAAERQSExUaH/2gAIAQEAAT8hQdluiSw8is9H/9oADAMBAAIAAwAAABCD3//EABYRAQEBAAAAAAAAAAAAAAAAAAABcf/aAAgBAwEBPxBuv//EABURAQEAAAAAAAAAAAAAAAAAAABx/9oACAECAQE/EEP/xAAYEAEBAQEBAAAAAAAAAAAAAAABEQAhMf/aAAgBAQABPxDg0iFDHtyj6xj5HSM7eTP/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;ca registration&quot;
+        title=&quot;&quot;
+        src=&quot;/static/40ed790d7e5acf4ece9b74ed8151a78a/b3ee8/ca-registration.jpg&quot;
+        srcset=&quot;/static/40ed790d7e5acf4ece9b74ed8151a78a/3bc27/ca-registration.jpg 240w,
+/static/40ed790d7e5acf4ece9b74ed8151a78a/98431/ca-registration.jpg 480w,
+/static/40ed790d7e5acf4ece9b74ed8151a78a/b3ee8/ca-registration.jpg 960w,
+/static/40ed790d7e5acf4ece9b74ed8151a78a/932dd/ca-registration.jpg 1433w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Trusted CAs provide their public keys to browsers. That means when you install a new browser, it already has a list of CAs and their public keys.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Why do we need CAs public key?&lt;/em&gt; Great question! When you visit google.com and it sends you back its certificate, part of which is encrypted with CA’s private key. And that bit of information needs to be decrypted to validate the certificate. &lt;em&gt;What can decrypt info encrypted by CA’s private key?&lt;/em&gt; Yes, the answer is CA’s public key (Just to prevent confusion here, the commonly known fact is that you use the public key to encrypt and private key to decrypt data. While that’s true, other way around is also correct. Data encrypted with a private key can be decrypted with its public key). We’ll see the detailed flow in the next section.&lt;/p&gt;
+&lt;h2&gt;2. Creating a Digital Certificate for Google&lt;/h2&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cb745237d3696a3d6a48cc0b7b124802/084a0/cert-creation.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 46.7866323907455%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHdWwJLB//EABsQAAIBBQAAAAAAAAAAAAAAAAABAhESMTJB/9oACAEBAAEFAuVd6HiOp//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAMAAwAAAAAAAAAAAAAAAAEQEQAiMf/aAAgBAQAGPwLAJrOsL//EABoQAAICAwAAAAAAAAAAAAAAAAAxAREQkaH/2gAIAQEAAT8hm2KXDYIPODH/2gAMAwEAAgADAAAAEHAP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHhAAAgEDBQAAAAAAAAAAAAAAAAERIVGhEEFxkbH/2gAIAQEAAT8QqOA53tptJpsXQ7c73kxWY/zT/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;cert creation&quot;
+        title=&quot;&quot;
+        src=&quot;/static/cb745237d3696a3d6a48cc0b7b124802/b3ee8/cert-creation.jpg&quot;
+        srcset=&quot;/static/cb745237d3696a3d6a48cc0b7b124802/3bc27/cert-creation.jpg 240w,
+/static/cb745237d3696a3d6a48cc0b7b124802/98431/cert-creation.jpg 480w,
+/static/cb745237d3696a3d6a48cc0b7b124802/b3ee8/cert-creation.jpg 960w,
+/static/cb745237d3696a3d6a48cc0b7b124802/b97fe/cert-creation.jpg 1440w,
+/static/cb745237d3696a3d6a48cc0b7b124802/fb329/cert-creation.jpg 1920w,
+/static/cb745237d3696a3d6a48cc0b7b124802/084a0/cert-creation.jpg 1945w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;As we said in the previous section, when you visit &lt;a href=&quot;https://google.com&quot;&gt;https://google.com&lt;/a&gt;, your browser gets back Google’s digital certificate. Now, let’s see how Google created this certificate.&lt;/p&gt;
+&lt;p&gt;Google provided a document with some info such as the owner’s name, owner’s public key, website address to CA. CA created a digital signature by hashing the info provided and encrypting it with CA’s private key to make sure no-one can alter it. Once CA put this signature into the initial document, here was the Digital Certificate Google needs.&lt;/p&gt;
+&lt;h2&gt;3. Let’s visit Google.com now&lt;/h2&gt;
+&lt;p&gt;I separated this part into two. The first part explains how the browser makes sure it’s really talking to Google and the public key really belongs to them. And the second part shows how this public key is being used to create a secure communication channel between browser and Google.&lt;/p&gt;
+&lt;h3&gt;3.1 Getting Google’s public key&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/560d1deee8187b8bf443e688b4ca97e3/f8899/https-flow-1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 91.08527131782945%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAASABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAIBAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB9eq1NUWMDoD/xAAZEAEBAQADAAAAAAAAAAAAAAACARAhMUH/2gAIAQEAAQUCMUTlpPB9xdTP/8QAFREBAQAAAAAAAAAAAAAAAAAAESD/2gAIAQMBAT8BI//EABURAQEAAAAAAAAAAAAAAAAAABEg/9oACAECAQE/AWP/xAAaEAACAgMAAAAAAAAAAAAAAAAAAQIhESAx/9oACAEBAAY/ArdEkuizv//EABsQAQACAwEBAAAAAAAAAAAAAAEAERAhMXGB/9oACAEBAAE/IdNPqJ1xqFH0G5Y1aur5FR7L9xcGP//aAAwDAQACAAMAAAAQGAA8/8QAFhEBAQEAAAAAAAAAAAAAAAAAAREg/9oACAEDAQE/ECCY/8QAFhEAAwAAAAAAAAAAAAAAAAAAESAx/9oACAECAQE/EKKf/8QAHRAAAgMAAgMAAAAAAAAAAAAAAREAITFBcRBRkf/aAAgBAQABPxBzqjWj6iOZITSPcLWxQTbKnVWGyey2AbwCBxnxBCVzAGHI8f/Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;https flow 1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/560d1deee8187b8bf443e688b4ca97e3/b3ee8/https-flow-1.jpg&quot;
+        srcset=&quot;/static/560d1deee8187b8bf443e688b4ca97e3/3bc27/https-flow-1.jpg 240w,
+/static/560d1deee8187b8bf443e688b4ca97e3/98431/https-flow-1.jpg 480w,
+/static/560d1deee8187b8bf443e688b4ca97e3/b3ee8/https-flow-1.jpg 960w,
+/static/560d1deee8187b8bf443e688b4ca97e3/f8899/https-flow-1.jpg 1290w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;At this point, you know how the certificate was created and how it looks like. If not, you can go and read the previous section.&lt;/p&gt;
+&lt;p&gt;As stated in the diagram, once you visit google.com, it will send you back a certificate. If the browser used this certificate without any validation, that would defeat the purpose of whole this CA and certification concepts. All those steps in the previous sections were taken so that the browser can validate the certificate instead of blindly trusting the other party.&lt;/p&gt;
+&lt;p&gt;Now that the browser has Google’s certificate, the validation step kicks in. The exact same information which Google registered to the CA is still in the certificate. So, the first step is hashing that information again in the browser the same way CA did. At this point, browser needs the hash value calculated by CA to compare it with what browser calculated and come to the conclusion that the certificate is valid.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Where is the hash CA calculated?&lt;/em&gt; If you remember from the previous section, it’s in the Digital Signature, but encrypted with CA’s private key.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;What can decrypt a data encrypted by CA’s private key?&lt;/em&gt; Of course, it’s CA’s public key.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Where to find CA’s public key?&lt;/em&gt; See the first section, browser already has public keys of trusted CAs.&lt;/p&gt;
+&lt;p&gt;Sounds like we have everything we need. Browser decrypts the Digital Signature using the CA’s public key and extracts the hash calculated by CA. If they’re the same, that means browser is now sure it’s talking to Google.&lt;/p&gt;
+&lt;h3&gt;3.2 Securing the communication&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/046101a8c61f0e5fef19c9c0d15097bf/80b8e/https-flow-2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 59.673202614379086%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgAF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAdhJoZS//8QAGRABAQADAQAAAAAAAAAAAAAAAQIQETEy/9oACAEBAAEFApl3YsHD1j//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPwGH/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGBABAQADAAAAAAAAAAAAAAAAARAAESH/2gAIAQEABj8Ce4m43//EABoQAQADAAMAAAAAAAAAAAAAAAEAETEQIZH/2gAIAQEAAT8hDdcgiops6kdCeCbx/9oADAMBAAIAAwAAABAfz//EABYRAQEBAAAAAAAAAAAAAAAAAAEQEf/aAAgBAwEBPxAAZP/EABYRAQEBAAAAAAAAAAAAAAAAABEQIf/aAAgBAgEBPxB1n//EABoQAQEBAQEBAQAAAAAAAAAAAAERACExQaH/2gAIAQEAAT8QdC8gjxvurygBeamigFj1mhBPhP3IBHo4IQ3/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;https flow 2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/046101a8c61f0e5fef19c9c0d15097bf/b3ee8/https-flow-2.jpg&quot;
+        srcset=&quot;/static/046101a8c61f0e5fef19c9c0d15097bf/3bc27/https-flow-2.jpg 240w,
+/static/046101a8c61f0e5fef19c9c0d15097bf/98431/https-flow-2.jpg 480w,
+/static/046101a8c61f0e5fef19c9c0d15097bf/b3ee8/https-flow-2.jpg 960w,
+/static/046101a8c61f0e5fef19c9c0d15097bf/b97fe/https-flow-2.jpg 1440w,
+/static/046101a8c61f0e5fef19c9c0d15097bf/80b8e/https-flow-2.jpg 1530w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Now, we have Google’s public key. That means we can securely encrypt information at our end with it and send it over the wire to Google. No one can read the content of the data we send except Google. Browser generates a secret key using symmetric-key encryption and encrypts it with Google’s public key, then sends it to Google. Google decrypts this info with their private key and guess what! Secret key is only known by us and Google. That means we can securely use this secret key for the rest of our communication.&lt;/p&gt;
+&lt;p&gt;If I’m logging in to my Google account, my username and password are encrypted with that secret key in the browser and decrypted at Google’s end with the same secret key. While Google is sending back the search results to me, they also use this secret key and encrypt the response, then browser decrypts it with the same secret key. As you can see, any data outside of our browser and Google’s server will be encrypted in transit. Even if there is an eavesdropper listening to your communication with Google, they won’t see any meaningful data.&lt;/p&gt;
+&lt;p&gt;If you’re asking &lt;em&gt;“Why do we also generate a secret key instead of directly using Google’s public/private key?”&lt;/em&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;asymmetric key encryptions are slower than symmetric ones. So, it makes more sense to use public/private keys only to solve the symmetric key’s shortcoming: secure key distribution.&lt;/li&gt;
+&lt;li&gt;Even if you’re fine with the performance issue, using Google’s keys only would enable one-way communication. You can encrypt the data with Google’s public key and only Google can decrypt it, but how Google would encrypt the data they send back to you? If they encrypt it with their private key, anyone can read the info, because everyone knows Google’s public key. If they encrypt it with their public key, you cannot decrypt it as you don’t have Google’s private key.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Wrap up&lt;/h2&gt;
+&lt;p&gt;Let’s quickly see the summary of the flow we covered in this post:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Browsers come with CAs’ public keys when you install.&lt;/li&gt;
+&lt;li&gt;Google gives its public key and some more info to a CA and gets a Digital Certificate in return to use it for the next X years.&lt;/li&gt;
+&lt;li&gt;When you visit &lt;a href=&quot;https://google.com&quot;&gt;https://google.com&lt;/a&gt;, Google’s server gives you this certificate. &lt;/li&gt;
+&lt;li&gt;Your browser extracts the info from the certificate and validates whether the info is valid by using the Digital Signature in the certificate.&lt;/li&gt;
+&lt;li&gt;After making sure the certificate is valid, it generates a secret key and uses Google’s public key inside the certificate to encrypt it.&lt;/li&gt;
+&lt;li&gt;The browser sends this encrypted data to Google.&lt;/li&gt;
+&lt;li&gt;Google decrypts the data using Google’s private key and extracts the secret key.&lt;/li&gt;
+&lt;li&gt;Both the browser and Google have the secret key and they use this key for the rest of the communication.&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Web security unknowns: Same-origin Policy]]></title><description><![CDATA[Attacks like CSRF or XSS are still not clear to many of us. It is not because they are super hard to understand, but it requires some basic understanding of concepts like SOP, CORS, CSP, HTTPS. Let's start with what's Same-origin Policy]]></description><link>https://merictaze.com/posts/web-security-unknowns-same-origin-policy/</link><guid isPermaLink="false">https://merictaze.com/posts/web-security-unknowns-same-origin-policy/</guid><pubDate>Tue, 16 Jul 2019 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/40ec2d50e0bcc2627cb6e147c427ad7a/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;Attacks like CSRF or XSS are still not clear to many of us. It is not because they are super hard to understand, but it requires some basic understanding of concepts like SOP, CORS, CSP, HTTPS. In this series of posts, I’ll try to clear them up one-by-one, and next time you read about attacks, you’ll understand everything.&lt;/p&gt;
 &lt;p&gt;
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
@@ -73,7 +310,7 @@
 &lt;h3&gt;Wrap up&lt;/h3&gt;
 &lt;p&gt;Browsers implement SOP to keep your resources secure since you never now what’s going on behind the scenes when you visit &lt;em&gt;evil.com&lt;/em&gt;. SOP does not prevent taking actions(sending requests etc), but makes sure bad guys won’t be able to see the outcome of that action(reading response/cookies/DOM).&lt;/p&gt;
 &lt;p&gt;It does not block you from using images, videos, scripts, css files from other domains. Long live CDNs! And there are ways to relax SOP by using things like CORS, JSONP.&lt;/p&gt;
-&lt;p&gt;Hope this post gave you some understanding of Same-origin Policy. Keep reading other unknowns in my other posts to have the full picture. Fell free to leave comments below.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Indexing DynamoDB Items to ElasticSearch using AWS Lambda]]></title><description><![CDATA[DynamoDB is Amazon’s NoSQL database which offers single-digit milliseconds latency. It is great for variety of use cases, but when you need to run complex search queries on your dataset, you quickly realise it is not designed for it.]]></description><link>https://merictaze.com/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/</link><guid isPermaLink="false">https://merictaze.com/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/</guid><dc:creator><![CDATA[me@merictaze.com]]></dc:creator><pubDate>Wed, 04 Jul 2018 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/8314334f2eb0b6a593e78008377cbae9/42e18/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;
+&lt;p&gt;Hope this post gave you some understanding of Same-origin Policy. Keep reading other unknowns in my other posts to have the full picture. Fell free to leave comments below.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Indexing DynamoDB Items to ElasticSearch using AWS Lambda]]></title><description><![CDATA[DynamoDB is Amazon’s NoSQL database which offers single-digit milliseconds latency. It is great for variety of use cases, but when you need to run complex search queries on your dataset, you quickly realise it is not designed for it.]]></description><link>https://merictaze.com/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/</link><guid isPermaLink="false">https://merictaze.com/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/</guid><pubDate>Wed, 04 Jul 2018 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/8314334f2eb0b6a593e78008377cbae9/42e18/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/8314334f2eb0b6a593e78008377cbae9/aac00/cover.jpg&quot;
@@ -846,7 +1083,7 @@
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;So at this point we have everything we need. All the new DynamoDB data is being indexed to ElasticSearch behind the scenes.  &lt;/p&gt;
 &lt;p&gt;You can also see the full CloudFormation template &lt;a href=&quot;https://gist.github.com/merictaze/44cb99335300fb1121512eb9beea3ab3&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Feel free to comment below if you have any questions or feedback.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Going Serverless Offline]]></title><description><![CDATA[In this post, we are going to setup an environment with API Gateway, Lambda and DynamoDB using serverless framework which can be deployed to AWS directly or run fully local.]]></description><link>https://merictaze.com/posts/going-serverless-offline/</link><guid isPermaLink="false">https://merictaze.com/posts/going-serverless-offline/</guid><dc:creator><![CDATA[me@merictaze.com]]></dc:creator><pubDate>Tue, 03 Jul 2018 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/3842589b20fa127a7bfb0edae065241c/992d9/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;
+&lt;p&gt;Feel free to comment below if you have any questions or feedback.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Going Serverless Offline]]></title><description><![CDATA[In this post, we are going to setup an environment with API Gateway, Lambda and DynamoDB using serverless framework which can be deployed to AWS directly or run fully local.]]></description><link>https://merictaze.com/posts/going-serverless-offline/</link><guid isPermaLink="false">https://merictaze.com/posts/going-serverless-offline/</guid><pubDate>Tue, 03 Jul 2018 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/3842589b20fa127a7bfb0edae065241c/992d9/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/3842589b20fa127a7bfb0edae065241c/db310/cover.jpg&quot;
