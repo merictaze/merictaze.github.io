@@ -14,8 +14,6 @@ tags:
 description: While making a simple request to https://google.com to see that simple search page, there are a lot of things going on behind the scenes to keep you secure. Understanding this flow will give you a lot of confidence in various topics like Digital Certificates and Signatures, Symmetric/Asymmetric key encryptions, Certificate Authorities and how they all work together to help you have secure communication.
 featuredImage: ./cover.jpeg
 ---
-# What happens when you hit google.com using HTTPS
-
 While making a simple request to https://google.com to see that simple search page, there are a lot of things going on behind the scenes to keep you secure. Understanding this flow will give you a lot of confidence in various topics like Digital Certificates and Signatures, Symmetric/Asymmetric key encryptions, Certificate Authorities and how they all work together to help you have secure communication. Let’s start with some fundamental concepts that HTTPS relies on
 
 ![](./cover.jpeg)<figcaption>Photo by <a href="https://unsplash.com/@rubavi78">Rubén Bagüés</a> on <a href="https://unsplash.com">Unsplash</a></figcaption>
