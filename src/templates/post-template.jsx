@@ -17,7 +17,7 @@ class PostTemplate extends React.Component {
           <Helmet>
             <title>{`${postTitle} - ${title}`}</title>
             <meta name="description" content={description} />
-            canonical && <link rel="canonical" href={canonical} />
+            ${canonical && <link rel="canonical" href={canonical} />}
           </Helmet>
           <PostTemplateDetails {...this.props} />
         </div>
