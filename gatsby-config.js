@@ -7,7 +7,7 @@ module.exports = {
   siteMetadata: {
     url,
     siteUrl: url,
-    title: 'MericTaze.com - Blog on Software Development',
+    title: 'Full Stack Software Development - MericTaze.com',
     subtitle: '',
     copyright: '© All rights reserved.',
     disqusShortname: '',
@@ -73,8 +73,8 @@ module.exports = {
                   }
                 })),
             setup: () => ({
-              title: 'MericTaze.com Blog Feed',
-              description: 'Blog on Software Development',
+              title: 'Full Stack Software Development - MericTaze.com',
+              description: 'Full Stack Software Development Blog',
               feed_url: url + '/rss.xml',
               site_url: url,
               language: 'en-us',
