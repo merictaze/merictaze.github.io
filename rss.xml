@@ -1,4 +1,846 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MericTaze.com Blog Feed]]></title><description><![CDATA[Blog on Software Development]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 13 Aug 2019 06:12:43 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[What happens when you hit google.com using HTTPS]]></title><description><![CDATA[While making a simple request to https://google.com to see that simple search page, there are a lot of things going on behind the scenes to keep you secure. Understanding this flow will give you a lot of confidence in various topics like Digital Certificates and Signatures, Symmetric/Asymmetric key encryptions, Certificate Authorities and how they all work together to help you have secure communication.]]></description><link>https://merictaze.com/posts/what-happens-when-you-hit-google-com-using-https/</link><guid isPermaLink="false">https://merictaze.com/posts/what-happens-when-you-hit-google-com-using-https/</guid><pubDate>Wed, 07 Aug 2019 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/f6328ef7650fec9a02293761615e1188/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;While making a simple request to &lt;a href=&quot;https://google.com&quot;&gt;https://google.com&lt;/a&gt; to see that simple search page, there are a lot of things going on behind the scenes to keep you secure. Understanding this flow will give you a lot of confidence in various topics like Digital Certificates and Signatures, Symmetric/Asymmetric key encryptions, Certificate Authorities and how they all work together to help you have secure communication. Let’s start with some fundamental concepts that HTTPS relies on&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Full Stack Software Development - MericTaze.com]]></title><description><![CDATA[Full Stack Software Development Blog]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 15 Sep 2019 04:19:59 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[Creating a unified Formik input field to support all input types seamlessly]]></title><description><![CDATA[We are going to create a single component that supports text, textarea, select, radio, and checkbox. It will absorb all implementation differences for different inputs and will allow us using a unified component in our Formik forms.]]></description><link>https://merictaze.com/posts/creating-a-unified-formik-input-field-to-support-all-input-types-seamlessly/</link><guid isPermaLink="false">https://merictaze.com/posts/creating-a-unified-formik-input-field-to-support-all-input-types-seamlessly/</guid><pubDate>Sun, 15 Sep 2019 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/fe3bf5918e46f9b1c13485d3ae94bfd5/bc549/cover.png" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;We are going to create a single component that supports text, textarea, select, radio, and checkbox. It will absorb all implementation differences for different inputs and will allow us using a unified component in our Formik forms.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;When I start on a new project, I always try to abstract specific libraries away by defining my own components. This brings some benefits&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Simplify the code by moving the complex/common part into my custom component.&lt;/li&gt;
+&lt;li&gt;Have the ease of changing the underlying dependency without going through a crazy refactoring, but rather only updating my custom component&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This time we are going to create a component that seamlessly works with any input type. Then we’re going to integrate it with react-bootstrap without touching any of our forms, but just updating our custom input component.&lt;/p&gt;
+&lt;p&gt;Let’s see what we’re building first before going into implementation details. This is how our form will look like&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fe3bf5918e46f9b1c13485d3ae94bfd5/8d6e5/cover.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 123.5658914728682%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAIAAAC+dZmEAAAACXBIWXMAAAsSAAALEgHS3X78AAABW0lEQVQ4y52U2XKDMAxF/f9f14FMWBJgMmELYYeWpYX2GPcdw30wNmNJV9KVRdu2eZ5XVfV5HCLLssvl4jhO13VfR9D3vRjHER9N0wzDsCzLjx64yX3xfr9vt5vv+8ofjnptCNi+Xq8oilTmZVl+a4DgRJK02XGe53maJn796kHSLooiSZI4jlnZq0ro0ibn6/UK7TAMYT7pAb7kKwhV1zXVgwn8Zz1gL42plmVZdBsvnPU5S5E0dfN8PiFMAdQvTcickcf9fndd96g2//tM5DRNlUKOGUOYsOR8hjaS8jzv8XiciYwwEHYQBCdzxp6ynTHmQ6uxP2PMSKzrisLUbByCfEnoE1PBPKJYaq75kkiFUW1mA+YonD0u4KNc7NPmAfzYwGAZhmGaJsVnQhkyarkvT0aSPtNtGoZm8NJt0BIJrycKJZRt2yoFjruPsTQmVbVjVQHbDbsjyc0/jTaTMQqGNyIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;cover&quot;
+        title=&quot;&quot;
+        src=&quot;/static/fe3bf5918e46f9b1c13485d3ae94bfd5/f570d/cover.png&quot;
+        srcset=&quot;/static/fe3bf5918e46f9b1c13485d3ae94bfd5/0783d/cover.png 240w,
+/static/fe3bf5918e46f9b1c13485d3ae94bfd5/782f4/cover.png 480w,
+/static/fe3bf5918e46f9b1c13485d3ae94bfd5/f570d/cover.png 960w,
+/static/fe3bf5918e46f9b1c13485d3ae94bfd5/8d6e5/cover.png 1290w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;And here is how we are going to define our form. It’s simple, clean, easy-to-read, right?&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist98138190&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-form-jsx&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;form&lt;/span&gt; &lt;span class=&quot;pl-e&quot;&gt;onSubmit&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;handleSubmit&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;FormItem&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;text&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Full Name&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;fullName&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  /&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;FormItem&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;textarea&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Comment&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;comment&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  /&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;FormItem&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;select&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Default Currency&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;defaultCurrency&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;[&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L17&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      {&lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;value&lt;/span&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;USD&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;label&lt;/span&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;American Dollar&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;},&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L18&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;18&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      {&lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;value&lt;/span&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;EUR&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;label&lt;/span&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;Euro&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L19&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;19&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    ]&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L20&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;20&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  /&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L21&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;21&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC21&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;FormItem&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L22&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;22&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;radio&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L23&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;23&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Gender&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L24&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;gender&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L25&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC25&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;[&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L26&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;26&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC26&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      {&lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;value&lt;/span&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;male&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;label&lt;/span&gt;:&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;Male&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;},&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L27&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;27&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      {&lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;value&lt;/span&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;female&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;label&lt;/span&gt;:&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;Female&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;},&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L28&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;28&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC28&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      {&lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;value&lt;/span&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;other&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;label&lt;/span&gt;:&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;Other&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L29&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;29&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC29&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    ]&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L30&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;30&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC30&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  /&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L31&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;31&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC31&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;FormItem&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L32&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;32&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC32&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;checkbox&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L33&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;33&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC33&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Hobbies&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L34&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;34&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC34&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;hobbies&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L35&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;35&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC35&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-e&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;[&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L36&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;36&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC36&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      {&lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;value&lt;/span&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;baking&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;label&lt;/span&gt;:&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;Baking&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;},&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L37&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;37&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC37&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      {&lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;value&lt;/span&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;dance&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;pl-c1&quot;&gt;&lt;span class=&quot;pl-s&quot;&gt;label&lt;/span&gt;:&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;Dance&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L38&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;38&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC38&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    ]&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L39&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;39&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC39&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  /&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L40&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;40&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC40&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;pl-e&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;submit&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&amp;gt;Submit&amp;lt;/&lt;span class=&quot;pl-ent&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-L41&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;41&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-form-jsx-LC41&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&amp;lt;/&lt;span class=&quot;pl-ent&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/49574a6b8f75a664069babc0789a79ad/raw/49ed5f56e6eed57522926d0f6bfd5ea63981d511/unified-formik-field-form.jsx&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/49574a6b8f75a664069babc0789a79ad#file-unified-formik-field-form-jsx&quot;&gt;unified-formik-field-form.jsx&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Ok, now let’s start implementing it.&lt;/p&gt;
+&lt;h2&gt;Component structure&lt;/h2&gt;
+&lt;p&gt;To make it easier to understand, you can see the structure of the components below. In the following sections, we are going to implement FormItem, FormInput, TextInput, TextAreaInput, SelectInput, and CheckInput.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f77c25a961b840f213a6e47d89c4bb65/00212/components.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 910px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 48.131868131868124%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAAA+klEQVQoz5VRW26DMBDkHg0QlIDXeHf9xIaqz7T56P0vVBuaql9VkEar0Upjz8xWM0YY/aGntqfjwLtQJU7PGF8wMU1NT93Ad6KIz9Je9HLlReN0AtMM3A7U/EG9zf6H1xtfbVad0InnC6ZPmmdOEqwCi2AJHK6EpUPpjHR5w+D0yqV0RZyjNqAnih+U3jG9YbrSnB/K84uXgNHKIkgqZI2V3o8+joFUOApdncF4nB4xRk4noUEYACPECjAdmIe++NzmYcXGy8+W4hPGVxUNx7oE5lvswo//FyZHx8rnVELa9rbt7jxVdh9UmEaPyrd775xLb4X+bX8XvgE1AmHtCpX9aQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;components&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f77c25a961b840f213a6e47d89c4bb65/00212/components.png&quot;
+        srcset=&quot;/static/f77c25a961b840f213a6e47d89c4bb65/0783d/components.png 240w,
+/static/f77c25a961b840f213a6e47d89c4bb65/782f4/components.png 480w,
+/static/f77c25a961b840f213a6e47d89c4bb65/00212/components.png 910w&quot;
+        sizes=&quot;(max-width: 910px) 100vw, 910px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2&gt;Creating the container component&lt;/h2&gt;
+&lt;p&gt;&lt;div id=&quot;gist98151231&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-formitem-jsx&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;import&lt;/span&gt; {&lt;span class=&quot;pl-smi&quot;&gt;connect&lt;/span&gt;} &lt;span class=&quot;pl-k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;formik&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;FormItem&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;connect&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; { &lt;span class=&quot;pl-smi&quot;&gt;label&lt;/span&gt;, &lt;span class=&quot;pl-k&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;inputProps&lt;/span&gt; } &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; { &lt;span class=&quot;pl-smi&quot;&gt;errors&lt;/span&gt;, &lt;span class=&quot;pl-smi&quot;&gt;touched&lt;/span&gt; } &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt; (&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;label&lt;/span&gt;&amp;gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&amp;lt;/&lt;span class=&quot;pl-ent&quot;&gt;label&lt;/span&gt;&amp;gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;FormInput&lt;/span&gt; &lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;inputProps&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt; /&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;errors&lt;/span&gt;&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;inputProps&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;name&lt;/span&gt;] &lt;span class=&quot;pl-k&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;touched&lt;/span&gt;&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;inputProps&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;name&lt;/span&gt;] &lt;span class=&quot;pl-k&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;errors&lt;/span&gt;&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;inputProps&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;name&lt;/span&gt;]&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&amp;lt;/&lt;span class=&quot;pl-ent&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;lt;/&lt;span class=&quot;pl-ent&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  );&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;});&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/94282b147a4b1a2e36d566aee54dbb46/raw/837aaceca15752e0836f1cd7dc090238a02feb72/unified-formik-field-FormItem.jsx&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/94282b147a4b1a2e36d566aee54dbb46#file-unified-formik-field-formitem-jsx&quot;&gt;unified-formik-field-FormItem.jsx&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;This will contain whatever a form field requires: a label, an input field, and validation errors. Line 8 renders the label if user provided the label prop. Line 10 renders the input component and line 12 renders the validation errors if there is any.&lt;/p&gt;
+&lt;p&gt;You might be asking where &lt;code class=&quot;language-text&quot;&gt;props.formik&lt;/code&gt; came from. It is added in the props by &lt;a href=&quot;https://jaredpalmer.com/formik/docs/api/connect&quot;&gt;connect&lt;/a&gt; method we use in line 3. Now our component will have the full formik context.&lt;/p&gt;
+&lt;p&gt;You can also use Formik’s &lt;a href=&quot;https://jaredpalmer.com/formik/docs/api/field&quot;&gt;Field component&lt;/a&gt; which is aware of the Formik context without you doing anything. You just need to adjust this FormItem component to make it work with Field component.&lt;/p&gt;
+&lt;h2&gt;Deciding which input to render&lt;/h2&gt;
+&lt;p&gt;&lt;div id=&quot;gist98151315&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-forminput-jsx&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;FormInput&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;switch&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;type&lt;/span&gt;) {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;radio&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;:&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;checkbox&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;:&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;CheckInput&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;);&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;select&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;:&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;SelectInput&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;);&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;textarea&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;:&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;TextAreaInput&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;);&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-k&quot;&gt;default&lt;/span&gt;:&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;            &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;TextInput&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;);&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/1b9acc8b677cf8569b6fc6ef947d1c68/raw/88b0c0ca7fb96a017f48c7e2cf82b63e2753a7cb/unified-formik-field-FormInput.jsx&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/1b9acc8b677cf8569b6fc6ef947d1c68#file-unified-formik-field-forminput-jsx&quot;&gt;unified-formik-field-FormInput.jsx&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;This one is straight-forward. It just renders the correct input component based on the type prop and passes all props down to that component. We are going to handle radio and checkbox in the same component, namely CheckInput, since they’re quite similar.&lt;/p&gt;
+&lt;h2&gt;Implementing input components&lt;/h2&gt;
+&lt;p&gt;Every prop you pass to the FormItem will eventually be passed into the actual input element except the ones we defined for our specific use&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;label&lt;/code&gt; is used in FormItem to render the label, so it’s not actually a prop for the input field&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;options&lt;/code&gt; is used to pass the list of options in select, radio and checkbox elements. It will be an array of options like&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[
+  {value: &amp;#39;val1&amp;#39;, label: &amp;#39;Option 1&amp;#39;},
+  {value: &amp;#39;val2&amp;#39;, label: &amp;#39;Option 2&amp;#39;}
+]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition to the props passed by the user, we should also pass additional props to make it work with Formik such as &lt;code class=&quot;language-text&quot;&gt;value&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;onClick&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;onBlur&lt;/code&gt; etc. We’re going to handle the extraction of the input props in &lt;code class=&quot;language-text&quot;&gt;extractInputProps&lt;/code&gt; method. Let’s leave it’s implementation to the next section.&lt;/p&gt;
+&lt;h3&gt;TextInput and TextAreaInput&lt;/h3&gt;
+&lt;p&gt;Here how we define our text and textarea inputs. Nothing fancy, just pass the props and render the input element.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist98162723&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-textinput-jsx&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-textinput-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-textinput-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;TextInput&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; &amp;lt;input {...extractInputProps(props)} /&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-textinput-jsx-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-textinput-jsx-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-textinput-jsx-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-textinput-jsx-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;TextAreaInput&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; &amp;lt;textarea {...extractInputProps(props)} /&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/4e199d7d939b9b3b533ef0bb947bb25d/raw/73c5749aefdcda4372404390840db8389282ba13/unified-formik-field-TextInput.jsx&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/4e199d7d939b9b3b533ef0bb947bb25d#file-unified-formik-field-textinput-jsx&quot;&gt;unified-formik-field-TextInput.jsx&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h3&gt;SelectInput&lt;/h3&gt;
+&lt;p&gt;Next, let’s define our select input. It’s similar to the previous ones, but we also need to render a list of options which were passed in the &lt;code class=&quot;language-text&quot;&gt;options&lt;/code&gt; prop in FormItem.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist98162899&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-selectinput-jsx&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;SelectInput&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; (&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;pl-en&quot;&gt;extractInputProps&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;)&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;option&lt;/span&gt; &lt;span class=&quot;pl-e&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&amp;gt;Select a value&amp;lt;/&lt;span class=&quot;pl-ent&quot;&gt;option&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-en&quot;&gt;map&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;option&lt;/span&gt; &lt;span class=&quot;pl-e&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;o&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;pl-e&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;o&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&amp;gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;o&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;o&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&amp;lt;/&lt;span class=&quot;pl-ent&quot;&gt;option&lt;/span&gt;&amp;gt;)&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;lt;/&lt;span class=&quot;pl-ent&quot;&gt;select&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;);&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/d7124feaf7d8f8f6ab8975c865cd9aed/raw/08ee36ec852de00abb497f22a2505273632a0755/unified-formik-field-SelectInput.jsx&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/d7124feaf7d8f8f6ab8975c865cd9aed#file-unified-formik-field-selectinput-jsx&quot;&gt;unified-formik-field-SelectInput.jsx&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h3&gt;CheckInput for radio and checkbox&lt;/h3&gt;
+&lt;p&gt;Now combining above two, it’s not too hard to understand radio and checkbox. Radio/Checkbox behaves different than other input elements, which we will handle in &lt;code class=&quot;language-text&quot;&gt;extractInputProps&lt;/code&gt; method.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist98162914&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-checkinput-jsx&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;CheckInput&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; (&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;Fragment&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-en&quot;&gt;map&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; (&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;pl-e&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;pl-en&quot;&gt;extractInputProps&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;, &lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;)&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt; /&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &amp;lt;/&lt;span class=&quot;pl-ent&quot;&gt;label&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    ))&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;lt;/&lt;span class=&quot;pl-ent&quot;&gt;Fragment&lt;/span&gt;&amp;gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;);&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/f80a01148cbaf9a960f8984c1150fce4/raw/a95fa1f9928dd679c6fddfc5ae2e06a0d8b52e72/unified-formik-field-CheckInput.jsx&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/f80a01148cbaf9a960f8984c1150fce4#file-unified-formik-field-checkinput-jsx&quot;&gt;unified-formik-field-CheckInput.jsx&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;Defining extractInputProps method&lt;/h2&gt;
+&lt;p&gt;This method will accept &lt;code class=&quot;language-text&quot;&gt;props&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;option&lt;/code&gt; as parameters. &lt;code class=&quot;language-text&quot;&gt;option&lt;/code&gt; will be passed only by select/radio/checkbox while rendering each option coming from &lt;code class=&quot;language-text&quot;&gt;options&lt;/code&gt; prop.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist98163023&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-extractinputprops1-js&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;extractInputProps&lt;/span&gt;({formik, options,&lt;span class=&quot;pl-k&quot;&gt;...&lt;/span&gt;otherProps}, &lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;) {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    value&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;values&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;otherProps&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;name&lt;/span&gt;],&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    onChange&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;handleChange&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    onBlur&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;handleBlur&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;...&lt;/span&gt;otherProps&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;radio&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;) {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;//&lt;/span&gt; set additinoal props for radio&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  } &lt;span class=&quot;pl-k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;checkbox&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;) {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;//&lt;/span&gt; set additinoal props for checkbox&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt; props;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/0d65b1407db520754d7c84cd6f3df978/raw/b3c534c58473217e028961f155bfc1a46c0ac5ae/unified-formik-field-extractInputProps1.js&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/0d65b1407db520754d7c84cd6f3df978#file-unified-formik-field-extractinputprops1-js&quot;&gt;unified-formik-field-extractInputProps1.js&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;As you can see from line 6, all the props you passed in FormItem finally reached the actual input elements. But, &lt;code class=&quot;language-text&quot;&gt;props&lt;/code&gt; has more than input element needs. That’s why we use object destructuring on line 1 and remove &lt;code class=&quot;language-text&quot;&gt;formik&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;options&lt;/code&gt; from the props we pass to input element.&lt;/p&gt;
+&lt;p&gt;Now it’s time to use &lt;code class=&quot;language-text&quot;&gt;formik&lt;/code&gt; prop which we get with Formik’s &lt;code class=&quot;language-text&quot;&gt;connect&lt;/code&gt; method we used in FormItem component. &lt;code class=&quot;language-text&quot;&gt;value&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;onChange&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;onBlur&lt;/code&gt; attributes are set to values/handlers provided by formik.&lt;/p&gt;
+&lt;p&gt;Almost done. The only thing left is the special handling of radio and checkbox. Let’s fill those parts in.&lt;/p&gt;
+&lt;h3&gt;Handing additional props for radio&lt;/h3&gt;
+&lt;p&gt;Each radio button has it’s own &lt;code class=&quot;language-text&quot;&gt;value&lt;/code&gt;. Since they share the same input name, form value is set to the value of the one user clicks. Browser uses &lt;code class=&quot;language-text&quot;&gt;checked&lt;/code&gt; attribute to decide whether it should be rendered as checked/unchecked. So, we set &lt;code class=&quot;language-text&quot;&gt;checked&lt;/code&gt; as true if the value of the radio button we’re rendering is equal to the value set in the form.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist98163153&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-extractinputprops2-js&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;radio&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;) {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt;;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;checked&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;values&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;name&lt;/span&gt;];&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/47213cafeb5acf5eb87fed76b8cea60f/raw/43bc8586c99de64281b64539847153a1be188e31/unified-formik-field-extractInputProps2.js&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/47213cafeb5acf5eb87fed76b8cea60f#file-unified-formik-field-extractinputprops2-js&quot;&gt;unified-formik-field-extractInputProps2.js&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h3&gt;Handing additional props for checkbox&lt;/h3&gt;
+&lt;p&gt;The default behavior for checkbox is usually not what web applications expect. If you have a group of checkboxes, and some of them are selected, your form values will be something like &lt;code class=&quot;language-text&quot;&gt;{option1: true, option2: false, option3: true}&lt;/code&gt;. But, most applications expect &lt;code class=&quot;language-text&quot;&gt;[&amp;#39;option1&amp;#39;, &amp;#39;option2&amp;#39;]&lt;/code&gt; as the value in their API. To achieve  this, we’ll override &lt;code class=&quot;language-text&quot;&gt;onChange&lt;/code&gt; method like below. Also &lt;code class=&quot;language-text&quot;&gt;checked&lt;/code&gt; attribute will rely on form value including the value of the checkbox being rendered.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist98163194&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-extractinputprops3-js&quot; class=&quot;file&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;checkbox&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;) {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt;;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;checked&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;values&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;name&lt;/span&gt;].&lt;span class=&quot;pl-en&quot;&gt;includes&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt;);&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;onChange&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;values&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;name&lt;/span&gt;];&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-smi&quot;&gt;e&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;target&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;checked&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=&quot;pl-k&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;val&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;push&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;e&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;target&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;val&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;slice&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;val&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;indexOf&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;e&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;target&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt;));&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;setFieldValue&lt;/span&gt;(val);&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/688ed0ea43ede9e5d642b9fcbf523194/raw/91c37b0f2a585eed93eede3ed66be340b0ffbfa6/unified-formik-field-extractInputProps3.js&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/merictaze/688ed0ea43ede9e5d642b9fcbf523194#file-unified-formik-field-extractinputprops3-js&quot;&gt;unified-formik-field-extractInputProps3.js&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;Putting it all together&lt;/h2&gt;
+&lt;p&gt;Here is the full working example&lt;/p&gt;
+&lt;div class=&quot;embed-container&quot;&gt;
+  &lt;iframe width=&quot;100%&quot; height=&quot;400&quot; src=&quot;//jsfiddle.net/merictaze/vcaukthm/embedded/js,result/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;You can easily change the input components and make it work with react-bootstrap as below:&lt;/p&gt;
+&lt;div class=&quot;embed-container&quot;&gt;
+  &lt;iframe width=&quot;100%&quot; height=&quot;400&quot; src=&quot;//jsfiddle.net/merictaze/2jvcb87r/embedded/js,result/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[What happens when you hit google.com using HTTPS]]></title><description><![CDATA[While making a simple request to https://google.com to see that simple search page, there are a lot of things going on behind the scenes to keep you secure. Understanding this flow will give you a lot of confidence in various topics like Digital Certificates and Signatures, Symmetric/Asymmetric key encryptions, Certificate Authorities and how they all work together to help you have secure communication.]]></description><link>https://merictaze.com/posts/what-happens-when-you-hit-google-com-using-https/</link><guid isPermaLink="false">https://merictaze.com/posts/what-happens-when-you-hit-google-com-using-https/</guid><pubDate>Wed, 07 Aug 2019 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/f6328ef7650fec9a02293761615e1188/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;While making a simple request to &lt;a href=&quot;https://google.com&quot;&gt;https://google.com&lt;/a&gt; to see that simple search page, there are a lot of things going on behind the scenes to keep you secure. Understanding this flow will give you a lot of confidence in various topics like Digital Certificates and Signatures, Symmetric/Asymmetric key encryptions, Certificate Authorities and how they all work together to help you have secure communication. Let’s start with some fundamental concepts that HTTPS relies on&lt;/p&gt;
 &lt;p&gt;
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
