@@ -1,4 +1,193 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Full Stack Software Development - MericTaze.com]]></title><description><![CDATA[Full Stack Software Development Blog]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 14 Jan 2021 04:01:54 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[How React Rendering Works - A Step by Step Guide]]></title><description><![CDATA[Although what react is doing looks quite complex, underlying logic is very simple. And the easiest way to understand is just running some simple examples. We’ll dive into how react renders components and updates the actual DOM.]]></description><link>https://merictaze.com/posts/how-react-rendering-works-a-step-by-step-guide/</link><guid isPermaLink="false">https://merictaze.com/posts/how-react-rendering-works-a-step-by-step-guide/</guid><pubDate>Mon, 07 Oct 2019 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/7f1c78c10e99f317cbc09e189849bed7/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;Although what react is doing looks quite complex, the underlying logic is very simple. And the easiest way to understand is just running some simple examples. We’ll dive into how react renders components and updates the actual DOM.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Full Stack Software Development - MericTaze.com]]></title><description><![CDATA[Full Stack Software Development Blog]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 14 Jan 2021 07:23:49 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[How to Succeed in Your System Design Interview]]></title><description><![CDATA[System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.]]></description><link>https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</link><guid isPermaLink="false">https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</guid><pubDate>Wed, 13 Jan 2021 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/cff4af7722c727c875c5670ebd95fd9a/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.&lt;/p&gt;
+&lt;p&gt;This is based on my personal experience over the years in the interviews I conducted as well as the ones I was the candidate, which turned into a senior job offer. Feel free to adjust based on your needs.&lt;/p&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 66.4179104477612%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB0WhUyA//xAAZEAEBAAMBAAAAAAAAAAAAAAABABESMUL/2gAIAQEAAQUCxedSJ4t//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAFxABAQEBAAAAAAAAAAAAAAAAAQAhQf/aAAgBAQABPyEMhiW5NZVRv//aAAwDAQACAAMAAAAQsw//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAZEAEBAAMBAAAAAAAAAAAAAAABABExgSH/2gAIAQEAAT8Q1gJ3lolMoZ3kg+WAF//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;cover&quot;
+        title=&quot;&quot;
+        src=&quot;/static/cff4af7722c727c875c5670ebd95fd9a/b3ee8/cover.jpg&quot;
+        srcset=&quot;/static/cff4af7722c727c875c5670ebd95fd9a/3bc27/cover.jpg 240w,
+/static/cff4af7722c727c875c5670ebd95fd9a/98431/cover.jpg 480w,
+/static/cff4af7722c727c875c5670ebd95fd9a/b3ee8/cover.jpg 960w,
+/static/cff4af7722c727c875c5670ebd95fd9a/b97fe/cover.jpg 1440w,
+/static/cff4af7722c727c875c5670ebd95fd9a/fb329/cover.jpg 1920w,
+/static/cff4af7722c727c875c5670ebd95fd9a/da876/cover.jpg 4288w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;figcaption&gt;Photo by &lt;a href=&quot;https://unsplash.com/@louisnardsophie&quot;&gt;Sophie Louisnard&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com&quot;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;&lt;/p&gt;
+&lt;h3&gt;Step 1: Clarify the requirements&lt;/h3&gt;
+&lt;p&gt;Even if the question is “Design Instagram”, and you already mastered it during preparation, don’t jump to the solution just yet. It will be a 99% rejection for a senior position. Start clarifying the requirements and listing down the features&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Who is going to use it?&lt;/li&gt;
+&lt;li&gt;What’s the expected number of users&lt;/li&gt;
+&lt;li&gt;What’s the expected number of requests per second&lt;/li&gt;
+&lt;li&gt;Which countries/languages are we supporting&lt;/li&gt;
+&lt;li&gt;Any privacy/GDPR concerns&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What features do we want&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Should we support image, video, or both&lt;/li&gt;
+&lt;li&gt;Do we need Follow/Unfollow&lt;/li&gt;
+&lt;li&gt;Do we need instant messaging&lt;/li&gt;
+&lt;li&gt;What about comment, likes, hashtags etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;What are non-functional requirements: Scalability, Availability, Fault tolerance, etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You might feel strange asking all these questions for a widely known app. But please don’t, and ask even very obvious questions. After this part, you’ll get a tick in interviewer’s notes: “Deals with ambiguity and ask questions to clarify the problem: check”.&lt;/p&gt;
+&lt;h3&gt;Step 2: Define Entities&lt;/h3&gt;
+&lt;p&gt;Before throwing all those boxes: “Service X”, “Service Y”, “Service Z” and their interactions, just take a step back and define what kind of entities you need. Some people prefer defining the APIs first, but I feel more comfortable figuring out the main entities first and defining APIs around those.&lt;/p&gt;
+&lt;p&gt;Based on the requirements and features you discussed in the previous step, start listing down the entities and what fields they have. For example, you can start with something like this&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Post: postId, content, mediaType, mediaLink, userId, creationDate&lt;/li&gt;
+&lt;li&gt;User: userId, username, profilePhoto&lt;/li&gt;
+&lt;li&gt;Relationship: followerUserId, followeeUserId&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Step 3: Define APIs&lt;/h3&gt;
+&lt;p&gt;List of the features you collected in step 1 and the entities you defined in step 2 will construct your APIs here. Let’s say interviewer requested the following features&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Post images only&lt;/li&gt;
+&lt;li&gt;Allow user to edit the post&lt;/li&gt;
+&lt;li&gt;Support follow/unfollow&lt;/li&gt;
+&lt;li&gt;News feed to see all the posts from all users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Based on that info, the APIs you’re going to need will be something like below (I know there is another 1M way of doing this):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;/posts (GET): Returns all the posts (probably paginated for infinite scroll)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;method: GET&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;input: GetPostsRequest&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lastPostId for pagination&lt;/li&gt;
+&lt;li&gt;numberOfItems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;/posts (POST): Creates a new post&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;method: POST&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;input: CreatePostRequest&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;content,&lt;/li&gt;
+&lt;li&gt;mediaType and mediaLink or the file itself if you’re not uploading it to the CDN directly from the UI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;/posts/{postId} (POST): Updates an existing post&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;method: POST&lt;/li&gt;
+&lt;li&gt;input: UpdatePostRequest - similar to CreatePostRequest with a postId&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;/relationships/{userId} (POST): Follows/Unfollows a user&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;method: POST&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;input RelationshipRequest&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;followeeId&lt;/li&gt;
+&lt;li&gt;followed (true to follow, false to unfollow, or you can create a DELETE method to unfollow and remove this flag)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It might be a good idea to mention that in step2 you designed DB entities while here you’ll use API entities which are similar to DB entities with small differences:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;postId will be generated at the backend, so it will not be part of the CreatePostRequest&lt;/li&gt;
+&lt;li&gt;same for userId, it will most likely be extracted from some encrypted token coming in the header&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Step 4: Draw High-level Architecture&lt;/h3&gt;
+&lt;p&gt;Now, it’s the right time to start drawing those boxes and show off your microservice architecture skills. First, define the main components you’re going to need, and add things like “Management”, “Authority”, “Processor” etc in the service name ;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AuthService&lt;/li&gt;
+&lt;li&gt;UserManagementService&lt;/li&gt;
+&lt;li&gt;RelationshipAuthorityService&lt;/li&gt;
+&lt;li&gt;PostManagementService&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A common approach is putting a Gateway that users will talk to, and initiate calls to your backend services from this gateway. For example, to create a new post, send your HTTP request to the Gateway and Gateway will first talk to AuthService to extract the user info and make sure user is authenticated/authorized and then call PostManagementService to create the post. Your diagram will look something like this:
+
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/df76b97cad0366c2071196a0d307d519/7fc9f/design.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 782px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 70.97186700767263%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAOABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd5VIxB//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQABBQJf/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGhAAAgIDAAAAAAAAAAAAAAAAAAERITFBcf/aAAgBAQABPyFsqcnBjl7FSP/aAAwDAQACAAMAAAAQQM//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAACAwEBAAAAAAAAAAAAAAABEQAhcUEx/9oACAEBAAE/EAoX2NNMUJBsqgBDYxwMgIHs/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;design&quot;
+        title=&quot;&quot;
+        src=&quot;/static/df76b97cad0366c2071196a0d307d519/7fc9f/design.jpg&quot;
+        srcset=&quot;/static/df76b97cad0366c2071196a0d307d519/3bc27/design.jpg 240w,
+/static/df76b97cad0366c2071196a0d307d519/98431/design.jpg 480w,
+/static/df76b97cad0366c2071196a0d307d519/7fc9f/design.jpg 782w&quot;
+        sizes=&quot;(max-width: 782px) 100vw, 782px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;After this point, start throwing all system design concepts you know:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Put a CDN here to serve JS/CSS file&lt;/li&gt;
+&lt;li&gt;Another CDN there to store media files like images and videos&lt;/li&gt;
+&lt;li&gt;Put a LoadBalancer in front of AuthService as all requests will have to talk to AuthService first and you need to scale it out and make it fault-tolerant&lt;/li&gt;
+&lt;li&gt;If AuthService DB is having a bad day, your product might be completely unusable, so let’s add some replication and sharding for that DB&lt;/li&gt;
+&lt;li&gt;Since it’s a public feed and everyone will see the same feed, there is no need to query PostManagementService DB every time, put a cache in front of it to make feed rendering super fast&lt;/li&gt;
+&lt;li&gt;If you need notifications for things like new followers, likes etc, that’s a great place to show your pub/sub and message queue knowledge. Publish events from RelationshipAurhorityService for follow/unfollow actions and PostManagementService for new posts, and subscribe to those with a message queue which will be consumed by NotificationService&lt;/li&gt;
+&lt;li&gt;For transient issues in some systems, add retries with exponential backoff for service calls. Add meaningful timeouts so that you don’t wait for minutes to get a simple response.&lt;/li&gt;
+&lt;li&gt;Show where system might fail and how you can fix single point of failures in the system. When you say I’ll have multiple nodes for AuthService and a LoadBalancer in front to not have a single point of failure, interviewer might ask “What if Load Balancer fails?”(in case you’re curious, you can have multiple nodes for LoadBalancer as well and use DNS Round-robin). So, ask yourself where system can fail while designing and show interviewer that you also consider these kinds of things.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please note experienced interviewers will dive deep into these concepts. So, make sure you know what they do, how they work and advantages/disadvantages between different approaches.&lt;/p&gt;
+&lt;h3&gt;Step 5: Monitor the System Health&lt;/h3&gt;
+&lt;p&gt;If all went smoothly, you might have some time at the end. At this point, interviewer will most likely ask how you measure the system health, what kind of things you monitor.&lt;/p&gt;
+&lt;p&gt;A common approach is having monitors like below and creating alarms with some threshold for each, which will notify the team automatically if something is wrong. This is not the exhaustive list for a service you’re launching to production, but it should be enough for the interviewer.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Latency/Number of request/Error/Fault count for all incoming API calls to your service and all outgoing API calls from your service to others (service, db etc).&lt;/li&gt;
+&lt;li&gt;Disk, Memory CPU usage and utilization for each node of the service&lt;/li&gt;
+&lt;li&gt;If you use things like message queues etc, you might monitor things like the number of messages in the queue, the oldest message in the queue etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;p&gt;Here are all the steps. Write it on a paper, put it next to your screen and keep practicing.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 1: Clarify the requirements&lt;/li&gt;
+&lt;li&gt;Step 2: Define Entities&lt;/li&gt;
+&lt;li&gt;Step 3: Define APIs&lt;/li&gt;
+&lt;li&gt;Step 4: Draw High-level Architecture&lt;/li&gt;
+&lt;li&gt;Step 5: Monitor the System Health&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Good luck with your interview!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How React Rendering Works - A Step by Step Guide]]></title><description><![CDATA[Although what react is doing looks quite complex, underlying logic is very simple. And the easiest way to understand is just running some simple examples. We’ll dive into how react renders components and updates the actual DOM.]]></description><link>https://merictaze.com/posts/how-react-rendering-works-a-step-by-step-guide/</link><guid isPermaLink="false">https://merictaze.com/posts/how-react-rendering-works-a-step-by-step-guide/</guid><pubDate>Mon, 07 Oct 2019 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/7f1c78c10e99f317cbc09e189849bed7/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;Although what react is doing looks quite complex, the underlying logic is very simple. And the easiest way to understand is just running some simple examples. We’ll dive into how react renders components and updates the actual DOM.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2&gt;Rendering React Components&lt;/h2&gt;
 &lt;p&gt;In other words, this is calling the &lt;code class=&quot;language-text&quot;&gt;render()&lt;/code&gt; method of the component.&lt;/p&gt;
