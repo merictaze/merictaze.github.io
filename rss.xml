@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Full Stack Software Development - MericTaze.com]]></title><description><![CDATA[Full Stack Software Development Blog]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 14 Jan 2021 07:23:49 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[How to Succeed in Your System Design Interview]]></title><description><![CDATA[System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.]]></description><link>https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</link><guid isPermaLink="false">https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</guid><pubDate>Wed, 13 Jan 2021 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/cff4af7722c727c875c5670ebd95fd9a/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Full Stack Software Development - MericTaze.com]]></title><description><![CDATA[Full Stack Software Development Blog]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 14 Jan 2021 15:41:34 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[How to Succeed in Your System Design Interview]]></title><description><![CDATA[System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.]]></description><link>https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</link><guid isPermaLink="false">https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</guid><pubDate>Wed, 13 Jan 2021 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/cff4af7722c727c875c5670ebd95fd9a/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.&lt;/p&gt;
 &lt;p&gt;This is based on my personal experience over the years in the interviews I conducted as well as the ones I was the candidate, which turned into a senior job offer. Feel free to adjust based on your needs.&lt;/p&gt;
 &lt;p&gt;
   &lt;span
@@ -45,7 +45,7 @@
 &lt;/li&gt;
 &lt;li&gt;What are non-functional requirements: Scalability, Availability, Fault tolerance, etc&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;You might feel strange asking all these questions for a widely known app. But please don’t, and ask even very obvious questions. After this part, you’ll get a tick in interviewer’s notes: “Deals with ambiguity and ask questions to clarify the problem: check”.&lt;/p&gt;
+&lt;p&gt;You might feel strange asking all these questions for a widely known app. But please don’t, and ask even very obvious questions. After this part, you’ll get a tick in interviewer’s notes: “Deals with ambiguity and asks questions to clarify the problem: check”.&lt;/p&gt;
 &lt;h3&gt;Step 2: Define Entities&lt;/h3&gt;
 &lt;p&gt;Before throwing all those boxes: “Service X”, “Service Y”, “Service Z” and their interactions, just take a step back and define what kind of entities you need. Some people prefer defining the APIs first, but I feel more comfortable figuring out the main entities first and defining APIs around those.&lt;/p&gt;
 &lt;p&gt;Based on the requirements and features you discussed in the previous step, start listing down the entities and what fields they have. For example, you can start with something like this&lt;/p&gt;
@@ -65,7 +65,7 @@
 &lt;p&gt;Based on that info, the APIs you’re going to need will be something like below (I know there is another 1M way of doing this):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;/posts (GET): Returns all the posts (probably paginated for infinite scroll)&lt;/p&gt;
+&lt;p&gt;/posts: Returns all the posts (probably paginated for infinite scroll)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: GET&lt;/li&gt;
 &lt;li&gt;
@@ -78,7 +78,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;/posts (POST): Creates a new post&lt;/p&gt;
+&lt;p&gt;/posts: Creates a new post&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: POST&lt;/li&gt;
 &lt;li&gt;
@@ -91,14 +91,14 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;/posts/{postId} (POST): Updates an existing post&lt;/p&gt;
+&lt;p&gt;/posts/{postId}: Updates an existing post&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: POST&lt;/li&gt;
 &lt;li&gt;input: UpdatePostRequest - similar to CreatePostRequest with a postId&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;/relationships/{userId} (POST): Follows/Unfollows a user&lt;/p&gt;
+&lt;p&gt;/relationships/{userId}: Follows/Unfollows a user&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: POST&lt;/li&gt;
 &lt;li&gt;
@@ -160,7 +160,7 @@
     &lt;/p&gt;
 &lt;p&gt;After this point, start throwing all system design concepts you know:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Put a CDN here to serve JS/CSS file&lt;/li&gt;
+&lt;li&gt;Put a CDN here to serve JS/CSS files&lt;/li&gt;
 &lt;li&gt;Another CDN there to store media files like images and videos&lt;/li&gt;
 &lt;li&gt;Put a LoadBalancer in front of AuthService as all requests will have to talk to AuthService first and you need to scale it out and make it fault-tolerant&lt;/li&gt;
 &lt;li&gt;If AuthService DB is having a bad day, your product might be completely unusable, so let’s add some replication and sharding for that DB&lt;/li&gt;
@@ -176,7 +176,7 @@
 &lt;ul&gt;
 &lt;li&gt;Latency/Number of request/Error/Fault count for all incoming API calls to your service and all outgoing API calls from your service to others (service, db etc).&lt;/li&gt;
 &lt;li&gt;Disk, Memory CPU usage and utilization for each node of the service&lt;/li&gt;
-&lt;li&gt;If you use things like message queues etc, you might monitor things like the number of messages in the queue, the oldest message in the queue etc.&lt;/li&gt;
+&lt;li&gt;If you use things like message queues etc, you can monitor things like the number of messages in the queue, the oldest message in the queue etc.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Summary&lt;/h3&gt;
 &lt;p&gt;Here are all the steps. Write it on a paper, put it next to your screen and keep practicing.&lt;/p&gt;

@@ -46,7 +46,7 @@
 </li>
 <li>What are non-functional requirements: Scalability, Availability, Fault tolerance, etc</li>
 </ul>
-<p>You might feel strange asking all these questions for a widely known app. But please don’t, and ask even very obvious questions. After this part, you’ll get a tick in interviewer’s notes: “Deals with ambiguity and ask questions to clarify the problem: check”.</p>
+<p>You might feel strange asking all these questions for a widely known app. But please don’t, and ask even very obvious questions. After this part, you’ll get a tick in interviewer’s notes: “Deals with ambiguity and asks questions to clarify the problem: check”.</p>
 <h3>Step 2: Define Entities</h3>
 <p>Before throwing all those boxes: “Service X”, “Service Y”, “Service Z” and their interactions, just take a step back and define what kind of entities you need. Some people prefer defining the APIs first, but I feel more comfortable figuring out the main entities first and defining APIs around those.</p>
 <p>Based on the requirements and features you discussed in the previous step, start listing down the entities and what fields they have. For example, you can start with something like this</p>
@@ -66,7 +66,7 @@
 <p>Based on that info, the APIs you’re going to need will be something like below (I know there is another 1M way of doing this):</p>
 <ul>
 <li>
-<p>/posts (GET): Returns all the posts (probably paginated for infinite scroll)</p>
+<p>/posts: Returns all the posts (probably paginated for infinite scroll)</p>
 <ul>
 <li>method: GET</li>
 <li>
@@ -79,7 +79,7 @@
 </ul>
 </li>
 <li>
-<p>/posts (POST): Creates a new post</p>
+<p>/posts: Creates a new post</p>
 <ul>
 <li>method: POST</li>
 <li>
@@ -92,14 +92,14 @@
 </ul>
 </li>
 <li>
-<p>/posts/{postId} (POST): Updates an existing post</p>
+<p>/posts/{postId}: Updates an existing post</p>
 <ul>
 <li>method: POST</li>
 <li>input: UpdatePostRequest - similar to CreatePostRequest with a postId</li>
 </ul>
 </li>
 <li>
-<p>/relationships/{userId} (POST): Follows/Unfollows a user</p>
+<p>/relationships/{userId}: Follows/Unfollows a user</p>
 <ul>
 <li>method: POST</li>
 <li>
@@ -161,7 +161,7 @@
     </p>
 <p>After this point, start throwing all system design concepts you know:</p>
 <ul>
-<li>Put a CDN here to serve JS/CSS file</li>
+<li>Put a CDN here to serve JS/CSS files</li>
 <li>Another CDN there to store media files like images and videos</li>
 <li>Put a LoadBalancer in front of AuthService as all requests will have to talk to AuthService first and you need to scale it out and make it fault-tolerant</li>
 <li>If AuthService DB is having a bad day, your product might be completely unusable, so let’s add some replication and sharding for that DB</li>
@@ -177,7 +177,7 @@
 <ul>
 <li>Latency/Number of request/Error/Fault count for all incoming API calls to your service and all outgoing API calls from your service to others (service, db etc).</li>
 <li>Disk, Memory CPU usage and utilization for each node of the service</li>
-<li>If you use things like message queues etc, you might monitor things like the number of messages in the queue, the oldest message in the queue etc.</li>
+<li>If you use things like message queues etc, you can monitor things like the number of messages in the queue, the oldest message in the queue etc.</li>
 </ul>
 <h3>Summary</h3>
 <p>Here are all the steps. Write it on a paper, put it next to your screen and keep practicing.</p>
