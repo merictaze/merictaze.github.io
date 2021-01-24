@@ -1,4 +1,442 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Full Stack Software Development - MericTaze.com]]></title><description><![CDATA[Full Stack Software Development Blog]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 24 Jan 2021 00:58:26 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[How to Succeed in Your System Design Interview]]></title><description><![CDATA[System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.]]></description><link>https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</link><guid isPermaLink="false">https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</guid><pubDate>Wed, 13 Jan 2021 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/cff4af7722c727c875c5670ebd95fd9a/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Full Stack Software Development - MericTaze.com]]></title><description><![CDATA[Full Stack Software Development Blog]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 24 Jan 2021 07:41:39 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[Recap of System Design Interview Concepts]]></title><description><![CDATA[Maybe you’re just getting started with distributed systems and system design, or you just need a quick recap for your upcoming interview. In either case, in this post, you’ll find the most common concepts of system design and the most important aspects of them. Let’s get started.]]></description><link>https://merictaze.com/posts/recap-of-system-design-interview-copcepts/</link><guid isPermaLink="false">https://merictaze.com/posts/recap-of-system-design-interview-copcepts/</guid><pubDate>Sat, 23 Jan 2021 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/bce648cb953666766a38ea766afcfdf3/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;Maybe you’re just getting started with distributed systems and system design, or you just need a quick recap for your upcoming interview. In either case, in this post, you’ll find the most common concepts of system design and the most important aspects of them. Let’s get started.&lt;/p&gt;
+&lt;p&gt;
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMBBf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAezsg0TD/8QAFhABAQEAAAAAAAAAAAAAAAAAABEg/9oACAEBAAEFAsVX/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BiP/EABcRAQADAAAAAAAAAAAAAAAAAAABERL/2gAIAQIBAT8BuGn/xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAYEAADAQEAAAAAAAAAAAAAAAAAAREQUf/aAAgBAQABPyHKivpeP//aAAwDAQACAAMAAAAQly//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPxCj/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8QUP/EABoQAQADAAMAAAAAAAAAAAAAAAEAESEQQaH/2gAIAQEAAT8Q4QaUGb3rqBKJdexu7c//2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;cover&quot;
+        title=&quot;&quot;
+        src=&quot;/static/bce648cb953666766a38ea766afcfdf3/b3ee8/cover.jpg&quot;
+        srcset=&quot;/static/bce648cb953666766a38ea766afcfdf3/3bc27/cover.jpg 240w,
+/static/bce648cb953666766a38ea766afcfdf3/98431/cover.jpg 480w,
+/static/bce648cb953666766a38ea766afcfdf3/b3ee8/cover.jpg 960w,
+/static/bce648cb953666766a38ea766afcfdf3/b97fe/cover.jpg 1440w,
+/static/bce648cb953666766a38ea766afcfdf3/fb329/cover.jpg 1920w,
+/static/bce648cb953666766a38ea766afcfdf3/d932e/cover.jpg 4608w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;figcaption&gt;Photo by &lt;a href=&quot;https://unsplash.com/@jessbaileydesigns&quot;&gt;Jess Bailey&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com&quot;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;&lt;/p&gt;
+&lt;h2 id=&quot;horizontal-vs-vertical-scaling&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#horizontal-vs-vertical-scaling&quot; aria-label=&quot;horizontal vs vertical scaling permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Horizontal vs Vertical Scaling&lt;/h2&gt;
+&lt;p&gt;When you have a single node(host/server) and 300 users using your app, everything might work flawlessly. When you hit 600 users, the node you have might not be able to keep up with the incoming number of requests with the hardware it has. At this point, you need to scale and you have two options.&lt;/p&gt;
+&lt;p&gt;You can improve the hardware on the same node by doubling the memory or CPU, or whatever you need so that you can accommodate 600 users with a single machine. This is what we call &lt;strong&gt;scaling up&lt;/strong&gt; or &lt;strong&gt;vertical scaling&lt;/strong&gt;. This solves the immediate problem but you cannot keep adding more memory or CPU to the same machine forever. At some point, you’ll hit the max hardware a machine can support.&lt;/p&gt;
+&lt;p&gt;Another approach is putting new nodes that serve the incoming requests/tasks together, which is called &lt;strong&gt;scaling out&lt;/strong&gt; or &lt;strong&gt;horizontal scaling&lt;/strong&gt;. While this brings a lot of challenges, it allows you to scale almost infinitely, hence the recommended approach for most usecases. In addition to that, doubling the number of nodes is cheaper than doubling the hardware in a single node.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6047197d43883050f72cfe1fc9bc328e/05e7a/01scaling.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 76.29233511586453%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd+WihB//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQABBQJf/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRAAAwEBAQAAAAAAAAAAAAAAAAERIVEQ/9oACAEBAAE/IdI75vR1EfT/2gAMAwEAAgADAAAAEHPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxAAAgMAAwAAAAAAAAAAAAAAAAERITFBYcH/2gAIAQEAAT8QTlaNGeCmL0SlYfkbk7B//9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;01scaling&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6047197d43883050f72cfe1fc9bc328e/b3ee8/01scaling.jpg&quot;
+        srcset=&quot;/static/6047197d43883050f72cfe1fc9bc328e/3bc27/01scaling.jpg 240w,
+/static/6047197d43883050f72cfe1fc9bc328e/98431/01scaling.jpg 480w,
+/static/6047197d43883050f72cfe1fc9bc328e/b3ee8/01scaling.jpg 960w,
+/static/6047197d43883050f72cfe1fc9bc328e/05e7a/01scaling.jpg 1122w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2 id=&quot;load-balancing&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#load-balancing&quot; aria-label=&quot;load balancing permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Load Balancing&lt;/h2&gt;
+&lt;p&gt;One way or another, you’ll need to scale out (scale horizontally) in most parts of your system. When you have multiple nodes, the question becomes how to balance the load between these nodes equally so that you can utilize the nodes/hardware as much as possible.&lt;/p&gt;
+&lt;p&gt;Let’s say you have a client trying to call OrderService. There are 3 main approaches to achieve that:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Client-side load balancing:&lt;/strong&gt; Client knows all the instances of OrderService and decides which instance to call, usually using a library provided by the service&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DNS load balancing:&lt;/strong&gt; DNS server knows all the instances of OrderService and decides which instance to resolve the given URL to&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server-side load balancing:&lt;/strong&gt; A separate server(LoadBalancer) knows all the instances of OrderService and decides which instance to call. This server sits between client and OrderService.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;With a server-side load balancer, you’re solving the scaling and single point of failure problems of your nodes (app servers), but then Load Balancer becomes the single point of failure if it’s just a single server. One common approach is having multiple load balancers and having DNS Load balancing between those to make sure failure in a single LoadBalancer node will not make the whole service unreachable.&lt;/p&gt;
+&lt;p&gt;There are different techniques to balance the load. Most of them apply to server-side load balancing as you don’t have much knowledge of what’s going on in the first two approaches.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Round-robin:&lt;/strong&gt; Requests/Tasks are distributed to all nodes in the group in rotation (sequentially)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Least connections:&lt;/strong&gt; Request is sent to the node with the least number of active connections at the time of the request&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Least response time:&lt;/strong&gt; Request is sent to the node with the lowest latency at the time of the request&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Source IP Hash:&lt;/strong&gt; A hash is generated based on the client’s IP address. This hash is used as a key to select which node to send the request. All requests coming from the same client will generate the same hash and sent to the same node given the node is still healthy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d66e5e683a12d364f8826fc4ba9b85c1/a5a46/02LB.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 62.78586278586279%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe8sMg//xAAXEAADAQAAAAAAAAAAAAAAAAABEBEg/9oACAEBAAEFArgr/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRAAAgMBAAAAAAAAAAAAAAAAAAEQESGB/9oACAEBAAE/IQ2djCLP/9oADAMBAAIAAwAAABCgD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABgQAQEBAQEAAAAAAAAAAAAAAAERACFx/9oACAEBAAE/EAIJe6nDmWTrQknMCgTzVv/Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;02LB&quot;
+        title=&quot;&quot;
+        src=&quot;/static/d66e5e683a12d364f8826fc4ba9b85c1/b3ee8/02LB.jpg&quot;
+        srcset=&quot;/static/d66e5e683a12d364f8826fc4ba9b85c1/3bc27/02LB.jpg 240w,
+/static/d66e5e683a12d364f8826fc4ba9b85c1/98431/02LB.jpg 480w,
+/static/d66e5e683a12d364f8826fc4ba9b85c1/b3ee8/02LB.jpg 960w,
+/static/d66e5e683a12d364f8826fc4ba9b85c1/a5a46/02LB.jpg 962w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2 id=&quot;microservice-architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#microservice-architecture&quot; aria-label=&quot;microservice architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Microservice Architecture&lt;/h2&gt;
+&lt;p&gt;If you’re building a simple app, having a single service with multiple APIs to fulfill all your needs is the default choice. However, when the system evolves and each aspect of your app becomes complicated pieces with its own complex business logic, and most likely owned by different teams, you’ll realize it might be better to split each aspect of your business into separate services and define contracts/APIs between them without sharing anything else.&lt;/p&gt;
+&lt;p&gt;As soon as your application grows, you can break it into different microservices such as entity life-cycle management for orders, Notification, Invoicing, Advertisement, Fulfilment,  Analysis and Reporting, and so on.&lt;/p&gt;
+&lt;p&gt;You decouple different concerns of the business or domain models into their respective services to evolve them easier. In a microservice architecture, there are a bunch of services fulfilling one or multiple aspects of the business. They talk to each other to fulfill different flows and they’re usually aware of each other with a &lt;strong&gt;Service Registry&lt;/strong&gt; (concept is called &lt;strong&gt;Service Discovery&lt;/strong&gt;), that knows which services exist, what their nodes’ or LoadBalancers’ addresses are, etc. &lt;/p&gt;
+&lt;p&gt;Instead of letting external users/clients calling each service, a more common approach is adding a Gateway that will be the bridge between users and microservices. Gateway can offer REST APIs for users to call and a central Auth logic to make sure users are authenticated, while microservices can use different protocols for communication (such as RPC) and auth.
+
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2d569af258e0f6becdd0cc7b62be1019/fb329/03MS.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 51.354166666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe9NQA//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAEFAl//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAYEAACAwAAAAAAAAAAAAAAAAABECAhMf/aAAgBAQABPyG0Mh//2gAMAwEAAgADAAAAEJDP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHBAAAgICAwAAAAAAAAAAAAAAAREAMRBBIVGx/9oACAEBAAE/EC2tdwNgEoqnKH7DeDxP/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;03MS&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2d569af258e0f6becdd0cc7b62be1019/b3ee8/03MS.jpg&quot;
+        srcset=&quot;/static/2d569af258e0f6becdd0cc7b62be1019/3bc27/03MS.jpg 240w,
+/static/2d569af258e0f6becdd0cc7b62be1019/98431/03MS.jpg 480w,
+/static/2d569af258e0f6becdd0cc7b62be1019/b3ee8/03MS.jpg 960w,
+/static/2d569af258e0f6becdd0cc7b62be1019/b97fe/03MS.jpg 1440w,
+/static/2d569af258e0f6becdd0cc7b62be1019/fb329/03MS.jpg 1920w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2 id=&quot;database&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#database&quot; aria-label=&quot;database permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Database&lt;/h2&gt;
+&lt;p&gt;When it comes to what type of database to use, there is usually a hot conversation, if not a fight, between SQL and no-SQL. At a high level, it’s good to know the main distinction between the two:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SQL:&lt;/strong&gt; your system has relational data and multiple/unpredictable query patterns&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;no-SQL:&lt;/strong&gt; your system has flat data, fewer/predictable query patterns, and needs to scale infinitely&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are also some cases that fit in between. For those cases, both solutions should work for you.
+Most DBs use replication and sharding together to achieve better availability, scalability, and many other similar distributed system terms.&lt;/p&gt;
+&lt;h3 id=&quot;replication&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#replication&quot; aria-label=&quot;replication permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Replication&lt;/h3&gt;
+&lt;p&gt;Replication is duplicating data in different nodes, data centers, or regions. It provides&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;scalability on reads as there are multiple nodes with the same data that can serve the request&lt;/li&gt;
+&lt;li&gt;availability and fault tolerance as losing some nodes will not take the whole system down. There will still be some other nodes with all the data that can serve the request&lt;/li&gt;
+&lt;li&gt;lower latency for the cases where replication happens cross-region. Each client can call the replica server closer to their location&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Whenever a client writes something, it goes to the leader. Later on, data is replicated at the followers (green arrows below). Replication process can be&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;fully-sync replication&lt;/strong&gt;, which will cause delay on the writes as the client has to wait for data to be written to the leader and replicated at all followers synchronously&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;async replication&lt;/strong&gt;, which might cause inconsistency for the cases async replication delays for some reason&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;semi-sync replication&lt;/strong&gt;, which tries finding a middle-ground between above approaches. Data is replicated synchronously in some nodes and asynchronously for others.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b505a8a4df7b7e50e30cc40aa61572ae/4953f/04DB.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 37.82321106434155%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAG8AD//xAAVEAEBAAAAAAAAAAAAAAAAAAAQIf/aAAgBAQABBQKv/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAFxABAQEBAAAAAAAAAAAAAAAAABEBIf/aAAgBAQABPyE2x1//2gAMAwEAAgADAAAAEAPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGhAAAgMBAQAAAAAAAAAAAAAAAAERQVEh4f/aAAgBAQABPxCNeHBO0J3R/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;04DB&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b505a8a4df7b7e50e30cc40aa61572ae/b3ee8/04DB.jpg&quot;
+        srcset=&quot;/static/b505a8a4df7b7e50e30cc40aa61572ae/3bc27/04DB.jpg 240w,
+/static/b505a8a4df7b7e50e30cc40aa61572ae/98431/04DB.jpg 480w,
+/static/b505a8a4df7b7e50e30cc40aa61572ae/b3ee8/04DB.jpg 960w,
+/static/b505a8a4df7b7e50e30cc40aa61572ae/b97fe/04DB.jpg 1440w,
+/static/b505a8a4df7b7e50e30cc40aa61572ae/4953f/04DB.jpg 1663w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;While the diagram above shows single-leader replication, please be aware there is also multi-leader and leader-less replication with their own advantages and disadvantages.&lt;/p&gt;
+&lt;h3 id=&quot;sharding-horizontal-partitioning&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sharding-horizontal-partitioning&quot; aria-label=&quot;sharding horizontal partitioning permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sharding (Horizontal Partitioning)&lt;/h3&gt;
+&lt;p&gt;It allows you to spread reads/writes evenly across nodes by partitioning the data into multiple nodes. Each shard/partition will own some part of the data (i.e. some rows of a table).&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1b137bee9b16e85886299981b4d8e349/f2aab/05DB.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 45.79172610556348%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHuqMqT/8QAFhABAQEAAAAAAAAAAAAAAAAAABEg/9oACAEBAAEFAlXH/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAFxABAQEBAAAAAAAAAAAAAAAAAQARMf/aAAgBAQABPyHXZxDY7PIv/9oADAMBAAIAAwAAABCwP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABwQAAMAAgMBAAAAAAAAAAAAAAABESExQVFxgf/aAAgBAQABPxCzKPHQxKr90VMLDhsN5y9P/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;05DB&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1b137bee9b16e85886299981b4d8e349/b3ee8/05DB.jpg&quot;
+        srcset=&quot;/static/1b137bee9b16e85886299981b4d8e349/3bc27/05DB.jpg 240w,
+/static/1b137bee9b16e85886299981b4d8e349/98431/05DB.jpg 480w,
+/static/1b137bee9b16e85886299981b4d8e349/b3ee8/05DB.jpg 960w,
+/static/1b137bee9b16e85886299981b4d8e349/f2aab/05DB.jpg 1402w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;While sharding, one of the important aspects is how to split data into multiple nodes, what’s the criteria to decide which data should be owned by which node. There are two common approaches
+&lt;strong&gt;1. Range-based sharding&lt;/strong&gt;
+You divide the rows into ranges based on the primary key’s value. Each range is assigned to a node. For example, if you have a user table whose primary key is username, you can shard the data based on the first letter of the username:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;username starts with [a, e] → Node 1&lt;/li&gt;
+&lt;li&gt;username starts with [f, m] → Node 2&lt;/li&gt;
+&lt;li&gt;username starts with [n, z] → Node 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As data is sorted in the nodes, it’s easier to run range queries like “get all users whose username starts with ar”. On the other hand, it’s hard to split the data into nodes uniformly as the initial ranges assigned to nodes might skew in time based on the incoming data. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Hash-based sharding&lt;/strong&gt;
+Hash-based sharding solves the uniform distribution issue of range-based sharding by sacrificing the efficient range-queries. Hash-based sharding takes the primary key or the whole row, hashes it, and uses the hash value to decide which node to go.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hash(data) % 3 == 0 → Node 1&lt;/li&gt;
+&lt;li&gt;hash(data) % 3 == 1 → Node 2&lt;/li&gt;
+&lt;li&gt;hash(data) % 3 == 2 → Node 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The hash function consistently produces the same hash for the same data. On the other hand, even slight changes in the data will create a completely different hash value. Now that similar data does not go to the same node like in range-based sharding anymore, data will be distributed more uniformly to the nodes. Due to the same reason, hash function causes losing the relationship between the actual value and which node it goes, hence lookup by primary key is easy but range queries are not possible.&lt;/p&gt;
+&lt;h2 id=&quot;caching&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#caching&quot; aria-label=&quot;caching permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Caching&lt;/h2&gt;
+&lt;p&gt;Each application stores some data one way or another. It can be static files in some storage or some information in a DB. Your data will grow in time and the access pattern of your app will not require most of the data for 99% of its usecases. Caching is storing the parts of your data that will be needed the most somewhere that is faster than going to the actual storage/DB. &lt;/p&gt;
+&lt;p&gt;Caching can be in many forms. Some examples are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Browser can cache files/responses to save on the network requests to the backend in the client’s disk&lt;/li&gt;
+&lt;li&gt;Each application server can cache the response from its dependent services or DB in memory&lt;/li&gt;
+&lt;li&gt;Distributed cache can store the commonly accessed data from DB in memory&lt;/li&gt;
+&lt;li&gt;CDN can cache static files requested by the users frequently in its storage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This convenience comes with a cost. Now that you have two places to look for something, DB and cache. It’s non-trivial to keep them in sync.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Write-through cache:&lt;/strong&gt; Simultaneously update the DB and cache. DB write can either be done by the application server (the one calling the cache), or cache can trigger a write to the DB directly. Success/Failure response will be returned back to the user once both write operations complete synchronously&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Write-back cache:&lt;/strong&gt; Application server just deals with the cache and does not talk to the DB directly. Changes made to the cache periodically (or based on some other configuration) will be sent to the DB asynchronously.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c626e0034210c90612551c28526e2e9b/7e1bc/06cache.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 25.56179775280899%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAFABQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAG8AD//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAEFAn//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAY/An//xAAZEAABBQAAAAAAAAAAAAAAAAAhABARMVH/2gAIAQEAAT8hMWx1f//aAAwDAQACAAMAAAAQ88//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAXEAADAQAAAAAAAAAAAAAAAAAAAREh/9oACAEBAAE/EGBWLSB//9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;06cache&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c626e0034210c90612551c28526e2e9b/b3ee8/06cache.jpg&quot;
+        srcset=&quot;/static/c626e0034210c90612551c28526e2e9b/3bc27/06cache.jpg 240w,
+/static/c626e0034210c90612551c28526e2e9b/98431/06cache.jpg 480w,
+/static/c626e0034210c90612551c28526e2e9b/b3ee8/06cache.jpg 960w,
+/static/c626e0034210c90612551c28526e2e9b/7e1bc/06cache.jpg 1424w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Cache is relatively more expensive(especially in-memory caches) than DB. Hence, it only stores the part of your data that is needed the most for your usecases instead of the whole DB. Given that, at some point, you’ll hit its limits. Then the question is which one to evict from the cache to make room for the new one&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Least Frequently Used (LFU):&lt;/strong&gt; Every time you access an item, you increment its access count. When you need to evict something, you evict the one with the lowest counter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Least Recently Used (LRU):&lt;/strong&gt; Every time you access an item, you set/update the time it was accessed. When you need to evict something, you evict the one with the oldest timestamp&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;First In First Out (FIFO):&lt;/strong&gt; Does not matter how many times or how recently an item was used, the item which was added to the cache the first will be evicted. Unlike LRU, accessing an existing item(cache hit) will not update its order.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;cdn&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#cdn&quot; aria-label=&quot;cdn permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CDN&lt;/h2&gt;
+&lt;p&gt;Most web and mobile apps rely on static files. These static files can be the HTML/CSS/JS files as well as images or videos. In the very old days, these static files were being stored in the server disk together with the web app. Later on, people started moving to Object Storage solutions such as AWS S3, Azure Blob storage, or Google Cloud Storage. This worked way better than storing them next to your web server as it provided better separation between the application code that’s accessed through APIs and asset files whose size and access patterns are different.&lt;/p&gt;
+&lt;p&gt;But, there was still a problem. This storage, often called origin server, which stores all your assets is still on some datacenter somewhere in the world, let’s say Seattle. Anyone using the app from the east coast, Europe, or Asia is also getting these files from Seattle, which will cause a lot of latency. That’s where CDN, Content Delivery Network, comes into play. It’s nothing but a cache. You still have your Object storage(or any other storage) as your origin server, and you distribute your CDN servers across the world. Users from Europe do not need to call your origin server in Seattle anymore, there is a CDN server in their city or country which is caching these static files based on the access pattern. Even if the requested file is not in the CDN server, CDN server will fetch it from Origin server and cache it for the upcoming requests.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6c864e6921c0083b2f2e949ba01a984f/c021e/07CDN.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 104.52446906740536%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAVABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHvYRSFUDQf/8QAFBABAAAAAAAAAAAAAAAAAAAAMP/aAAgBAQABBQIf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFBABAAAAAAAAAAAAAAAAAAAAMP/aAAgBAQAGPwIf/8QAGxAAAgIDAQAAAAAAAAAAAAAAAAERIRBBYTH/2gAIAQEAAT8hmXBsk104xqxo9rH/2gAMAwEAAgADAAAAEHjIPP/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAQACAwADAAAAAAAAAAAAAAEAESExQYGx0f/aAAgBAQABPxDZa9wKRl5ZKGFzEAJhO42Um+3UVwt8zpB+jmABRP/Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;07CDN&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6c864e6921c0083b2f2e949ba01a984f/b3ee8/07CDN.jpg&quot;
+        srcset=&quot;/static/6c864e6921c0083b2f2e949ba01a984f/3bc27/07CDN.jpg 240w,
+/static/6c864e6921c0083b2f2e949ba01a984f/98431/07CDN.jpg 480w,
+/static/6c864e6921c0083b2f2e949ba01a984f/b3ee8/07CDN.jpg 960w,
+/static/6c864e6921c0083b2f2e949ba01a984f/c021e/07CDN.jpg 1083w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2 id=&quot;message-queues-and-pubsub&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#message-queues-and-pubsub&quot; aria-label=&quot;message queues and pubsub permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Message Queues and Pub/Sub&lt;/h2&gt;
+&lt;p&gt;Breaking the synchronous flow and adding a message queue or Pub/Sub in between is very useful for a variety of use-cases. It provides async service communication and helps to decouple the systems. They look similar, but they’re quite different. In some cases, they can even be combined.&lt;/p&gt;
+&lt;p&gt;There are two sides of a &lt;strong&gt;Message Queue&lt;/strong&gt;. On the left side, one or more producers are producing tasks/messages while on the right side, one or more consumers are consuming those tasks/messages. Each task needs to be completed by one of the consumers. Therefore, each message is sent to only one of the consumers, unlike pub-sub pattern. After the consumer gets the message from the queue and processes it, it will be removed from the queue.&lt;/p&gt;
+&lt;p&gt;For example, if you have a video processing app, you might want to upload the video, send it to a message queue for later processing, and return success to the user immediately. Now, some consumers, most likely with more CPU power than the ones accepting the request from the user, will start consuming the messages and processing the videos. Each video will be processed by one of the consumers. If users are fine with waiting a day to get the processed video, you can even have way fewer consumer nodes and consume messages at a slower rate to save a ton of money.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6b208b7ccab2940eb0a1c824af24f3b8/07b60/08queue.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 35.86698337292162%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAHABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3aAH/8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQABBQJ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAFhABAQEAAAAAAAAAAAAAAAAAACFB/9oACAEBAAE/IdVX/9oADAMBAAIAAwAAABBwD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABkQAAMBAQEAAAAAAAAAAAAAAAABEVEhYf/aAAgBAQABPxBYfaLcJ7P/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;08queue&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6b208b7ccab2940eb0a1c824af24f3b8/b3ee8/08queue.jpg&quot;
+        srcset=&quot;/static/6b208b7ccab2940eb0a1c824af24f3b8/3bc27/08queue.jpg 240w,
+/static/6b208b7ccab2940eb0a1c824af24f3b8/98431/08queue.jpg 480w,
+/static/6b208b7ccab2940eb0a1c824af24f3b8/b3ee8/08queue.jpg 960w,
+/static/6b208b7ccab2940eb0a1c824af24f3b8/b97fe/08queue.jpg 1440w,
+/static/6b208b7ccab2940eb0a1c824af24f3b8/07b60/08queue.jpg 1684w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Message queues are useful for point-to-point communication, but what if you’re the owner of an entity that is needed by multiple systems. In this case, you need a publisher on the left that is publishing messages to a topic that is needed by multiple systems, and on the right, there are subscribers which will get all the messages sent to the topic.&lt;/p&gt;
+&lt;p&gt; For example, you own the FlightOrderService, and whenever there is a new order&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NotificationService needs to send an email to the customer&lt;/li&gt;
+&lt;li&gt;TicketService needs to generate the tickets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You might think you can create 2 message queues, one for each subscriber, and ask FlightOrderService to send the order event to those 2 queues. Even though it works, Pub/Sub is a better architecture for this problem as there will be additional subscribers along the way. FlightOrderService will publish a message to the topic and other services will subscribe to the topic. If you publish 3 new orders, NotificationService and TicketService will get all 3 messages. The subscriber can use a message queue to put the messages coming from the topic for later processing or directly trigger some compute to immediately work on the task.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/afb150c6165aaac42703668d85e30019/94c0b/09pubsub.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 39.88304093567251%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3gQH/8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQABBQJ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAFhABAQEAAAAAAAAAAAAAAAAAACEB/9oACAEBAAE/IarH/9oADAMBAAIAAwAAABDwD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAAEEAwAAAAAAAAAAAAAAAAEAESExYXGB/9oACAEBAAE/EGIvEI68RmbvK//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;09pubsub&quot;
+        title=&quot;&quot;
+        src=&quot;/static/afb150c6165aaac42703668d85e30019/b3ee8/09pubsub.jpg&quot;
+        srcset=&quot;/static/afb150c6165aaac42703668d85e30019/3bc27/09pubsub.jpg 240w,
+/static/afb150c6165aaac42703668d85e30019/98431/09pubsub.jpg 480w,
+/static/afb150c6165aaac42703668d85e30019/b3ee8/09pubsub.jpg 960w,
+/static/afb150c6165aaac42703668d85e30019/b97fe/09pubsub.jpg 1440w,
+/static/afb150c6165aaac42703668d85e30019/94c0b/09pubsub.jpg 1710w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2 id=&quot;wrap-up&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#wrap-up&quot; aria-label=&quot;wrap up permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Wrap up&lt;/h2&gt;
+&lt;p&gt;These concepts are foundations of most systems, distributed or not. It is good to know at least the basics and what they are used for so that you are aware of your options while designing systems. I tried explaining the concept at a high level without going into details as it would be 15-20 pages otherwise. If you realize there are things you don’t know or you require a deeper knowledge of, I highly recommend reading more-in-depth posts specifically for the concepts you need.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to Succeed in Your System Design Interview]]></title><description><![CDATA[System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.]]></description><link>https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</link><guid isPermaLink="false">https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</guid><pubDate>Wed, 13 Jan 2021 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/cff4af7722c727c875c5670ebd95fd9a/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.&lt;/p&gt;
 &lt;p&gt;This is based on my personal experience over the years in the interviews I conducted as well as the ones I was the candidate, which turned into a senior job offer. Feel free to adjust based on your needs.&lt;/p&gt;
 &lt;p&gt;
   &lt;span
@@ -26,7 +464,7 @@
     &lt;/span&gt;
   &lt;/span&gt;
   &lt;figcaption&gt;Photo by &lt;a href=&quot;https://unsplash.com/@louisnardsophie&quot;&gt;Sophie Louisnard&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com&quot;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;&lt;/p&gt;
-&lt;h3&gt;Step 1: Clarify the requirements&lt;/h3&gt;
+&lt;h2 id=&quot;step-1-clarify-the-requirements&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#step-1-clarify-the-requirements&quot; aria-label=&quot;step 1 clarify the requirements permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Step 1: Clarify the requirements&lt;/h2&gt;
 &lt;p&gt;Even if the question is “Design Instagram”, and you already mastered it during preparation, don’t jump to the solution just yet. It will be a 99% rejection for a senior position. Start clarifying the requirements and listing down the features&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Who is going to use it?&lt;/li&gt;
@@ -45,8 +483,8 @@
 &lt;/li&gt;
 &lt;li&gt;What are non-functional requirements: Scalability, Availability, Fault tolerance, etc&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;You might feel strange asking all these questions for a widely known app. But please don’t, and ask even very obvious questions. After this part, you’ll get a tick in interviewer’s notes: “Deals with ambiguity and ask questions to clarify the problem: check”.&lt;/p&gt;
-&lt;h3&gt;Step 2: Define Entities&lt;/h3&gt;
+&lt;p&gt;You might feel strange asking all these questions for a widely known app. But please don’t, and ask even very obvious questions. After this part, you’ll get a tick in interviewer’s notes: “Deals with ambiguity and asks questions to clarify the problem: check”.&lt;/p&gt;
+&lt;h2 id=&quot;step-2-define-entities&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#step-2-define-entities&quot; aria-label=&quot;step 2 define entities permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Step 2: Define Entities&lt;/h2&gt;
 &lt;p&gt;Before throwing all those boxes: “Service X”, “Service Y”, “Service Z” and their interactions, just take a step back and define what kind of entities you need. Some people prefer defining the APIs first, but I feel more comfortable figuring out the main entities first and defining APIs around those.&lt;/p&gt;
 &lt;p&gt;Based on the requirements and features you discussed in the previous step, start listing down the entities and what fields they have. For example, you can start with something like this&lt;/p&gt;
 &lt;ul&gt;
@@ -54,7 +492,7 @@
 &lt;li&gt;User: userId, username, profilePhoto&lt;/li&gt;
 &lt;li&gt;Relationship: followerUserId, followeeUserId&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Step 3: Define APIs&lt;/h3&gt;
+&lt;h2 id=&quot;step-3-define-apis&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#step-3-define-apis&quot; aria-label=&quot;step 3 define apis permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Step 3: Define APIs&lt;/h2&gt;
 &lt;p&gt;List of the features you collected in step 1 and the entities you defined in step 2 will construct your APIs here. Let’s say interviewer requested the following features&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Post images only&lt;/li&gt;
@@ -65,7 +503,7 @@
 &lt;p&gt;Based on that info, the APIs you’re going to need will be something like below (I know there is another 1M way of doing this):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;/posts (GET): Returns all the posts (probably paginated for infinite scroll)&lt;/p&gt;
+&lt;p&gt;/posts: Returns all the posts (probably paginated for infinite scroll)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: GET&lt;/li&gt;
 &lt;li&gt;
@@ -78,7 +516,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;/posts (POST): Creates a new post&lt;/p&gt;
+&lt;p&gt;/posts: Creates a new post&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: POST&lt;/li&gt;
 &lt;li&gt;
@@ -91,14 +529,14 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;/posts/{postId} (POST): Updates an existing post&lt;/p&gt;
+&lt;p&gt;/posts/{postId}: Updates an existing post&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: POST&lt;/li&gt;
 &lt;li&gt;input: UpdatePostRequest - similar to CreatePostRequest with a postId&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;/relationships/{userId} (POST): Follows/Unfollows a user&lt;/p&gt;
+&lt;p&gt;/relationships/{userId}: Follows/Unfollows a user&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: POST&lt;/li&gt;
 &lt;li&gt;
@@ -116,7 +554,7 @@
 &lt;li&gt;postId will be generated at the backend, so it will not be part of the CreatePostRequest&lt;/li&gt;
 &lt;li&gt;same for userId, it will most likely be extracted from some encrypted token coming in the header&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Step 4: Draw High-level Architecture&lt;/h3&gt;
+&lt;h2 id=&quot;step-4-draw-high-level-architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#step-4-draw-high-level-architecture&quot; aria-label=&quot;step 4 draw high level architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Step 4: Draw High-level Architecture&lt;/h2&gt;
 &lt;p&gt;Now, it’s the right time to start drawing those boxes and show off your microservice architecture skills. First, define the main components you’re going to need, and add things like “Management”, “Authority”, “Processor” etc in the service name ;)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;AuthService&lt;/li&gt;
@@ -160,7 +598,7 @@
     &lt;/p&gt;
 &lt;p&gt;After this point, start throwing all system design concepts you know:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Put a CDN here to serve JS/CSS file&lt;/li&gt;
+&lt;li&gt;Put a CDN here to serve JS/CSS files&lt;/li&gt;
 &lt;li&gt;Another CDN there to store media files like images and videos&lt;/li&gt;
 &lt;li&gt;Put a LoadBalancer in front of AuthService as all requests will have to talk to AuthService first and you need to scale it out and make it fault-tolerant&lt;/li&gt;
 &lt;li&gt;If AuthService DB is having a bad day, your product might be completely unusable, so let’s add some replication and sharding for that DB&lt;/li&gt;
@@ -170,15 +608,15 @@
 &lt;li&gt;Show where system might fail and how you can fix single point of failures in the system. When you say I’ll have multiple nodes for AuthService and a LoadBalancer in front to not have a single point of failure, interviewer might ask “What if Load Balancer fails?”(in case you’re curious, you can have multiple nodes for LoadBalancer as well and use DNS Round-robin). So, ask yourself where system can fail while designing and show interviewer that you also consider these kinds of things.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Please note experienced interviewers will dive deep into these concepts. So, make sure you know what they do, how they work and advantages/disadvantages between different approaches.&lt;/p&gt;
-&lt;h3&gt;Step 5: Monitor the System Health&lt;/h3&gt;
+&lt;h2 id=&quot;step-5-monitor-the-system-health&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#step-5-monitor-the-system-health&quot; aria-label=&quot;step 5 monitor the system health permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Step 5: Monitor the System Health&lt;/h2&gt;
 &lt;p&gt;If all went smoothly, you might have some time at the end. At this point, interviewer will most likely ask how you measure the system health, what kind of things you monitor.&lt;/p&gt;
 &lt;p&gt;A common approach is having monitors like below and creating alarms with some threshold for each, which will notify the team automatically if something is wrong. This is not the exhaustive list for a service you’re launching to production, but it should be enough for the interviewer.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Latency/Number of request/Error/Fault count for all incoming API calls to your service and all outgoing API calls from your service to others (service, db etc).&lt;/li&gt;
 &lt;li&gt;Disk, Memory CPU usage and utilization for each node of the service&lt;/li&gt;
-&lt;li&gt;If you use things like message queues etc, you might monitor things like the number of messages in the queue, the oldest message in the queue etc.&lt;/li&gt;
+&lt;li&gt;If you use things like message queues etc, you can monitor things like the number of messages in the queue, the oldest message in the queue etc.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;h2 id=&quot;summary&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#summary&quot; aria-label=&quot;summary permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Summary&lt;/h2&gt;
 &lt;p&gt;Here are all the steps. Write it on a paper, put it next to your screen and keep practicing.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Step 1: Clarify the requirements&lt;/li&gt;
@@ -188,8 +626,7 @@
 &lt;li&gt;Step 5: Monitor the System Health&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Good luck with your interview!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How React Rendering Works - A Step by Step Guide]]></title><description><![CDATA[Although what react is doing looks quite complex, underlying logic is very simple. And the easiest way to understand is just running some simple examples. We’ll dive into how react renders components and updates the actual DOM.]]></description><link>https://merictaze.com/posts/how-react-rendering-works-a-step-by-step-guide/</link><guid isPermaLink="false">https://merictaze.com/posts/how-react-rendering-works-a-step-by-step-guide/</guid><pubDate>Mon, 07 Oct 2019 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/7f1c78c10e99f317cbc09e189849bed7/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;Although what react is doing looks quite complex, the underlying logic is very simple. And the easiest way to understand is just running some simple examples. We’ll dive into how react renders components and updates the actual DOM.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;Rendering React Components&lt;/h2&gt;
+&lt;h2 id=&quot;rendering-react-components&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#rendering-react-components&quot; aria-label=&quot;rendering react components permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Rendering React Components&lt;/h2&gt;
 &lt;p&gt;In other words, this is calling the &lt;code class=&quot;language-text&quot;&gt;render()&lt;/code&gt; method of the component.&lt;/p&gt;
 &lt;p&gt;Although it might seem confusing at first glance, it’s actually super simple and straightforward. There is one simple rule: when you call &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; in a component, that component and all of its children are marked as dirty. That means &lt;code class=&quot;language-text&quot;&gt;render()&lt;/code&gt; method will be called for each of these dirty components. While doing this, React does not even check whether props/state is actually changed, it just marks them as dirty blindly.&lt;/p&gt;
 &lt;p&gt;When you call &lt;code class=&quot;language-text&quot;&gt;setState()&lt;/code&gt; in component B, &lt;code class=&quot;language-text&quot;&gt;render()&lt;/code&gt; will be called for B, D, E, and H.&lt;/p&gt;
@@ -239,7 +676,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;/div&gt;
 &lt;p&gt;Some of you might be asking “&lt;em&gt;OK, when state changes, component and its children re-renders, but what about props?&lt;/em&gt;”. Let’s say component has &lt;code class=&quot;language-text&quot;&gt;props.firstName&lt;/code&gt;. Since it’s a prop, it means it is passed by its parent (parent can also be a HOC such as redux’s &lt;code class=&quot;language-text&quot;&gt;connect()&lt;/code&gt;). If you keep following &lt;code class=&quot;language-text&quot;&gt;firstName&lt;/code&gt; prop, it will eventually be defined as a &lt;code class=&quot;language-text&quot;&gt;state&lt;/code&gt; variable in one of the ancestors. If &lt;code class=&quot;language-text&quot;&gt;state.firstName&lt;/code&gt; is changed using &lt;code class=&quot;language-text&quot;&gt;setState()&lt;/code&gt;, it will trigger a re-render for that ancestor and all of its children. That means all the components which have &lt;code class=&quot;language-text&quot;&gt;state.firstName&lt;/code&gt; and  &lt;code class=&quot;language-text&quot;&gt;props.firstName&lt;/code&gt; also get re-rendered. So, all components will be showing the latest value for &lt;code class=&quot;language-text&quot;&gt;firstName&lt;/code&gt;. That’s why React only cares about &lt;code class=&quot;language-text&quot;&gt;state&lt;/code&gt; not &lt;code class=&quot;language-text&quot;&gt;props&lt;/code&gt; while deciding on whether to render a component. &lt;/p&gt;
 &lt;p&gt;That’s it about default component rendering. Easy peasy! This simple logic will work great for most of the applications. If you have a complex application, you might need to fine-tune this behavior. Now, let’s see some ways of doing that.&lt;/p&gt;
-&lt;h3&gt;Using shouldComponentUpdate&lt;/h3&gt;
+&lt;h3 id=&quot;using-shouldcomponentupdate&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#using-shouldcomponentupdate&quot; aria-label=&quot;using shouldcomponentupdate permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Using shouldComponentUpdate&lt;/h3&gt;
 &lt;p&gt;When react marks a component as dirty due to &lt;code class=&quot;language-text&quot;&gt;setState()&lt;/code&gt; call, it calls this method to decide whether to re-render the component and its children. By default, this method returns &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt; . That’s why they are all re-rendered on every &lt;code class=&quot;language-text&quot;&gt;setState()&lt;/code&gt; call. You can override this method and tell React when you want your components to get re-rendered, and when it’s safe to skip.&lt;/p&gt;
 &lt;p&gt;In below example, since we know &lt;code class=&quot;language-text&quot;&gt;unusedField&lt;/code&gt; is not needed in our component, we can ignore it. Also instead of re-rendering the component on every &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; call, we can tell to re-render only when the actual value of &lt;code class=&quot;language-text&quot;&gt;usedField&lt;/code&gt; changes.&lt;/p&gt;
 &lt;p&gt;Although we call &lt;code class=&quot;language-text&quot;&gt;setState()&lt;/code&gt; every second for two fields, nothing will be re-rendered as &lt;code class=&quot;language-text&quot;&gt;state.unusedField&lt;/code&gt; is not used in &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate()&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;state.usedField&lt;/code&gt; is always &lt;code class=&quot;language-text&quot;&gt;1&lt;/code&gt;. So, &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate&lt;/code&gt; will return false.&lt;/p&gt;
@@ -281,7 +718,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;shallowEqual&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; nextState&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Guess what? This is exactly what PureComponent does. That’s why it’s the suggested approach over using &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate()&lt;/code&gt;. It’s safer, faster with one rule, that is making state fields immutable.&lt;/p&gt;
-&lt;h3&gt;Pure Components&lt;/h3&gt;
+&lt;h3 id=&quot;pure-components&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#pure-components&quot; aria-label=&quot;pure components permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Pure Components&lt;/h3&gt;
 &lt;p&gt;If you remember, default implementation for &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate&lt;/code&gt; was returning true all the time. So, when you extend &lt;code class=&quot;language-text&quot;&gt;React.Component&lt;/code&gt; in your component, that’s what you get. But, you have another option, extending &lt;code class=&quot;language-text&quot;&gt;React.PureComponent&lt;/code&gt; to have a better implementation of &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate&lt;/code&gt; as long as you promise you’ll keep it pure. And its implementation is exactly what we’ve seen in the previous part, shallow checks on &lt;code class=&quot;language-text&quot;&gt;props&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;state&lt;/code&gt;. Now let’s check some examples.&lt;/p&gt;
 &lt;p&gt;First, let’s see the beauty of PureComponent. In the example below, we call &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; every second, and update order object at random times.&lt;/p&gt;
 &lt;div class=&quot;embed-container&quot;&gt;
@@ -292,14 +729,13 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;div class=&quot;embed-container&quot;&gt;
   &lt;iframe width=&quot;100%&quot; height=&quot;400&quot; src=&quot;//jsfiddle.net/merictaze/fcm8begw/embedded/js,result/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-&lt;h2&gt;Rendering DOM&lt;/h2&gt;
+&lt;h2 id=&quot;rendering-dom&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#rendering-dom&quot; aria-label=&quot;rendering dom permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Rendering DOM&lt;/h2&gt;
 &lt;p&gt;Every time you make a change in the actual DOM, it triggers a bunch of events and browser needs to do  some more stuff which is time-consuming. Because of that React came up with this idea of Virtual DOM. It’s a simplified JSON representation of the DOM. No events attached to elements and also browser does not care when you change it. It’s just the elements, their attributes and their children in a JSON object. It makes it cheap to make changes while rendering React components, and then React finds an efficient way of updating the actual DOM by diffing the old and new virtual DOMs.&lt;/p&gt;
 &lt;p&gt;It’s an internal React logic and there is not much you can do about it. But, it’s good to know how it works so that you create your components in a way that it causes fewer DOM updates. However, the problem is that React can change the logic any time as it’s an internal implementation detail. So, better not to rely on anything on this part as it can change any time.&lt;/p&gt;
 &lt;p&gt;More on how React updates the actual DOM can be found here &lt;a href=&quot;https://reactjs.org/docs/reconciliation.html&quot;&gt;https://reactjs.org/docs/reconciliation.html&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Wrap up&lt;/h2&gt;
+&lt;h2 id=&quot;wrap-up&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#wrap-up&quot; aria-label=&quot;wrap up permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Wrap up&lt;/h2&gt;
 &lt;p&gt;Don’t go the route of premature optimization. Just go with the default behavior. When you realize re-rendering some components is really concerning and causing performance issues then try to optimize it by overriding &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate()&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;If you’re confident of the purity of your components or using libraries like &lt;code class=&quot;language-text&quot;&gt;immutable-js&lt;/code&gt;, which ensures you won’t be able to make in-place updates to your &lt;code class=&quot;language-text&quot;&gt;state&lt;/code&gt;, then it’s better to go with &lt;code class=&quot;language-text&quot;&gt;React.PureComponent&lt;/code&gt; than implementing your own &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate()&lt;/code&gt; as it gives less room for error and shallow equality check is cheap. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Creating a unified Formik input field to support all input types seamlessly]]></title><description><![CDATA[We are going to create a single component that supports text, textarea, select, radio, and checkbox. It will absorb all implementation differences for different inputs and will allow us using a unified component in our Formik forms.]]></description><link>https://merictaze.com/posts/creating-a-unified-formik-input-field-to-support-all-input-types-seamlessly/</link><guid isPermaLink="false">https://merictaze.com/posts/creating-a-unified-formik-input-field-to-support-all-input-types-seamlessly/</guid><pubDate>Sun, 15 Sep 2019 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/fe3bf5918e46f9b1c13485d3ae94bfd5/bc549/cover.png" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;We are going to create a single component that supports text, textarea, select, radio, and checkbox. It will absorb all implementation differences for different inputs and will allow us using a unified component in our Formik forms.&lt;/p&gt;
-&lt;hr&gt;
 &lt;p&gt;When I start on a new project, I always try to abstract specific libraries away by defining my own components. This brings some benefits&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Simplify the code by moving the complex/common part into my custom component.&lt;/li&gt;
@@ -533,7 +969,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Ok, now let’s start implementing it.&lt;/p&gt;
-&lt;h2&gt;Component structure&lt;/h2&gt;
+&lt;h2 id=&quot;component-structure&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#component-structure&quot; aria-label=&quot;component structure permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Component structure&lt;/h2&gt;
 &lt;p&gt;To make it easier to understand, you can see the structure of the components below. In the following sections, we are going to implement FormItem, FormInput, TextInput, TextAreaInput, SelectInput, and CheckInput.&lt;/p&gt;
 &lt;p&gt;
   &lt;a
@@ -568,7 +1004,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;h2&gt;Creating the container component&lt;/h2&gt;
+&lt;h2 id=&quot;creating-the-container-component&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#creating-the-container-component&quot; aria-label=&quot;creating the container component permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Creating the container component&lt;/h2&gt;
 &lt;p&gt;&lt;div id=&quot;gist98151231&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
@@ -661,7 +1097,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;p&gt;This will contain whatever a form field requires: a label, an input field, and validation errors. Line 8 renders the label if user provided the label prop. Line 10 renders the input component and line 12 renders the validation errors if there is any.&lt;/p&gt;
 &lt;p&gt;You might be asking where &lt;code class=&quot;language-text&quot;&gt;props.formik&lt;/code&gt; came from. It is added in the props by &lt;a href=&quot;https://jaredpalmer.com/formik/docs/api/connect&quot;&gt;connect&lt;/a&gt; method we use in line 3. Now our component will have the full formik context.&lt;/p&gt;
 &lt;p&gt;You can also use Formik’s &lt;a href=&quot;https://jaredpalmer.com/formik/docs/api/field&quot;&gt;Field component&lt;/a&gt; which is aware of the Formik context without you doing anything. You just need to adjust this FormItem component to make it work with Field component.&lt;/p&gt;
-&lt;h2&gt;Deciding which input to render&lt;/h2&gt;
+&lt;h2 id=&quot;deciding-which-input-to-render&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#deciding-which-input-to-render&quot; aria-label=&quot;deciding which input to render permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Deciding which input to render&lt;/h2&gt;
 &lt;p&gt;&lt;div id=&quot;gist98151315&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
@@ -741,7 +1177,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;This one is straight-forward. It just renders the correct input component based on the type prop and passes all props down to that component. We are going to handle radio and checkbox in the same component, namely CheckInput, since they’re quite similar.&lt;/p&gt;
-&lt;h2&gt;Implementing input components&lt;/h2&gt;
+&lt;h2 id=&quot;implementing-input-components&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#implementing-input-components&quot; aria-label=&quot;implementing input components permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Implementing input components&lt;/h2&gt;
 &lt;p&gt;Every prop you pass to the FormItem will eventually be passed into the actual input element except the ones we defined for our specific use&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;label&lt;/code&gt; is used in FormItem to render the label, so it’s not actually a prop for the input field&lt;/li&gt;
@@ -754,7 +1190,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In addition to the props passed by the user, we should also pass additional props to make it work with Formik such as &lt;code class=&quot;language-text&quot;&gt;value&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;onClick&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;onBlur&lt;/code&gt; etc. We’re going to handle the extraction of the input props in &lt;code class=&quot;language-text&quot;&gt;extractInputProps&lt;/code&gt; method. Let’s leave it’s implementation to the next section.&lt;/p&gt;
-&lt;h3&gt;TextInput and TextAreaInput&lt;/h3&gt;
+&lt;h3 id=&quot;textinput-and-textareainput&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#textinput-and-textareainput&quot; aria-label=&quot;textinput and textareainput permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;TextInput and TextAreaInput&lt;/h3&gt;
 &lt;p&gt;Here how we define our text and textarea inputs. Nothing fancy, just pass the props and render the input element.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist98162723&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -795,7 +1231,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;h3&gt;SelectInput&lt;/h3&gt;
+&lt;h3 id=&quot;selectinput&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#selectinput&quot; aria-label=&quot;selectinput permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SelectInput&lt;/h3&gt;
 &lt;p&gt;Next, let’s define our select input. It’s similar to the previous ones, but we also need to render a list of options which were passed in the &lt;code class=&quot;language-text&quot;&gt;options&lt;/code&gt; prop in FormItem.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist98162899&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -851,7 +1287,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;h3&gt;CheckInput for radio and checkbox&lt;/h3&gt;
+&lt;h3 id=&quot;checkinput-for-radio-and-checkbox&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#checkinput-for-radio-and-checkbox&quot; aria-label=&quot;checkinput for radio and checkbox permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CheckInput for radio and checkbox&lt;/h3&gt;
 &lt;p&gt;Now combining above two, it’s not too hard to understand radio and checkbox. Radio/Checkbox behaves different than other input elements, which we will handle in &lt;code class=&quot;language-text&quot;&gt;extractInputProps&lt;/code&gt; method.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist98162914&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -919,7 +1355,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;h2&gt;Defining extractInputProps method&lt;/h2&gt;
+&lt;h2 id=&quot;defining-extractinputprops-method&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#defining-extractinputprops-method&quot; aria-label=&quot;defining extractinputprops method permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Defining extractInputProps method&lt;/h2&gt;
 &lt;p&gt;This method will accept &lt;code class=&quot;language-text&quot;&gt;props&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;option&lt;/code&gt; as parameters. &lt;code class=&quot;language-text&quot;&gt;option&lt;/code&gt; will be passed only by select/radio/checkbox while rendering each option coming from &lt;code class=&quot;language-text&quot;&gt;options&lt;/code&gt; prop.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist98163023&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -1016,7 +1452,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;p&gt;As you can see from line 6, all the props you passed in FormItem finally reached the actual input elements. But, &lt;code class=&quot;language-text&quot;&gt;props&lt;/code&gt; has more than input element needs. That’s why we use object destructuring on line 1 and remove &lt;code class=&quot;language-text&quot;&gt;formik&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;options&lt;/code&gt; from the props we pass to input element.&lt;/p&gt;
 &lt;p&gt;Now it’s time to use &lt;code class=&quot;language-text&quot;&gt;formik&lt;/code&gt; prop which we get with Formik’s &lt;code class=&quot;language-text&quot;&gt;connect&lt;/code&gt; method we used in FormItem component. &lt;code class=&quot;language-text&quot;&gt;value&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;onChange&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;onBlur&lt;/code&gt; attributes are set to values/handlers provided by formik.&lt;/p&gt;
 &lt;p&gt;Almost done. The only thing left is the special handling of radio and checkbox. Let’s fill those parts in.&lt;/p&gt;
-&lt;h3&gt;Handing additional props for radio&lt;/h3&gt;
+&lt;h3 id=&quot;handing-additional-props-for-radio&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#handing-additional-props-for-radio&quot; aria-label=&quot;handing additional props for radio permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Handing additional props for radio&lt;/h3&gt;
 &lt;p&gt;Each radio button has it’s own &lt;code class=&quot;language-text&quot;&gt;value&lt;/code&gt;. Since they share the same input name, form value is set to the value of the one user clicks. Browser uses &lt;code class=&quot;language-text&quot;&gt;checked&lt;/code&gt; attribute to decide whether it should be rendered as checked/unchecked. So, we set &lt;code class=&quot;language-text&quot;&gt;checked&lt;/code&gt; as true if the value of the radio button we’re rendering is equal to the value set in the form.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist98163153&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -1060,7 +1496,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;h3&gt;Handing additional props for checkbox&lt;/h3&gt;
+&lt;h3 id=&quot;handing-additional-props-for-checkbox&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#handing-additional-props-for-checkbox&quot; aria-label=&quot;handing additional props for checkbox permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Handing additional props for checkbox&lt;/h3&gt;
 &lt;p&gt;The default behavior for checkbox is usually not what web applications expect. If you have a group of checkboxes, and some of them are selected, your form values will be something like &lt;code class=&quot;language-text&quot;&gt;{option1: true, option2: false, option3: true}&lt;/code&gt;. But, most applications expect &lt;code class=&quot;language-text&quot;&gt;[&amp;#39;option1&amp;#39;, &amp;#39;option2&amp;#39;]&lt;/code&gt; as the value in their API. To achieve  this, we’ll override &lt;code class=&quot;language-text&quot;&gt;onChange&lt;/code&gt; method like below. Also &lt;code class=&quot;language-text&quot;&gt;checked&lt;/code&gt; attribute will rely on form value including the value of the checkbox being rendered.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist98163194&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -1132,7 +1568,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;h2&gt;Putting it all together&lt;/h2&gt;
+&lt;h2 id=&quot;putting-it-all-together&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#putting-it-all-together&quot; aria-label=&quot;putting it all together permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Putting it all together&lt;/h2&gt;
 &lt;p&gt;Here is the full working example&lt;/p&gt;
 &lt;div class=&quot;embed-container&quot;&gt;
   &lt;iframe width=&quot;100%&quot; height=&quot;400&quot; src=&quot;//jsfiddle.net/merictaze/vcaukthm/embedded/js,result/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
@@ -1167,16 +1603,16 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;/span&gt;
   &lt;/span&gt;
   &lt;figcaption&gt;Photo by &lt;a href=&quot;https://unsplash.com/@rubavi78&quot;&gt;Rubén Bagüés&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com&quot;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;&lt;/p&gt;
-&lt;h2&gt;Encryption Algorithms&lt;/h2&gt;
+&lt;h2 id=&quot;encryption-algorithms&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#encryption-algorithms&quot; aria-label=&quot;encryption algorithms permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Encryption Algorithms&lt;/h2&gt;
 &lt;p&gt;Encryption is needed to securely transfer/store the data in case malicious parties gain access to your data either in transit or at rest.&lt;/p&gt;
-&lt;h3&gt;Symmetric-Key Encryption&lt;/h3&gt;
+&lt;h3 id=&quot;symmetric-key-encryption&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#symmetric-key-encryption&quot; aria-label=&quot;symmetric key encryption permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Symmetric-Key Encryption&lt;/h3&gt;
 &lt;p&gt;You and your old friend Alice want to talk about some secret stuff via mail. Since it has secret stuff, you don’t want anyone else to read it. You go and buy a locker with two identical keys. You give one of them to Alice. You put your letters inside the locker, lock it with your key, and send it to Alice. Alice uses her key to unlock the locker and read the mail. Then, she puts her reply into the locker, locks it with her key and sends it back to you. This is similar to what happens with symmetric-key encryption.&lt;/p&gt;
 &lt;p&gt;The same key is used to both encrypt and decrypt the data. It’s not as mathematically complex as asymmetric keys, but it’s faster for the same reason.&lt;/p&gt;
 &lt;p&gt;After buying the locker with two identical keys, how would you give one of the keys to Alice securely? The biggest shortcoming of this type of algorithms is key distribution. It does not offer a secure way to send the key to the other party.&lt;/p&gt;
-&lt;h3&gt;Asymmetric-Key Encryption&lt;/h3&gt;
+&lt;h3 id=&quot;asymmetric-key-encryption&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#asymmetric-key-encryption&quot; aria-label=&quot;asymmetric key encryption permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Asymmetric-Key Encryption&lt;/h3&gt;
 &lt;p&gt;This time, you’re getting smarter. You buy a locker with a unique key for yourself. You send your locker to Alice and don’t send your key to anywhere and keep it somewhere secure. Alice puts her letter into your locker and puts the lock on, then sends it back to you. You use your key, the only key to open the locker, and unlock the locker. What if you need to send a letter to Alice? Then, she needs to buy her own locker with a unique key and send the locker to you. Voilà, the key distribution problem solved. This will give you an idea of how asymmetric-key encryption works.&lt;/p&gt;
 &lt;p&gt;Different keys are used to encrypt and decrypt the data, called public and private keys. While the public key(unlocked locker) can be shared with anyone, the private key(unique locker key) is kept as private. Anything encrypted with the public key can be decrypted by the private one, and vice versa.&lt;/p&gt;
-&lt;h3&gt;Hybrid Encryption&lt;/h3&gt;
+&lt;h3 id=&quot;hybrid-encryption&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#hybrid-encryption&quot; aria-label=&quot;hybrid encryption permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Hybrid Encryption&lt;/h3&gt;
 &lt;p&gt;This one tries to get the best of both algorithms above. It uses asymmetric-key encryption to achieve key distribution of the secret key and uses symmetric-key encryption(secret key) for the rest of the communication which is faster.&lt;/p&gt;
 &lt;p&gt;This time there are two things&lt;/p&gt;
 &lt;ul&gt;
@@ -1185,11 +1621,11 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;/ul&gt;
 &lt;p&gt;Alice buys a shared locker with two identical keys. You send your locker to Alice. Alice puts one of the identical keys of the shared locker inside and sends it back to you. You unlock the locker with your unique key. You see that shiny key inside the locker. Congratulations, now you securely received one of the identical keys. Going forward, you only need the shared locker and the identical keys to communicate securely.&lt;/p&gt;
 &lt;p&gt;Yes, that’s what’s happening in hybrid encryption. It uses asymmetric-key encryption(public-private key) to securely transfer the symmetric key(secret key). Then both parties use the secret key to encrypt/decrypt the data. This is also what’s used in HTTPS as we’ll see in the next sections.&lt;/p&gt;
-&lt;h2&gt;Certificate Authority&lt;/h2&gt;
+&lt;h2 id=&quot;certificate-authority&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#certificate-authority&quot; aria-label=&quot;certificate authority permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Certificate Authority&lt;/h2&gt;
 &lt;p&gt;When you go to your bank, and say &lt;em&gt;“Hey, I’m John Doe, please give me some money from my account”&lt;/em&gt;, the first thing they do is asking a piece of Id. When you show your Gym membership card with your name on it, they’ll say &lt;em&gt;“Please show us a government-issued Id”&lt;/em&gt; as they don’t consider your Gym as a trusted authority. Once you show your government-issued Id, they believe you as they trust to the government and let you withdraw money.&lt;/p&gt;
 &lt;p&gt;Same story goes here. When you type &lt;a href=&quot;https://google.com&quot;&gt;https://google.com&lt;/a&gt; into your browser’s address bar, it gets a response saying that &lt;em&gt;“Hey, I’m Google, please send your username and password to me”&lt;/em&gt;. But how do you know it’s actually Google, but not someone else. You need an authority like the government to validate Google’s identity, and that’s exactly where CAs come into the picture. They’re the trusted authority and your browser uses CAs to make sure you’re talking to the correct website. If the certificate was issued by some other authority (like your Gym), browser will let you know saying something like “Your connection is not private: Attackers might be trying to steal your information … NET::ERR&lt;em&gt;CERT&lt;/em&gt;AUTHORITY_INVALID”.&lt;/p&gt;
 &lt;p&gt;While the government is the trusted authority in the country and you register yourself with them when you’re born and use your Id card to validate your identity wherever needed, CAs are the trusted authority for certificates and you register your website’s info with them and use your certificate to prove your website’s identity.&lt;/p&gt;
-&lt;h2&gt;Digital Certificate and Signature&lt;/h2&gt;
+&lt;h2 id=&quot;digital-certificate-and-signature&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#digital-certificate-and-signature&quot; aria-label=&quot;digital certificate and signature permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Digital Certificate and Signature&lt;/h2&gt;
 &lt;p&gt;This time, you’re preparing documents for your passport application. Since you don’t have time to apply in person, you decided to send the documents via mail. But, just by looking at some document, how would government officials know it’s really sent by you. What if someone else filled the form with your info and asking the passport to be sent to his address once it’s ready?&lt;/p&gt;
 &lt;p&gt;To make sure it’s really you sending these documents, they require a notary public witnessing the signing of the documents and verifying their authenticity. So, you sign the document in front of a notary public and he certifies the document by signing and stamping it as well. He also keeps a copy of it in case later government needs to validate the copy they received is what certifier had certified.&lt;/p&gt;
 &lt;p&gt;The part they signed and stamped is the &lt;strong&gt;Signature&lt;/strong&gt; and the certified document which contains the initial info you provided and their signature is the &lt;strong&gt;Certificate&lt;/strong&gt;.&lt;/p&gt;
@@ -1202,7 +1638,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;Before going into the actual flow at the time you visit google.com, we’ll see how CAs and Google’s certificate was setup long before you visit Google in the first two sections.&lt;/p&gt;
-&lt;h2&gt;1. Registering Certificate Authorities&lt;/h2&gt;
+&lt;h2 id=&quot;1-registering-certificate-authorities&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-registering-certificate-authorities&quot; aria-label=&quot;1 registering certificate authorities permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Registering Certificate Authorities&lt;/h2&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1239,7 +1675,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;/p&gt;
 &lt;p&gt;Trusted CAs provide their public keys to browsers. That means when you install a new browser, it already has a list of CAs and their public keys.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Why do we need CAs public key?&lt;/em&gt; Great question! When you visit google.com and it sends you back its certificate, part of which is encrypted with CA’s private key. And that bit of information needs to be decrypted to validate the certificate. &lt;em&gt;What can decrypt info encrypted by CA’s private key?&lt;/em&gt; Yes, the answer is CA’s public key (Just to prevent confusion here, the commonly known fact is that you use the public key to encrypt and private key to decrypt data. While that’s true, other way around is also correct. Data encrypted with a private key can be decrypted with its public key). We’ll see the detailed flow in the next section.&lt;/p&gt;
-&lt;h2&gt;2. Creating a Digital Certificate for Google&lt;/h2&gt;
+&lt;h2 id=&quot;2-creating-a-digital-certificate-for-google&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-creating-a-digital-certificate-for-google&quot; aria-label=&quot;2 creating a digital certificate for google permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Creating a Digital Certificate for Google&lt;/h2&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1278,9 +1714,9 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;/p&gt;
 &lt;p&gt;As we said in the previous section, when you visit &lt;a href=&quot;https://google.com&quot;&gt;https://google.com&lt;/a&gt;, your browser gets back Google’s digital certificate. Now, let’s see how Google created this certificate.&lt;/p&gt;
 &lt;p&gt;Google provided a document with some info such as the owner’s name, owner’s public key, website address to CA. CA created a digital signature by hashing the info provided and encrypting it with CA’s private key to make sure no-one can alter it. Once CA put this signature into the initial document, here was the Digital Certificate Google needs.&lt;/p&gt;
-&lt;h2&gt;3. Let’s visit Google.com now&lt;/h2&gt;
+&lt;h2 id=&quot;3-lets-visit-googlecom-now&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-lets-visit-googlecom-now&quot; aria-label=&quot;3 lets visit googlecom now permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. Let’s visit Google.com now&lt;/h2&gt;
 &lt;p&gt;I separated this part into two. The first part explains how the browser makes sure it’s really talking to Google and the public key really belongs to them. And the second part shows how this public key is being used to create a secure communication channel between browser and Google.&lt;/p&gt;
-&lt;h3&gt;3.1 Getting Google’s public key&lt;/h3&gt;
+&lt;h3 id=&quot;31-getting-googles-public-key&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#31-getting-googles-public-key&quot; aria-label=&quot;31 getting googles public key permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.1 Getting Google’s public key&lt;/h3&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1322,7 +1758,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;p&gt;&lt;em&gt;What can decrypt a data encrypted by CA’s private key?&lt;/em&gt; Of course, it’s CA’s public key.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Where to find CA’s public key?&lt;/em&gt; See the first section, browser already has public keys of trusted CAs.&lt;/p&gt;
 &lt;p&gt;Sounds like we have everything we need. Browser decrypts the Digital Signature using the CA’s public key and extracts the hash calculated by CA. If they’re the same, that means browser is now sure it’s talking to Google.&lt;/p&gt;
-&lt;h3&gt;3.2 Securing the communication&lt;/h3&gt;
+&lt;h3 id=&quot;32-securing-the-communication&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#32-securing-the-communication&quot; aria-label=&quot;32 securing the communication permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.2 Securing the communication&lt;/h3&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1365,7 +1801,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;li&gt;asymmetric key encryptions are slower than symmetric ones. So, it makes more sense to use public/private keys only to solve the symmetric key’s shortcoming: secure key distribution.&lt;/li&gt;
 &lt;li&gt;Even if you’re fine with the performance issue, using Google’s keys only would enable one-way communication. You can encrypt the data with Google’s public key and only Google can decrypt it, but how Google would encrypt the data they send back to you? If they encrypt it with their private key, anyone can read the info, because everyone knows Google’s public key. If they encrypt it with their public key, you cannot decrypt it as you don’t have Google’s private key.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Wrap up&lt;/h2&gt;
+&lt;h2 id=&quot;wrap-up&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#wrap-up&quot; aria-label=&quot;wrap up permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Wrap up&lt;/h2&gt;
 &lt;p&gt;Let’s quickly see the summary of the flow we covered in this post:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Browsers come with CAs’ public keys when you install.&lt;/li&gt;
@@ -1401,14 +1837,14 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;/span&gt;
   &lt;/span&gt;
   &lt;figcaption&gt;Photo by &lt;a href=&quot;https://unsplash.com/@randyfath&quot;&gt;Randy Fath&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com&quot;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;&lt;/p&gt;
-&lt;h3&gt;What is Same-origin Policy(SOP)&lt;/h3&gt;
+&lt;h2 id=&quot;what-is-same-origin-policysop&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#what-is-same-origin-policysop&quot; aria-label=&quot;what is same origin policysop permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What is Same-origin Policy(SOP)&lt;/h2&gt;
 &lt;p&gt;It is a security measure implemented by most browsers to protect users from the bad guys. It’s meant to keep you secure and it isn’t something new. It dates back to the old Netscape times. What it does is simple, blocks reading resources from other domains, only same-origin is allowed.&lt;/p&gt;
 &lt;p&gt;The resource here can be the DOM of an iframe you embedded in the page, a JSON response in an http request, or cookies.&lt;/p&gt;
 &lt;p&gt;Why does it exist? It’s there to keep you secure from the malicious scripts which might be running on the websites you visit. Although you’re visiting &lt;em&gt;evil.com&lt;/em&gt;, scripts running on this site can make requests to &lt;em&gt;my-bank.com/get-account-details&lt;/em&gt;, or embed an iframe with source &lt;em&gt;my-bank.com/get-account-details&lt;/em&gt; and then try to read the response/DOM to access your data. In case you think &lt;em&gt;“it’s fine as they don’t know my credentials”&lt;/em&gt;, think twice. Browser will use existing cookies for &lt;em&gt;my-bank.com&lt;/em&gt; automatically. It means if you have an active session on &lt;em&gt;my-bank.com&lt;/em&gt;, malicious scripts don’t need your credential.&lt;/p&gt;
 &lt;p&gt;There are also some common misconceptions on SOP. It does not block sending requests to the backend. It only blocks reading the response. &lt;em&gt;“That’s great, let me trigger a call to mybank.com/transfer-money in my malicious script. I just want the request to reach the backend, I don’t care about the response, I’ll see it in my bank account anyways”&lt;/em&gt; you might be saying. Not that fast. Of course, from SOP point of view, that’s perfectly fine. But, there are other security measures to prevent that. That’s the most important aspect you should really understand about SOP. Let’s repeat again: you can freely send any request to any domain, SOP does not care about requests, it only blocks reading the response from other domains.&lt;/p&gt;
 &lt;p&gt;Due to the same reason above, SOP not blocking the requests, it does not help with CSRF attacks. This attack relies on sending the request under the hood with the cookies you already have for that domain . It does not care about the response.&lt;/p&gt;
 &lt;p&gt;If you’re saying &lt;em&gt;“yes, there is no news here to me”&lt;/em&gt;, great! you can stop reading. Otherwise, keep going.&lt;/p&gt;
-&lt;h3&gt;What is considered as same-origin&lt;/h3&gt;
+&lt;h2 id=&quot;what-is-considered-as-same-origin&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#what-is-considered-as-same-origin&quot; aria-label=&quot;what is considered as same origin permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What is considered as same-origin&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Protocol&lt;/strong&gt; (http, https) &lt;strong&gt;+Host&lt;/strong&gt; (example.com) &lt;strong&gt;+Port&lt;/strong&gt; (8080)&lt;/p&gt;
 &lt;p&gt;Given definition above, &lt;a href=&quot;http://example.com/abc&quot;&gt;http://example.com/abc&lt;/a&gt; and &lt;a href=&quot;http://example.com/xyz&quot;&gt;http://example.com/xyz&lt;/a&gt; will be in the same-origin, but not&lt;/p&gt;
 &lt;ul&gt;
@@ -1416,23 +1852,23 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;li&gt;&lt;a href=&quot;https://example.com/abc&quot;&gt;https://example.com/abc&lt;/a&gt; due to different protocol&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://example.com/abc&quot;&gt;http://test.example.com/abc&lt;/a&gt; due to different host&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;SOP to rescue&lt;/h3&gt;
+&lt;h2 id=&quot;sop-to-rescue&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sop-to-rescue&quot; aria-label=&quot;sop to rescue permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SOP to rescue&lt;/h2&gt;
 &lt;p&gt;Please note that below examples assume there is no additional security checks at the backend and focuses on SOP only.&lt;/p&gt;
-&lt;h4&gt;iframe&lt;/h4&gt;
+&lt;h3 id=&quot;iframe&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#iframe&quot; aria-label=&quot;iframe permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;iframe&lt;/h3&gt;
 &lt;p&gt;What happens when you type &lt;em&gt;gmail.com&lt;/em&gt;? Assuming you have an account and already logged-in before, it will show all your emails. Let’s say I own &lt;em&gt;evil.com&lt;/em&gt; and used an iframe to embed &lt;em&gt;gmail.com&lt;/em&gt; in it. Once you hit &lt;em&gt;evil.com&lt;/em&gt;, can you imagine what can go wrong if I read the content in that iframe with JavaScript as being the owner of &lt;em&gt;evil.com&lt;/em&gt;? Yes, you guessed it, I can read all your emails and even save them in some DB. But, don’t worry. Since you’re on &lt;em&gt;evil.com&lt;/em&gt;, scripts running on this domain will not be able to read DOM content in an iframe from another domain (ie. &lt;em&gt;gmail.com&lt;/em&gt;).&lt;/p&gt;
 &lt;p&gt;SOP saves the day and blocks reading the DOM of an iframe which belong to another domain.&lt;/p&gt;
-&lt;h4&gt;http request&lt;/h4&gt;
+&lt;h3 id=&quot;http-request&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#http-request&quot; aria-label=&quot;http request permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;http request&lt;/h3&gt;
 &lt;p&gt;I hear some of you saying &lt;em&gt;“I never used iframe, do you have some other example?”&lt;/em&gt;. Okay, let’s give the same example without iframes. I own &lt;em&gt;evil.com&lt;/em&gt; and you visit it since you don’t know I do evil things. The JS code I added in &lt;em&gt;evil.com&lt;/em&gt; sends a GET request to &lt;em&gt;gmail.com/get-all-emails&lt;/em&gt;. Do you think I’ll be able to send it?&lt;/p&gt;
 &lt;p&gt;The answer is yes (what?!). Just to point out again, SOP does not do anything for the requests, it blocks response only. My request will be sent to gmail and browser will get a 200 success. When my script tries to see the response, however, it won’t be able to, neither will you when you check Network/Response tab in Chrome dev tools. Browser will block it as SOP promised. (This can be relaxed using CORS though)&lt;/p&gt;
 &lt;p&gt;SOP rescues us again and blocks reading the response of an http request from another domain.&lt;/p&gt;
-&lt;h4&gt;cookies&lt;/h4&gt;
+&lt;h3 id=&quot;cookies&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#cookies&quot; aria-label=&quot;cookies permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;cookies&lt;/h3&gt;
 &lt;p&gt;Web mostly relies on cookies for authentication. Web server sets some cookies for its domain so that it can identify you when it receives a request from you. To keep things simple, let’s say when you login to &lt;em&gt;gmail.com&lt;/em&gt; it sets a cookie username=“test@gmail.com” for domain gmail.com. Whenever there is a request going to gmail.com, your browser will add all your valid cookies belong to that domain. That means, when you call &lt;em&gt;gmail.com/get-all-emails&lt;/em&gt;, it will also send username=”test@gmail.com” without you realising. And Gmail’s web server will see who you are from the cookie and return all the emails you have.&lt;/p&gt;
 &lt;p&gt;In real world, it’s not that simple. Gmail actually sets something to identify you, but it’s more complex and if anyone changes any part of that string, they would know and refuse to respond to your request.&lt;/p&gt;
 &lt;p&gt;I think it’s somewhat clear now that whoever has that string can actually get all your emails. So, it’s super important for the browser not to expose cookies from one domain to another one. Again, as being the owner of &lt;em&gt;evil.com&lt;/em&gt;, I can send a request to &lt;em&gt;gmail.com&lt;/em&gt; on your behalf and browser will include all cookies belong to &lt;em&gt;gmail.com&lt;/em&gt; domain. But, the scripts running on evil.com won’t be able to read the cookies and server’s response. Yayy!&lt;/p&gt;
 &lt;p&gt;Just a small note on this: different protocol and port does not make a resource cross-domain for cookies. For example, &lt;a href=&quot;http://example.com&quot;&gt;http://example.com&lt;/a&gt;, &lt;a href=&quot;https://example.com&quot;&gt;https://example.com&lt;/a&gt; and &lt;a href=&quot;https://example.com:7000&quot;&gt;https://example.com:7000&lt;/a&gt; are considered as the same-origin.&lt;/p&gt;
-&lt;h4&gt;form&lt;/h4&gt;
+&lt;h3 id=&quot;form&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#form&quot; aria-label=&quot;form permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;form&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;“What about if I use a form”&lt;/em&gt; I hear you ask. Let’s say I did some JS tricks and submitted a form using my malicious code running on &lt;em&gt;evil.com&lt;/em&gt; which sends a request to &lt;em&gt;gmail.com/send-email&lt;/em&gt; with the payload I provided in the code. Same goes here, browser will send it. But after submitting, browser will take you from &lt;em&gt;evil.com&lt;/em&gt; to the action url (ie. &lt;em&gt;gmail.com/send-email&lt;/em&gt;), so &lt;em&gt;evil.com couldn’t&lt;/em&gt; read the response from other domains as the user is redirected to &lt;em&gt;gmail&lt;/em&gt;. Please note, this is not a feature of SOP, just default form behaviour in browsers.&lt;/p&gt;
-&lt;h3&gt;Is everything coming from another domain blocked?&lt;/h3&gt;
+&lt;h2 id=&quot;is-everything-coming-from-another-domain-blocked&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#is-everything-coming-from-another-domain-blocked&quot; aria-label=&quot;is everything coming from another domain blocked permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Is everything coming from another domain blocked?&lt;/h2&gt;
 &lt;p&gt;Nope. You can still&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Embed iframes&lt;/li&gt;
@@ -1448,7 +1884,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;li&gt;cannot read the response of the submitted form&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In addition to that, there are some techniques for relaxing SOP. You can use Cross-origin Resource Sharing(CORS), JSON with Padding(JSONP), and some others. Please note, this is not something browser can do alone to workaround SOP. Both frontend and backend need to be configured properly to achieve accessing cross-domain resources.&lt;/p&gt;
-&lt;h3&gt;Wrap up&lt;/h3&gt;
+&lt;h2 id=&quot;wrap-up&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#wrap-up&quot; aria-label=&quot;wrap up permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Wrap up&lt;/h2&gt;
 &lt;p&gt;Browsers implement SOP to keep your resources secure since you never now what’s going on behind the scenes when you visit &lt;em&gt;evil.com&lt;/em&gt;. SOP does not prevent taking actions(sending requests etc), but makes sure bad guys won’t be able to see the outcome of that action(reading response/cookies/DOM).&lt;/p&gt;
 &lt;p&gt;It does not block you from using images, videos, scripts, css files from other domains. Long live CDNs! And there are ways to relax SOP by using things like CORS, JSONP.&lt;/p&gt;
 &lt;p&gt;Hope this post gave you some understanding of Same-origin Policy. Keep reading other unknowns in my other posts to have the full picture. Fell free to leave comments below.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Indexing DynamoDB Items to ElasticSearch using AWS Lambda]]></title><description><![CDATA[DynamoDB is Amazon’s NoSQL database which offers single-digit milliseconds latency. It is great for variety of use cases, but when you need to run complex search queries on your dataset, you quickly realise it is not designed for it.]]></description><link>https://merictaze.com/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/</link><guid isPermaLink="false">https://merictaze.com/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/</guid><pubDate>Wed, 04 Jul 2018 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/8314334f2eb0b6a593e78008377cbae9/42e18/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;
@@ -1488,7 +1924,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;p&gt;You can try using composite primary keys, local and global secondary indexes to fulfil your needs. But as the queries get more complex, you might realise those are not enough. But don’t worry, you are not alone. Lots of people who have faced with this problem chose a similar solution; using ElasticSearch for their complex search operations while keeping the DynamoDB as the authority for the data.  &lt;/p&gt;
 &lt;p&gt;Here we are going to learn how ElasticSearch can be plugged into your DynamoDB with a click of a button using CloudFormation.&lt;/p&gt;
 &lt;p&gt;The same steps can be done using AWS Web Console, but I think making use of CloudFormation is better as often times you need to create the same resources for multiple stages and regions.&lt;/p&gt;
-&lt;h3&gt;Creating DynamoDB Table&lt;/h3&gt;
+&lt;h2 id=&quot;creating-dynamodb-table&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#creating-dynamodb-table&quot; aria-label=&quot;creating dynamodb table permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Creating DynamoDB Table&lt;/h2&gt;
 &lt;p&gt;Let’s start with creating a DynamoDB table using CloudFormation. Here we create a table called ‘OrderTable’ whose key is orderId. It also sets read/write capacity to 5. One of the most important things here is that we also enable DynamoDB streams. Whenever an entry is created or updated, it will be streamed automatically. It will only return the new image, but you have &lt;a href=&quot;https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_StreamSpecification.html&quot;&gt;other options&lt;/a&gt; if you also need the old image or just the keys.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist90498564&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -1577,7 +2013,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;If you already have an existing table and don’t want to create a new one, you can get its SourceArn from AWS Web Console, and use it in the following sections.&lt;/p&gt;
-&lt;h3&gt;Adding a Lambda function&lt;/h3&gt;
+&lt;h2 id=&quot;adding-a-lambda-function&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#adding-a-lambda-function&quot; aria-label=&quot;adding a lambda function permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Adding a Lambda function&lt;/h2&gt;
 &lt;p&gt;Here we print the records coming from DynamoDB stream. We also add a Role to access various AWS resources from our lambda function which we’ll cover later. We use ZipFile which allows adding inline code to our CloudFormation template.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist90498566&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -1657,7 +2093,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;h3&gt;Mapping between the stream and lambda function&lt;/h3&gt;
+&lt;h2 id=&quot;mapping-between-the-stream-and-lambda-function&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#mapping-between-the-stream-and-lambda-function&quot; aria-label=&quot;mapping between the stream and lambda function permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Mapping between the stream and lambda function&lt;/h2&gt;
 &lt;p&gt;This defines the mapping between DynamoDB Stream and our Lambda function. Whenever there is something new in DynamoDB Streams, it will trigger our lambda function with those records.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist90498567&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -1713,7 +2149,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;h3&gt;Lambda IAM role&lt;/h3&gt;
+&lt;h2 id=&quot;lambda-iam-role&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#lambda-iam-role&quot; aria-label=&quot;lambda iam role permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Lambda IAM role&lt;/h2&gt;
 &lt;p&gt;Here we give our lambda function access for writing logs so that we can check them in CloudWatch and also access for reading DynamoDB streams.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist90498568&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -1857,7 +2293,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;h3&gt;Adding ElasticSearch&lt;/h3&gt;
+&lt;h2 id=&quot;adding-elasticsearch&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#adding-elasticsearch&quot; aria-label=&quot;adding elasticsearch permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Adding ElasticSearch&lt;/h2&gt;
 &lt;p&gt;This creates a t2.micro ElasticSearch instance which is included in Free Tier. It also allows LambdaRole to access to the instance.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist90498571&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -1973,7 +2409,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;h3&gt;Updating Lambda to index documents&lt;/h3&gt;
+&lt;h2 id=&quot;updating-lambda-to-index-documents&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#updating-lambda-to-index-documents&quot; aria-label=&quot;updating lambda to index documents permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Updating Lambda to index documents&lt;/h2&gt;
 &lt;p&gt;Now let’s update our previous lambda function to index DynamoDB stream records to ElasticSearch. Note that we need to sign our requests, otherwise you’ll get an authorization error.  &lt;/p&gt;
 &lt;p&gt;Consider using &lt;a href=&quot;https://github.com/TheDeveloper/http-aws-es&quot;&gt;http-aws-es&lt;/a&gt; library which makes things quite easy if you are using S3Bucket and S3Key instead of ZipFile. It allows you to use &lt;a href=&quot;https://github.com/elastic/elasticsearch-js&quot;&gt;elasticsearch-js&lt;/a&gt; client and also handles the request signing part.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist90498572&quot; class=&quot;gist&quot;&gt;
@@ -2266,7 +2702,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;li&gt;When you’re ready, it takes just one command to deploy everything to AWS&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can also check the repositories of the individual plugins for more detailed information: &lt;a href=&quot;https://github.com/serverless/serverless&quot;&gt;serverless&lt;/a&gt;, &lt;a href=&quot;https://github.com/dherault/serverless-offline&quot;&gt;serverless-offline&lt;/a&gt; and &lt;a href=&quot;https://github.com/99xt/serverless-dynamodb-local&quot;&gt;serverless-dynamodb-local&lt;/a&gt;.&lt;/p&gt;
-&lt;h4&gt;Setting up serverless framework&lt;/h4&gt;
+&lt;h2 id=&quot;setting-up-serverless-framework&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#setting-up-serverless-framework&quot; aria-label=&quot;setting up serverless framework permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Setting up serverless framework&lt;/h2&gt;
 &lt;p&gt;Start with installing serverless framework if you have not already&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install -g serverless&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;and setup your AWS credentials. You can create your key and secret from AWS Console&lt;/p&gt;
@@ -2278,7 +2714,7 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;cd test-serverless
 serverless deploy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;As simple as that. But we’ll continue with setting up a local development environment.&lt;/p&gt;
-&lt;h4&gt;Setting up the local development environment&lt;/h4&gt;
+&lt;h2 id=&quot;setting-up-the-local-development-environment&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#setting-up-the-local-development-environment&quot; aria-label=&quot;setting up the local development environment permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Setting up the local development environment&lt;/h2&gt;
 &lt;p&gt;We need two plugins here;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;serverless-offline which emulates AWS Lambda and API Gateway&lt;/li&gt;
@@ -2380,7 +2816,7 @@ Serverless: GET /
 
 Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Try hitting &lt;a href=&quot;http://localhost:3000&quot;&gt;http://localhost:3000&lt;/a&gt;, you should see the output of the lambda function.&lt;/p&gt;
-&lt;h4&gt;Integrating with local DynamoDB&lt;/h4&gt;
+&lt;h2 id=&quot;integrating-with-local-dynamodb&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#integrating-with-local-dynamodb&quot; aria-label=&quot;integrating with local dynamodb permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Integrating with local DynamoDB&lt;/h2&gt;
 &lt;p&gt;We need to make the following changes to our serverless.yml file.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;add an environment variable for the table name which we’ll use it in the template as well as in our nodejs code.&lt;/li&gt;
@@ -2590,7 +3026,7 @@ Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)&
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;h4&gt;Updating lambda functions&lt;/h4&gt;
+&lt;h2 id=&quot;updating-lambda-functions&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#updating-lambda-functions&quot; aria-label=&quot;updating lambda functions permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Updating lambda functions&lt;/h2&gt;
 &lt;p&gt;Let’s update our lambda functions to read/write to the table we defined above.&lt;/p&gt;
 &lt;p&gt;serverless-offline plugin sets IS_OFFLINE environment variable to true. We’ll use it to decide if we want to connect to the local dynamo instance or the one in AWS. In other words, if we run serverless offline start, it will connect to the local DynamoDB, but once we deploy it to AWS, it will use the actual DynamoDB table.&lt;/p&gt;
 &lt;p&gt;Then we have our lambda functions: usersGet will return all entries in the table while usersCreate will add new entries.&lt;/p&gt;
