@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Full Stack Software Development - MericTaze.com]]></title><description><![CDATA[Full Stack Software Development Blog]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 14 Jan 2021 15:41:34 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[How to Succeed in Your System Design Interview]]></title><description><![CDATA[System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.]]></description><link>https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</link><guid isPermaLink="false">https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</guid><pubDate>Wed, 13 Jan 2021 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/cff4af7722c727c875c5670ebd95fd9a/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Full Stack Software Development - MericTaze.com]]></title><description><![CDATA[Full Stack Software Development Blog]]></description><link>https://merictaze.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 24 Jan 2021 00:58:26 GMT</lastBuildDate><atom:link href="https://merictaze.com/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en-us]]></language><item><title><![CDATA[How to Succeed in Your System Design Interview]]></title><description><![CDATA[System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.]]></description><link>https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</link><guid isPermaLink="false">https://merictaze.com/posts/how-to-succeed-in-your-system-design-interview/</guid><pubDate>Wed, 13 Jan 2021 00:00:00 GMT</pubDate><enclosure url="https://merictaze.com/static/cff4af7722c727c875c5670ebd95fd9a/0a89a/cover.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;p&gt;System design questions can be asked for any level with different expectations from the candidate, but to get a Senior offer, you have to rock this round. Practice makes perfect - like for anything else, it applies for system design interview too. So, keep practicing without taking shortcuts, practice as if it’s the real interview and always follow the same steps to make it perfect.&lt;/p&gt;
 &lt;p&gt;This is based on my personal experience over the years in the interviews I conducted as well as the ones I was the candidate, which turned into a senior job offer. Feel free to adjust based on your needs.&lt;/p&gt;
 &lt;p&gt;
   &lt;span
@@ -45,7 +45,7 @@
 &lt;/li&gt;
 &lt;li&gt;What are non-functional requirements: Scalability, Availability, Fault tolerance, etc&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;You might feel strange asking all these questions for a widely known app. But please don’t, and ask even very obvious questions. After this part, you’ll get a tick in interviewer’s notes: “Deals with ambiguity and asks questions to clarify the problem: check”.&lt;/p&gt;
+&lt;p&gt;You might feel strange asking all these questions for a widely known app. But please don’t, and ask even very obvious questions. After this part, you’ll get a tick in interviewer’s notes: “Deals with ambiguity and ask questions to clarify the problem: check”.&lt;/p&gt;
 &lt;h3&gt;Step 2: Define Entities&lt;/h3&gt;
 &lt;p&gt;Before throwing all those boxes: “Service X”, “Service Y”, “Service Z” and their interactions, just take a step back and define what kind of entities you need. Some people prefer defining the APIs first, but I feel more comfortable figuring out the main entities first and defining APIs around those.&lt;/p&gt;
 &lt;p&gt;Based on the requirements and features you discussed in the previous step, start listing down the entities and what fields they have. For example, you can start with something like this&lt;/p&gt;
@@ -65,7 +65,7 @@
 &lt;p&gt;Based on that info, the APIs you’re going to need will be something like below (I know there is another 1M way of doing this):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;/posts: Returns all the posts (probably paginated for infinite scroll)&lt;/p&gt;
+&lt;p&gt;/posts (GET): Returns all the posts (probably paginated for infinite scroll)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: GET&lt;/li&gt;
 &lt;li&gt;
@@ -78,7 +78,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;/posts: Creates a new post&lt;/p&gt;
+&lt;p&gt;/posts (POST): Creates a new post&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: POST&lt;/li&gt;
 &lt;li&gt;
@@ -91,14 +91,14 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;/posts/{postId}: Updates an existing post&lt;/p&gt;
+&lt;p&gt;/posts/{postId} (POST): Updates an existing post&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: POST&lt;/li&gt;
 &lt;li&gt;input: UpdatePostRequest - similar to CreatePostRequest with a postId&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;/relationships/{userId}: Follows/Unfollows a user&lt;/p&gt;
+&lt;p&gt;/relationships/{userId} (POST): Follows/Unfollows a user&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;method: POST&lt;/li&gt;
 &lt;li&gt;
@@ -160,7 +160,7 @@
     &lt;/p&gt;
 &lt;p&gt;After this point, start throwing all system design concepts you know:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Put a CDN here to serve JS/CSS files&lt;/li&gt;
+&lt;li&gt;Put a CDN here to serve JS/CSS file&lt;/li&gt;
 &lt;li&gt;Another CDN there to store media files like images and videos&lt;/li&gt;
 &lt;li&gt;Put a LoadBalancer in front of AuthService as all requests will have to talk to AuthService first and you need to scale it out and make it fault-tolerant&lt;/li&gt;
 &lt;li&gt;If AuthService DB is having a bad day, your product might be completely unusable, so let’s add some replication and sharding for that DB&lt;/li&gt;
@@ -176,7 +176,7 @@
 &lt;ul&gt;
 &lt;li&gt;Latency/Number of request/Error/Fault count for all incoming API calls to your service and all outgoing API calls from your service to others (service, db etc).&lt;/li&gt;
 &lt;li&gt;Disk, Memory CPU usage and utilization for each node of the service&lt;/li&gt;
-&lt;li&gt;If you use things like message queues etc, you can monitor things like the number of messages in the queue, the oldest message in the queue etc.&lt;/li&gt;
+&lt;li&gt;If you use things like message queues etc, you might monitor things like the number of messages in the queue, the oldest message in the queue etc.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Summary&lt;/h3&gt;
 &lt;p&gt;Here are all the steps. Write it on a paper, put it next to your screen and keep practicing.&lt;/p&gt;
@@ -346,12 +346,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-unified-formik-field-form-jsx&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-form-jsx&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-form-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-unified-formik-field-form-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&amp;lt;&lt;span class=&quot;pl-ent&quot;&gt;form&lt;/span&gt; &lt;span class=&quot;pl-e&quot;&gt;onSubmit&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pl-smi&quot;&gt;handleSubmit&lt;/span&gt;&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&amp;gt;&lt;/td&gt;
@@ -573,12 +573,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-unified-formik-field-formitem-jsx&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-formitem-jsx&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-formitem-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-unified-formik-field-formitem-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;import&lt;/span&gt; {&lt;span class=&quot;pl-smi&quot;&gt;connect&lt;/span&gt;} &lt;span class=&quot;pl-k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;formik&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;;&lt;/td&gt;
@@ -666,12 +666,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-unified-formik-field-forminput-jsx&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-forminput-jsx&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-forminput-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-unified-formik-field-forminput-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;FormInput&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; {&lt;/td&gt;
@@ -760,12 +760,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-unified-formik-field-textinput-jsx&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-textinput-jsx&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-textinput-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-unified-formik-field-textinput-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;TextInput&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; &amp;lt;input {...extractInputProps(props)} /&amp;gt;&lt;/td&gt;
@@ -801,12 +801,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-unified-formik-field-selectinput-jsx&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-selectinput-jsx&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-unified-formik-field-selectinput-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;SelectInput&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; (&lt;/td&gt;
@@ -857,12 +857,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-unified-formik-field-checkinput-jsx&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-checkinput-jsx&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-jsx  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-unified-formik-field-checkinput-jsx-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;CheckInput&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; (&lt;/td&gt;
@@ -925,39 +925,39 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-unified-formik-field-extractinputprops1-js&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-extractinputprops1-js&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;extractInputProps&lt;/span&gt;({formik, options,&lt;span class=&quot;pl-k&quot;&gt;...&lt;/span&gt;otherProps}, &lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;) {&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;function&lt;/span&gt; &lt;span class=pl-en&gt;extractInputProps&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;span class=pl-s1&gt;formik&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s1&gt;options&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;...&lt;span class=pl-s1&gt;otherProps&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s1&gt;option&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; {&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;props&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    value&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;values&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;otherProps&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;name&lt;/span&gt;],&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c1&gt;value&lt;/span&gt;: &lt;span class=pl-s1&gt;formik&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;values&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s1&gt;otherProps&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;name&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    onChange&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;handleChange&lt;/span&gt;,&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c1&gt;onChange&lt;/span&gt;: &lt;span class=pl-s1&gt;formik&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;handleChange&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    onBlur&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;handleBlur&lt;/span&gt;,&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c1&gt;onBlur&lt;/span&gt;: &lt;span class=pl-s1&gt;formik&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;handleBlur&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;...&lt;/span&gt;otherProps&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    ...&lt;span class=pl-s1&gt;otherProps&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
@@ -966,23 +966,23 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;radio&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;) {&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-k&gt;if&lt;/span&gt; &lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;type&lt;/span&gt; &lt;span class=pl-c1&gt;===&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;radio&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;//&lt;/span&gt; set additinoal props for radio&lt;/span&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c&gt;// set additinoal props for radio&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  } &lt;span class=&quot;pl-k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;checkbox&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;) {&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-k&gt;else&lt;/span&gt; &lt;span class=pl-k&gt;if&lt;/span&gt; &lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;type&lt;/span&gt; &lt;span class=pl-c1&gt;===&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;checkbox&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;//&lt;/span&gt; set additinoal props for checkbox&lt;/span&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c&gt;// set additinoal props for checkbox&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
@@ -991,11 +991,11 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt; props;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-k&gt;return&lt;/span&gt; &lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops1-js-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
 &lt;/table&gt;
 
@@ -1022,27 +1022,27 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-unified-formik-field-extractinputprops2-js&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-extractinputprops2-js&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;radio&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;) {&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;if&lt;/span&gt; &lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;type&lt;/span&gt; &lt;span class=pl-c1&gt;===&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;radio&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt;;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;value&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s1&gt;option&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;value&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;checked&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;values&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;name&lt;/span&gt;];&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;checked&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s1&gt;option&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;value&lt;/span&gt; &lt;span class=pl-c1&gt;===&lt;/span&gt; &lt;span class=pl-s1&gt;formik&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;values&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;name&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops2-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
 &lt;/table&gt;
 
@@ -1066,55 +1066,55 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-unified-formik-field-extractinputprops3-js&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-unified-formik-field-extractinputprops3-js&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;checkbox&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;) {&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;else&lt;/span&gt; &lt;span class=pl-k&gt;if&lt;/span&gt; &lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;type&lt;/span&gt; &lt;span class=pl-c1&gt;===&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;checkbox&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt;;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;value&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s1&gt;option&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;value&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;checked&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;values&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;name&lt;/span&gt;].&lt;span class=&quot;pl-en&quot;&gt;includes&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;option&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt;);&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;checked&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s1&gt;formik&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;values&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;name&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;includes&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;option&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;value&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;onChange&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; {&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;onChange&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s1&gt;e&lt;/span&gt; &lt;span class=pl-c1&gt;=&amp;gt;&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;values&lt;/span&gt;[&lt;span class=&quot;pl-smi&quot;&gt;props&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;name&lt;/span&gt;];&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;val&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s1&gt;formik&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;values&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s1&gt;props&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;name&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-smi&quot;&gt;e&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;target&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;checked&lt;/span&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s1&gt;e&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;target&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;checked&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=&quot;pl-k&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;val&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;push&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;e&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;target&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt;)&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      ? &lt;span class=pl-s1&gt;val&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;push&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;e&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;target&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;value&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;val&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;slice&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;val&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;indexOf&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;e&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;target&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;value&lt;/span&gt;));&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      : &lt;span class=pl-s1&gt;val&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;slice&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;val&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;indexOf&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;e&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;target&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;value&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-smi&quot;&gt;formik&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;setFieldValue&lt;/span&gt;(val);&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s1&gt;formik&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;setFieldValue&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;val&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+        &lt;td id=&quot;file-unified-formik-field-extractinputprops3-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
 &lt;/table&gt;
 
@@ -1494,12 +1494,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-ddb2es-01-cf-dynamo-yml&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-ddb2es-01-cf-dynamo-yml&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-ddb2es-01-cf-dynamo-yml-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-ddb2es-01-cf-dynamo-yml-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-ent&quot;&gt;OrderTable&lt;/span&gt;:&lt;/td&gt;
@@ -1583,12 +1583,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-ddb2es-02-cf-lambda-yml&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-ddb2es-02-cf-lambda-yml&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-ddb2es-02-cf-lambda-yml-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-ddb2es-02-cf-lambda-yml-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-ent&quot;&gt;EsIndexerFunction&lt;/span&gt;:&lt;/td&gt;
@@ -1663,12 +1663,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-ddb2es-03-cf-mapping-yml&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-ddb2es-03-cf-mapping-yml&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-ddb2es-03-cf-mapping-yml-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-ddb2es-03-cf-mapping-yml-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-ent&quot;&gt;TableStreamLambdaMapping&lt;/span&gt;:&lt;/td&gt;
@@ -1719,12 +1719,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-ddb2es-04-cf-lambdarole-yml&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-ddb2es-04-cf-lambdarole-yml&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-ddb2es-04-cf-lambdarole-yml-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-ddb2es-04-cf-lambdarole-yml-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-ent&quot;&gt;LambdaRole&lt;/span&gt;:&lt;/td&gt;
@@ -1863,12 +1863,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-ddb2es-05-cf-elasticsearch-yml&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-ddb2es-05-cf-elasticsearch-yml&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-ddb2es-05-cf-elasticsearch-yml-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-ddb2es-05-cf-elasticsearch-yml-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-ent&quot;&gt;ElasticsearchDomain&lt;/span&gt;: &lt;/td&gt;
@@ -1980,12 +1980,12 @@ In this example, we’re calling &lt;code class=&quot;language-text&quot;&gt;set
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-ddb2es-06-cf-lambda_v2-yml&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-ddb2es-06-cf-lambda_v2-yml&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-ddb2es-06-cf-lambda_v2-yml-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-ddb2es-06-cf-lambda_v2-yml-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-ent&quot;&gt;EsIndexerFunction&lt;/span&gt;:&lt;/td&gt;
@@ -2290,12 +2290,12 @@ serverless deploy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-serverless-offline-01-serverless-yml&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-serverless-offline-01-serverless-yml&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-01-serverless-yml-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-serverless-offline-01-serverless-yml-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-ent&quot;&gt;service&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;test-serverless&lt;/span&gt;&lt;/td&gt;
@@ -2392,12 +2392,12 @@ Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)&
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-serverless-offline-02-serverless-yml&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-serverless-offline-02-serverless-yml&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-02-serverless-yml-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
         &lt;td id=&quot;file-serverless-offline-02-serverless-yml-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-ent&quot;&gt;service&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;test-serverless&lt;/span&gt;&lt;/td&gt;
@@ -2599,23 +2599,23 @@ Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)&
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
-  &lt;div id=&quot;file-serverless-offline-03-handler-js&quot; class=&quot;file&quot;&gt;
+  &lt;div id=&quot;file-serverless-offline-03-handler-js&quot; class=&quot;file my-2&quot;&gt;
     
 
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript &quot;&gt;
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
-&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot;&gt;
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;AWS&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;aws-sdk&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;);&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-c1&gt;AWS&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-en&gt;require&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;aws-sdk&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;bluebird&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;bluebird&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;);&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;bluebird&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-en&gt;require&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;bluebird&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-c1&quot;&gt;AWS&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;config&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;setPromisesDependency&lt;/span&gt;(bluebird);&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c1&gt;AWS&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;config&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;setPromisesDependency&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;bluebird&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
@@ -2624,19 +2624,19 @@ Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)&
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;//&lt;/span&gt; use local dynamodb if running offline&lt;/span&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;// use local dynamodb if running offline&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;dbClient&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;pl-en&quot;&gt;AWS.DynamoDB.DocumentClient&lt;/span&gt;(&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;dbClient&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-k&gt;new&lt;/span&gt; &lt;span class=pl-c1&gt;AWS&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;DynamoDB&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;DocumentClient&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-c1&quot;&gt;process&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;env&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;IS_OFFLINE&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;?&lt;/span&gt; {region&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;localhost&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;, endpoint&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;http://localhost:8000&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;} &lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; {}&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-s1&gt;process&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;env&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;IS_OFFLINE&lt;/span&gt; ? &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;span class=pl-c1&gt;region&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-c1&gt;endpoint&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;#39;http://localhost:8000&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt; : &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;);&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
@@ -2645,63 +2645,63 @@ Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)&
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-c1&quot;&gt;module&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;exports&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;usersGet&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;async&lt;/span&gt; (&lt;span class=&quot;pl-c1&quot;&gt;event&lt;/span&gt;, &lt;span class=&quot;pl-smi&quot;&gt;context&lt;/span&gt;, &lt;span class=&quot;pl-smi&quot;&gt;callback&lt;/span&gt;) &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-smi&gt;module&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;exports&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;usersGet&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-k&gt;async&lt;/span&gt; &lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;event&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s1&gt;context&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s1&gt;callback&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-c1&gt;=&amp;gt;&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;params&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    TableName&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;process&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;env&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;DYNAMODB_USER_TABLE&lt;/span&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c1&gt;TableName&lt;/span&gt;: &lt;span class=pl-s1&gt;process&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;env&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;DYNAMODB_USER_TABLE&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  };&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;let&lt;/span&gt; result;&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-k&gt;let&lt;/span&gt; &lt;span class=pl-s1&gt;result&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;try&lt;/span&gt; {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-k&gt;try&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    result &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;dbClient&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;scan&lt;/span&gt;(params).&lt;span class=&quot;pl-en&quot;&gt;promise&lt;/span&gt;();&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s1&gt;result&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-k&gt;await&lt;/span&gt; &lt;span class=pl-s1&gt;dbClient&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;scan&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;params&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;promise&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L17&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  } &lt;span class=&quot;pl-k&quot;&gt;catch&lt;/span&gt;(error) {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-k&gt;catch&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;error&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L18&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;18&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-en&quot;&gt;callback&lt;/span&gt;(&lt;span class=&quot;pl-c1&quot;&gt;null&lt;/span&gt;, {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s1&gt;callback&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-c1&gt;null&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L19&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;19&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      statusCode&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;error&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;statusCode&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;501&lt;/span&gt;,&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;statusCode&lt;/span&gt;: &lt;span class=pl-s1&gt;error&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;statusCode&lt;/span&gt; &lt;span class=pl-c1&gt;||&lt;/span&gt; &lt;span class=pl-c1&gt;501&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L20&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;20&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      headers&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; { &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;Content-Type&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;text/plain&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt; },&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;headers&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;#39;text/plain&amp;#39;&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L21&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;21&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC21&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      body&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;Failed to get users&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC21&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;body&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;#39;Failed to get users&amp;#39;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L22&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;22&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    });&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L23&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;23&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt;;&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-k&gt;return&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L24&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L25&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
@@ -2710,23 +2710,23 @@ Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)&
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L26&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;26&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC26&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-en&quot;&gt;callback&lt;/span&gt;(&lt;span class=&quot;pl-c1&quot;&gt;null&lt;/span&gt;, {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC26&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-s1&gt;callback&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-c1&gt;null&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L27&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;27&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    statusCode&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;200&lt;/span&gt;,&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c1&gt;statusCode&lt;/span&gt;: &lt;span class=pl-c1&gt;200&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L28&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;28&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC28&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    body&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;JSON&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;stringify&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;result&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;Items&lt;/span&gt;)&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC28&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c1&gt;body&lt;/span&gt;: &lt;span class=pl-c1&gt;JSON&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;stringify&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;result&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;Items&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L29&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;29&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC29&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  });&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC29&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L30&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;30&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC30&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;};&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC30&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L31&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;31&quot;&gt;&lt;/td&gt;
@@ -2735,31 +2735,31 @@ Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)&
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L32&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;32&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC32&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-c1&quot;&gt;module&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;exports&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;usersCreate&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;async&lt;/span&gt; (&lt;span class=&quot;pl-c1&quot;&gt;event&lt;/span&gt;, &lt;span class=&quot;pl-smi&quot;&gt;context&lt;/span&gt;, &lt;span class=&quot;pl-smi&quot;&gt;callback&lt;/span&gt;) &lt;span class=&quot;pl-k&quot;&gt;=&amp;gt;&lt;/span&gt; {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC32&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-smi&gt;module&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;exports&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;usersCreate&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-k&gt;async&lt;/span&gt; &lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;event&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s1&gt;context&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s1&gt;callback&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-c1&gt;=&amp;gt;&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L33&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;33&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC33&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC33&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;params&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L34&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;34&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC34&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    TableName&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;process&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;env&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;DYNAMODB_USER_TABLE&lt;/span&gt;,&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC34&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c1&gt;TableName&lt;/span&gt;: &lt;span class=pl-s1&gt;process&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;env&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;DYNAMODB_USER_TABLE&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L35&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;35&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC35&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    Item&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC35&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c1&gt;Item&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L36&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;36&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC36&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      email&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;pl-s1&quot;&gt;&lt;span class=&quot;pl-pse&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;pl-c1&quot;&gt;Math&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;random&lt;/span&gt;().&lt;span class=&quot;pl-c1&quot;&gt;toString&lt;/span&gt;(&lt;span class=&quot;pl-c1&quot;&gt;36&lt;/span&gt;).&lt;span class=&quot;pl-c1&quot;&gt;substring&lt;/span&gt;(&lt;span class=&quot;pl-c1&quot;&gt;7&lt;/span&gt;)&lt;span class=&quot;pl-pse&quot;&gt;}&lt;/span&gt;&lt;/span&gt;@test.com&lt;span class=&quot;pl-pds&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC36&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;email&lt;/span&gt;: &lt;span class=pl-s&gt;`&lt;span class=pl-s1&gt;&lt;span class=pl-kos&gt;${&lt;/span&gt;&lt;span class=pl-v&gt;Math&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;random&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;toString&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-c1&gt;36&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;substring&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-c1&gt;7&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/span&gt;@test.com`&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L37&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;37&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC37&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC37&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L38&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;38&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC38&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  };&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC38&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L39&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;39&quot;&gt;&lt;/td&gt;
@@ -2768,47 +2768,47 @@ Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)&
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L40&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;40&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC40&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;let&lt;/span&gt; result;&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC40&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-k&gt;let&lt;/span&gt; &lt;span class=pl-s1&gt;result&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L41&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;41&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC41&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-k&quot;&gt;try&lt;/span&gt; {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC41&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-k&gt;try&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L42&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;42&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC42&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    result &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;dbClient&lt;/span&gt;.&lt;span class=&quot;pl-en&quot;&gt;put&lt;/span&gt;(params).&lt;span class=&quot;pl-en&quot;&gt;promise&lt;/span&gt;();&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC42&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s1&gt;result&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-k&gt;await&lt;/span&gt; &lt;span class=pl-s1&gt;dbClient&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;put&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;params&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;promise&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L43&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;43&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC43&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  } &lt;span class=&quot;pl-k&quot;&gt;catch&lt;/span&gt; (error) {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC43&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-k&gt;catch&lt;/span&gt; &lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;error&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L44&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;44&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC44&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-en&quot;&gt;callback&lt;/span&gt;(&lt;span class=&quot;pl-c1&quot;&gt;null&lt;/span&gt;, {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC44&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s1&gt;callback&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-c1&gt;null&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L45&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;45&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC45&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      statusCode&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;error&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;statusCode&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;501&lt;/span&gt;,&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC45&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;statusCode&lt;/span&gt;: &lt;span class=pl-s1&gt;error&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;statusCode&lt;/span&gt; &lt;span class=pl-c1&gt;||&lt;/span&gt; &lt;span class=pl-c1&gt;501&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L46&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;46&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC46&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      headers&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; {&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;Content-Type&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;text/plain&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;},&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC46&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;headers&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;#39;text/plain&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L47&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;47&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC47&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      body&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;Failed to create user&lt;span class=&quot;pl-pds&quot;&gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC47&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;body&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;#39;Failed to create user&amp;#39;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L48&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;48&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC48&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    });&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC48&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L49&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;49&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC49&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-k&quot;&gt;return&lt;/span&gt;;&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC49&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-k&gt;return&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L50&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;50&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC50&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC50&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L51&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;51&quot;&gt;&lt;/td&gt;
@@ -2817,28 +2817,23 @@ Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)&
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L52&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;52&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC52&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-en&quot;&gt;callback&lt;/span&gt;(&lt;span class=&quot;pl-c1&quot;&gt;null&lt;/span&gt;, {&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC52&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-s1&gt;callback&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-c1&gt;null&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L53&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;53&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC53&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    statusCode&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;200&lt;/span&gt;,&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC53&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c1&gt;statusCode&lt;/span&gt;: &lt;span class=pl-c1&gt;200&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L54&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;54&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC54&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    body&lt;span class=&quot;pl-k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pl-c1&quot;&gt;JSON&lt;/span&gt;.&lt;span class=&quot;pl-c1&quot;&gt;stringify&lt;/span&gt;(&lt;span class=&quot;pl-smi&quot;&gt;params&lt;/span&gt;.&lt;span class=&quot;pl-smi&quot;&gt;Item&lt;/span&gt;)&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC54&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-c1&gt;body&lt;/span&gt;: &lt;span class=pl-c1&gt;JSON&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;stringify&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;params&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;Item&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L55&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;55&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC55&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  });&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC55&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-serverless-offline-03-handler-js-L56&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;56&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC56&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;};&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-L57&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;57&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC57&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
+        &lt;td id=&quot;file-serverless-offline-03-handler-js-LC56&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
       &lt;/tr&gt;
 &lt;/table&gt;
 
