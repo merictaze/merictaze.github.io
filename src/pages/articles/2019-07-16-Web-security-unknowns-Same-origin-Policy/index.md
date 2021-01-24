@@ -19,7 +19,7 @@ Attacks like CSRF or XSS are still not clear to many of us. It is not because th
 
 ![](./cover.jpeg)<figcaption>Photo by <a href="https://unsplash.com/@randyfath">Randy Fath</a> on <a href="https://unsplash.com">Unsplash</a></figcaption>
 
-### What is Same-origin Policy(SOP)
+## What is Same-origin Policy(SOP)
 
 It is a security measure implemented by most browsers to protect users from the bad guys. It’s meant to keep you secure and it isn’t something new. It dates back to the old Netscape times. What it does is simple, blocks reading resources from other domains, only same-origin is allowed.
 
@@ -33,7 +33,7 @@ Due to the same reason above, SOP not blocking the requests, it does not help wi
 
 If you’re saying _“yes, there is no news here to me”_, great! you can stop reading. Otherwise, keep going.
 
-### What is considered as same-origin
+## What is considered as same-origin
 
 **Protocol** (http, https) **+Host** (example.com) **+Port** (8080)
 
@@ -43,17 +43,17 @@ Given definition above, [http://example.com/abc](http://example.com/abc) and [ht
 - [https://example.com/abc](https://example.com/abc) due to different protocol
 - [http://test.example.com/abc](http://example.com/abc) due to different host
 
-### SOP to rescue
+## SOP to rescue
 
 Please note that below examples assume there is no additional security checks at the backend and focuses on SOP only.
 
-#### iframe
+### iframe
 
 What happens when you type _gmail.com_? Assuming you have an account and already logged-in before, it will show all your emails. Let’s say I own _evil.com_ and used an iframe to embed _gmail.com_ in it. Once you hit _evil.com_, can you imagine what can go wrong if I read the content in that iframe with JavaScript as being the owner of _evil.com_? Yes, you guessed it, I can read all your emails and even save them in some DB. But, don’t worry. Since you’re on _evil.com_, scripts running on this domain will not be able to read DOM content in an iframe from another domain (ie. _gmail.com_).
 
 SOP saves the day and blocks reading the DOM of an iframe which belong to another domain.
 
-#### http request
+### http request
 
 I hear some of you saying _“I never used iframe, do you have some other example?”_. Okay, let’s give the same example without iframes. I own _evil.com_ and you visit it since you don’t know I do evil things. The JS code I added in _evil.com_ sends a GET request to _gmail.com/get-all-emails_. Do you think I’ll be able to send it?
 
@@ -61,7 +61,7 @@ The answer is yes (what?!). Just to point out again, SOP does not do anything fo
 
 SOP rescues us again and blocks reading the response of an http request from another domain.
 
-#### cookies
+### cookies
 
 Web mostly relies on cookies for authentication. Web server sets some cookies for its domain so that it can identify you when it receives a request from you. To keep things simple, let’s say when you login to _gmail.com_ it sets a cookie username="test@gmail.com" for domain gmail.com. Whenever there is a request going to gmail.com, your browser will add all your valid cookies belong to that domain. That means, when you call _gmail.com/get-all-emails_, it will also send username=”test@gmail.com” without you realising. And Gmail’s web server will see who you are from the cookie and return all the emails you have.
 
@@ -71,11 +71,11 @@ I think it’s somewhat clear now that whoever has that string can actually get 
 
 Just a small note on this: different protocol and port does not make a resource cross-domain for cookies. For example, [http://example.com](http://example.com), [https://example.com](https://example.com) and [https://example.com:7000](https://example.com:7000) are considered as the same-origin.
 
-#### form
+### form
 
 _“What about if I use a form”_ I hear you ask. Let’s say I did some JS tricks and submitted a form using my malicious code running on _evil.com_ which sends a request to _gmail.com/send-email_ with the payload I provided in the code. Same goes here, browser will send it. But after submitting, browser will take you from _evil.com_ to the action url (ie. _gmail.com/send-email_), so _evil.com couldn’t_ read the response from other domains as the user is redirected to _gmail_. Please note, this is not a feature of SOP, just default form behaviour in browsers.
 
-### Is everything coming from another domain blocked?
+## Is everything coming from another domain blocked?
 
 Nope. You can still
 
@@ -93,7 +93,7 @@ However, you
 
 In addition to that, there are some techniques for relaxing SOP. You can use Cross-origin Resource Sharing(CORS), JSON with Padding(JSONP), and some others. Please note, this is not something browser can do alone to workaround SOP. Both frontend and backend need to be configured properly to achieve accessing cross-domain resources.
 
-### Wrap up
+## Wrap up
 
 Browsers implement SOP to keep your resources secure since you never now what’s going on behind the scenes when you visit _evil.com_. SOP does not prevent taking actions(sending requests etc), but makes sure bad guys won’t be able to see the outcome of that action(reading response/cookies/DOM).
 

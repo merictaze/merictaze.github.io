@@ -28,7 +28,7 @@ What are the advantages of using offline:
 
 You can also check the repositories of the individual plugins for more detailed information: [serverless](https://github.com/serverless/serverless), [serverless-offline](https://github.com/dherault/serverless-offline) and [serverless-dynamodb-local](https://github.com/99xt/serverless-dynamodb-local).
 
-#### Setting up serverless framework
+## Setting up serverless framework
 
 Start with installing serverless framework if you have not already
 
@@ -59,7 +59,7 @@ serverless deploy
 
 As simple as that. But we’ll continue with setting up a local development environment.
 
-#### Setting up the local development environment
+## Setting up the local development environment
 
 We need two plugins here;
 
@@ -95,7 +95,7 @@ Serverless: Offline listening on [http://localhost:3000](http://localhost:3000)
 
 Try hitting [http://localhost:3000](http://localhost:3000), you should see the output of the lambda function.
 
-#### Integrating with local DynamoDB
+## Integrating with local DynamoDB
 
 We need to make the following changes to our serverless.yml file.
 
@@ -106,7 +106,7 @@ We need to make the following changes to our serverless.yml file.
 
 `gist:70d295e86e9006b98e22c94e12534eb7`
 
-#### Updating lambda functions
+## Updating lambda functions
 
 Let’s update our lambda functions to read/write to the table we defined above.
 

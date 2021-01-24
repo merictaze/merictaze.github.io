@@ -134,6 +134,28 @@ module.exports = {
             resolve: 'gatsby-remark-embed-gist',
             options: { includeDefaultCss: true, username: 'merictaze' },
           },
+          'gatsby-transformer-yaml',
+          {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+              path: `${__dirname}/_data/comments`,
+              name: 'comments',
+            },
+          },
+
+          {
+            resolve: 'gatsby-remark-table-of-contents',
+            options: {
+              exclude: 'Table of Contents',
+              tight: false,
+              ordered: false,
+              fromHeading: 1,
+              toHeading: 6,
+              className: 'table-of-contents',
+            },
+          },
+          'gatsby-remark-autolink-headers',
+
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',

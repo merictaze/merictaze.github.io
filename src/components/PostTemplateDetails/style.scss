@@ -29,6 +29,35 @@
         @include margin-bottom(0);
     }
     &__body {
+
+
+        ul p {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        ul ul {
+            margin-bottom: 0;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        ul > li {
+            list-style-type: disc;
+        }
+
+
+        ul ul > li {
+            list-style-type: circle;
+        }
+
+
+        ul ul ul > li {
+            list-style-type: square;
+        }
+
         & figure {
             @include margin-bottom(1);
             & blockquote {
@@ -58,6 +87,17 @@
             max-width: $layout-post-single-width;
             margin-left: auto;
             margin-right: auto;
+        }
+    }
+    .post-toc {
+        li {
+            margin-top: 0;
+            margin-bottom: 0;
+            list-style-type: decimal;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
         }
     }
     &__footer {

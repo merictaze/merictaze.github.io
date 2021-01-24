@@ -16,8 +16,6 @@ featuredImage: ./cover.jpg
 ---
 Although what react is doing looks quite complex, the underlying logic is very simple. And the easiest way to understand is just running some simple examples. We’ll dive into how react renders components and updates the actual DOM.
 
----
-
 ## Rendering React Components
 
 In other words, this is calling the `render()` method of the component.

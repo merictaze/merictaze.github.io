@@ -36,12 +36,20 @@ class PostTemplateDetails extends React.Component {
 
     const commentsBlock = (
       <div>
-        <Disqus
-          postNode={post}
-          siteMetadata={this.props.data.site.siteMetadata}
-        />
+        <h2>Comments</h2>
+
+        <form method="POST" action="https://mrc-blog-comment.herokuapp.com/v2/entry/merictaze/merictaze.github.io/source/comments">
+          <input name="options[redirect]" type="hidden" value="https://merictaze.com" />
+          <input name="options[slug]" type="hidden" value="{{ page.slug }}" />
+            <label><input name="fields[name]" type="text"/>Name or Email</label>
+            <label><textarea name="fields[message]"></textarea>Message</label>
+
+              <button type="submit">Go!</button>
+        </form>
+
+        <p>No comments yet.</p>
       </div>
-    )
+    );
 
     return (
       <div>
@@ -54,6 +62,15 @@ class PostTemplateDetails extends React.Component {
               <Author author={author} publishDate={post.frontmatter.date} />
             </div>
 
+            <div className="post-single__body">
+              <h2>Table Of Contents</h2>
+              <div
+                className="post-toc"
+                /* eslint-disable-next-line react/no-danger */
+                dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
+              />
+            </div>
+            <hr/>
             <div
               className="post-single__body"
               /* eslint-disable-next-line react/no-danger */
@@ -80,7 +97,7 @@ class PostTemplateDetails extends React.Component {
                 {/*<br /> <strong>{author.name}</strong> on Twitter*/}
               {/*</a>*/}
             </p>
-            {commentsBlock}
+            {/*{commentsBlock}*/}
           </div>
         </div>
       </div>

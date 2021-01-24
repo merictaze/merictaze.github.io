@@ -25,7 +25,7 @@ Here we are going to learn how ElasticSearch can be plugged into your DynamoDB w
 
 The same steps can be done using AWS Web Console, but I think making use of CloudFormation is better as often times you need to create the same resources for multiple stages and regions.
 
-### Creating DynamoDB Table
+## Creating DynamoDB Table
 
 Let’s start with creating a DynamoDB table using CloudFormation. Here we create a table called ‘OrderTable’ whose key is orderId. It also sets read/write capacity to 5. One of the most important things here is that we also enable DynamoDB streams. Whenever an entry is created or updated, it will be streamed automatically. It will only return the new image, but you have [other options](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_StreamSpecification.html) if you also need the old image or just the keys.
 
@@ -35,31 +35,31 @@ Let’s start with creating a DynamoDB table using CloudFormation. Here we creat
 
 If you already have an existing table and don’t want to create a new one, you can get its SourceArn from AWS Web Console, and use it in the following sections.
 
-### Adding a Lambda function
+## Adding a Lambda function
 
 Here we print the records coming from DynamoDB stream. We also add a Role to access various AWS resources from our lambda function which we’ll cover later. We use ZipFile which allows adding inline code to our CloudFormation template.
 
 `gist:0c4add0c9c275d8e726df7db47f0e498`
 
-### Mapping between the stream and lambda function
+## Mapping between the stream and lambda function
 
 This defines the mapping between DynamoDB Stream and our Lambda function. Whenever there is something new in DynamoDB Streams, it will trigger our lambda function with those records.
 
 `gist:aea2be7119a77d3fcecd25872fbdf0ae`
 
-### Lambda IAM role
+## Lambda IAM role
 
 Here we give our lambda function access for writing logs so that we can check them in CloudWatch and also access for reading DynamoDB streams.
 
 `gist:2c9bdd95e66a9226a34e61ca4f1f6a0c`
 
-### Adding ElasticSearch
+## Adding ElasticSearch
 
 This creates a t2.micro ElasticSearch instance which is included in Free Tier. It also allows LambdaRole to access to the instance.
 
 `gist:0de4b21eaf7c4b03f31b700bafc03c65`
 
-### Updating Lambda to index documents
+## Updating Lambda to index documents
 
 Now let’s update our previous lambda function to index DynamoDB stream records to ElasticSearch. Note that we need to sign our requests, otherwise you’ll get an authorization error.  
   

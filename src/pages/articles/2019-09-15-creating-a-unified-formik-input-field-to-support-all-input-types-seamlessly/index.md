@@ -17,8 +17,6 @@ featuredImage: ./cover.png
 ---
 We are going to create a single component that supports text, textarea, select, radio, and checkbox. It will absorb all implementation differences for different inputs and will allow us using a unified component in our Formik forms.
 
----
-
 When I start on a new project, I always try to abstract specific libraries away by defining my own components. This brings some benefits
 
 * Simplify the code by moving the complex/common part into my custom component.
