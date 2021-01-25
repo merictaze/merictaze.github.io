@@ -96,7 +96,8 @@ It allows you to spread reads/writes evenly across nodes by partitioning the dat
 
 ![](./05DB.jpg)
 
-While sharding, one of the important aspects is how to split data into multiple nodes, what’s the criteria to decide which data should be owned by which node. There are two common approaches 
+While sharding, one of the important aspects is how to split data into multiple nodes, what’s the criteria to decide which data should be owned by which node. There are two common approaches
+ 
 **1. Range-based sharding**
 You divide the rows into ranges based on the primary key’s value. Each range is assigned to a node. For example, if you have a user table whose primary key is username, you can shard the data based on the first letter of the username:
 
@@ -160,7 +161,7 @@ For example, if you have a video processing app, you might want to upload the vi
 
 ![](./08queue.jpg)
 
-Message queues are useful for point-to-point communication, but what if you’re the owner of an entity that is needed by multiple systems. In this case, you need a publisher on the left that is publishing messages to a topic that is needed by multiple systems, and on the right, there are subscribers which will get all the messages sent to the topic.
+Message queues are useful for point-to-point communication, but what if you’re the owner of an entity that is needed by multiple systems. In this case, you need a publisher on the left that is publishing messages to a topic that is needed by multiple systems, and on the right, there are subscribers which will get all the messages sent to the topic. This is what we call **Pub/Sub**.
 
  For example, you own the FlightOrderService, and whenever there is a new order
 
