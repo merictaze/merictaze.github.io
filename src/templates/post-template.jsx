@@ -43,6 +43,15 @@ export const pageQuery = graphql`
         url
       }
     }
+    allCommentsYaml(filter: { slug: { eq: $slug } }) {
+      nodes {
+        id
+        slug
+        name
+        date
+        message
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html

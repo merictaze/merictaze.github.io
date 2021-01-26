@@ -2,6 +2,26 @@
 @import "../../assets/scss/mixins";
 
 .post-single {
+
+    input[type='submit']:disabled {
+        cursor: not-allowed;
+        pointer-events: all !important;
+    }
+    [data-letters]:before {
+        content:attr(data-letters);
+        display:inline-block;
+        font-size:1em;
+        width:2.5em;
+        height:2.5em;
+        line-height:2.5em;
+        text-align:center;
+        border-radius:50%;
+        background:plum;
+        vertical-align:middle;
+        margin-right:1em;
+        color:white;
+    }
+
     .gist, .embed-container {
         max-width: $layout-post-single-width;
         margin-left: auto;
@@ -111,6 +131,43 @@
             & a {
                 text-decoration: underline;
             }
+        }
+
+        /* Style inputs with type="text", select elements and textareas */
+        input[type=text], select, textarea {
+            width: 100%; /* Full width */
+            padding: 12px; /* Some padding */
+            border: 1px solid #ccc; /* Gray border */
+            border-radius: 4px; /* Rounded borders */
+            box-sizing: border-box; /* Make sure that padding and width stays in place */
+            margin-top: 6px; /* Add a top margin */
+            margin-bottom: 16px; /* Bottom margin */
+            resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+        }
+
+        /* Style the submit button with a specific background color etc */
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* When moving the mouse over the submit button, add a darker green color */
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        .alert-success {
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .alert-failure {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
         }
     }
     &__date {

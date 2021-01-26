@@ -1,7 +1,6 @@
 import React from 'react'
+import moment from 'moment';
 import { Link } from 'gatsby'
-import moment from 'moment'
-import Disqus from '../Disqus/Disqus'
 import Author from '../Author'
 import './style.scss'
 
@@ -33,23 +32,6 @@ class PostTemplateDetails extends React.Component {
         </ul>
       </div>
     )
-
-    const commentsBlock = (
-      <div>
-        <h2>Comments</h2>
-
-        <form method="POST" action="https://mrc-blog-comment.herokuapp.com/v2/entry/merictaze/merictaze.github.io/source/comments">
-          <input name="options[redirect]" type="hidden" value="https://merictaze.com" />
-          <input name="options[slug]" type="hidden" value="{{ page.slug }}" />
-            <label><input name="fields[name]" type="text"/>Name or Email</label>
-            <label><textarea name="fields[message]"></textarea>Message</label>
-
-              <button type="submit">Go!</button>
-        </form>
-
-        <p>No comments yet.</p>
-      </div>
-    );
 
     return (
       <div>
@@ -97,11 +79,103 @@ class PostTemplateDetails extends React.Component {
                 {/*<br /> <strong>{author.name}</strong> on Twitter*/}
               {/*</a>*/}
             </p>
-            {/*{commentsBlock}*/}
+            <CommentComponent slug={post.fields.slug} comments={this.props.data.allCommentsYaml.nodes} />
           </div>
         </div>
       </div>
     )
+  }
+}
+
+class CommentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      form: {
+        name: '',
+        message: '',
+        slug: this.props.slug,
+      },
+      submitted: 0,
+    };
+  }
+
+  handleChange = (event) => {
+    const target = event.target;
+    this.setState(prevState => ({
+      form: {
+        ...prevState.form,
+        [target.name]: target.value,
+      },
+    }))
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const data = new URLSearchParams();
+    data.append('fields[name]', this.state.form.name);
+    data.append('fields[message]', this.state.form.message);
+    data.append('fields[slug]', this.state.form.slug);
+    data.append('options[slug]', this.state.form.slug);
+
+    this.setState({submitted: 2});
+    fetch('https://mrc-blog-comment.herokuapp.com/v2/entry/merictaze/merictaze.github.io/source/comments', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data,
+    })
+    .then((response) => response.json())
+    .then((response) => {this.setState({submitted: response.success ? 1 : -1})})
+    .catch((error) => {this.setState({submitted: -1})});
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Comments</h2>
+
+        {this.state.submitted === 1 &&
+          <div className="alert-success">Comment has been submitted, it will show up here after the review.</div>}
+
+        {this.state.submitted === -1 &&
+          <div className="alert-failure">Failed to submit the comment, please try again later</div>}
+
+        <form onSubmit={this.handleSubmit} style={{marginBottom: 50}}>
+          <label>
+            Name or Email
+            <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
+          </label>
+
+          <label>
+            Message
+            <textarea rows={4} name="message" value={this.state.message} onChange={this.handleChange}></textarea>
+          </label>
+
+          <div>
+            <input type="submit" value="Submit" disabled={this.state.submitted === 2}/>
+          </div>
+        </form>
+
+
+        {this.props.comments && this.props.comments.map(comment => (
+          <div style={{marginTop: 20}} key={comment.id}>
+            <div style={{display: 'flex', flex: 1}}>
+              <div style={{alignSelf: 'center'}} data-letters={comment.name.charAt(0).toUpperCase()}></div>
+              <div>
+                <div>{comment.name}</div>
+                <div><em><small>{moment(comment.date).format('D MMM YYYY')}</small></em></div>
+              </div>
+            </div>
+            <p style={{marginRight: '3.5em'}}>
+              {comment.message}
+            </p>
+          </div>
+        ))}
+
+        {(!this.props.comments || this.props.comments.length === 0) && <p>No comments yet.</p>}
+      </div>
+    );
   }
 }
 
