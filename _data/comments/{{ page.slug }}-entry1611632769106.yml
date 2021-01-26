@@ -1,0 +1,5 @@
+_id: 068e4f00-5f89-11eb-a175-2b288cf228df
+slug: '{{ page.slug }}'
+name: test
+message: '123'
+date: '2021-01-26T03:46:09.103Z'
