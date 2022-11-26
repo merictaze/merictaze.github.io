@@ -49,7 +49,7 @@
         }
       }
     })
-  </script><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><title data-react-helmet="true">Indexing DynamoDB Items to ElasticSearch using AWS Lambda - Full Stack Software Development - MericTaze.com</title><link data-react-helmet="true" rel="canonical" href="https://medium.com/@merictaze/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda-7f93f5db6277"/><meta data-react-helmet="true" name="description" content="DynamoDB is Amazon’s NoSQL database which offers single-digit milliseconds latency. It is great for variety of use cases, but when you need to run complex search queries on your dataset, you quickly realise it is not designed for it."/><link as="script" rel="preload" href="/component---src-templates-post-template-jsx-e508ae700446158f54ea.js"/><link as="script" rel="preload" href="/0b7ae99cce91d70f231d72c658db5866ef4f5cb8-f7175af29082d8928f4b.js"/><link as="script" rel="preload" href="/81578efe5f9fea384c4e8a2e898265632e23c19a-b987d30ab7edd195dfa9.js"/><link as="script" rel="preload" href="/styles-e9d24b1846c7d6eb9685.js"/><link as="script" rel="preload" href="/app-f9a77b93ab66f9c8cab1.js"/><link as="script" rel="preload" href="/framework-5053dd469ab715e0c96e.js"/><link as="script" rel="preload" href="/webpack-runtime-2edc6a3027f63978a2f2.js"/><link as="fetch" rel="preload" href="/page-data/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="layout"><div><div><div><a class="post-single__home-button" href="/">All Articles</a></div><div class="post-single"><div class="post-single__inner"><h1 class="post-single__title">Indexing DynamoDB Items to ElasticSearch using AWS Lambda</h1><div class="post-single__author"><div style="display:flex"><img src="/static/photo-e36eb1b14cd9b4408329e5ba823b9a22.jpg" class="sidebar__author-photo" style="margin-right:10px" width="50" height="50" alt="Meric Taze"/><div><div>Meric Taze</div><em><small>4 Jul 2018</small></em></div></div></div><div class="post-single__body"><h2>Table Of Contents</h2><div class="post-toc"><ul>
+  </script><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><title data-react-helmet="true">Indexing DynamoDB Items to ElasticSearch using AWS Lambda - Full Stack Software Development - MericTaze.com</title><link data-react-helmet="true" rel="canonical" href="https://medium.com/@merictaze/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda-7f93f5db6277"/><meta data-react-helmet="true" name="description" content="DynamoDB is Amazon’s NoSQL database which offers single-digit milliseconds latency. It is great for variety of use cases, but when you need to run complex search queries on your dataset, you quickly realise it is not designed for it."/><link as="script" rel="preload" href="/component---src-templates-post-template-jsx-9b161a1f7f94c9dda947.js"/><link as="script" rel="preload" href="/0b7ae99cce91d70f231d72c658db5866ef4f5cb8-741c20f95c96fde81cfa.js"/><link as="script" rel="preload" href="/81578efe5f9fea384c4e8a2e898265632e23c19a-c97ef0abcc276f4aaa85.js"/><link as="script" rel="preload" href="/styles-29147cbc04bbc833f6a0.js"/><link as="script" rel="preload" href="/app-13247a88d37879f7acf7.js"/><link as="script" rel="preload" href="/framework-71241b133c1fca0997a7.js"/><link as="script" rel="preload" href="/webpack-runtime-9272f6e8bf267fde213d.js"/><link as="fetch" rel="preload" href="/page-data/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="layout"><div><div><div><a class="post-single__home-button" href="/">All Articles</a></div><div class="post-single"><div class="post-single__inner"><h1 class="post-single__title">Indexing DynamoDB Items to ElasticSearch using AWS Lambda</h1><div class="post-single__author"><div style="display:flex"><img src="/static/photo-e36eb1b14cd9b4408329e5ba823b9a22.jpg" class="sidebar__author-photo" style="margin-right:10px" width="50" height="50" alt="Meric Taze"/><div><div>Meric Taze</div><em><small>4 Jul 2018</small></em></div></div></div><div class="post-single__body"><h2>Table Of Contents</h2><div class="post-toc"><ul>
 <li><a href="/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/#creating-dynamodb-table">Creating DynamoDB Table</a></li>
 <li><a href="/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/#adding-a-lambda-function">Adding a Lambda function</a></li>
 <li><a href="/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/#mapping-between-the-stream-and-lambda-function">Mapping between the stream and lambda function</a></li>
@@ -101,9 +101,9 @@
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-ddb2es-01-cf-dynamo-yml" class="file my-2">
     
-  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
+    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
 
-      
+        
 <div class="js-check-bidi js-blob-code-container blob-code-content">
 
   <template class="js-file-alert-template">
@@ -118,7 +118,7 @@
     </span>
 
 
-  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">  Show hidden characters
+  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">    Show hidden characters
 </a>
 </div>
 </div></template>
@@ -129,72 +129,72 @@
 </svg>
 </span></template>
 
-  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-01-cf-dynamo.yml">
+  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-01-cf-dynamo.yml">
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">OrderTable</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-ent">Type</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>AWS::DynamoDB::Table<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-ent">Properties</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC4" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">AttributeDefinitions</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC5" class="blob-code blob-code-inner js-file-line">      - <span class="pl-ent">AttributeName</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>orderId<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC6" class="blob-code blob-code-inner js-file-line">        <span class="pl-ent">AttributeType</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>S<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">KeySchema</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC8" class="blob-code blob-code-inner js-file-line">      - <span class="pl-ent">AttributeName</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>orderId<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC9" class="blob-code blob-code-inner js-file-line">        <span class="pl-ent">KeyType</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>HASH<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC10" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">ProvisionedThroughput</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC11" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">ReadCapacityUnits</span>: <span class="pl-c1">5</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC12" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">WriteCapacityUnits</span>: <span class="pl-c1">5</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L13" class="blob-num js-line-number js-code-nav-line-number" data-line-number="13"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC13" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">TableName</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>OrderTable<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L14" class="blob-num js-line-number js-code-nav-line-number" data-line-number="14"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC14" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">StreamSpecification</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-01-cf-dynamo-yml-L15" class="blob-num js-line-number js-code-nav-line-number" data-line-number="15"></td>
+          <td id="file-ddb2es-01-cf-dynamo-yml-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
           <td id="file-ddb2es-01-cf-dynamo-yml-LC15" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">StreamViewType</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>NEW_IMAGE<span class="pl-pds">&#39;</span></span></td>
         </tr>
   </table>
 </div>
 
 
-  </div>
+    </div>
 
   </div>
 </div>
@@ -218,9 +218,9 @@
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-ddb2es-02-cf-lambda-yml" class="file my-2">
     
-  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
+    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
 
-      
+        
 <div class="js-check-bidi js-blob-code-container blob-code-content">
 
   <template class="js-file-alert-template">
@@ -235,7 +235,7 @@
     </span>
 
 
-  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">  Show hidden characters
+  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">    Show hidden characters
 </a>
 </div>
 </div></template>
@@ -246,64 +246,64 @@
 </svg>
 </span></template>
 
-  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-02-cf-lambda.yml">
+  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-02-cf-lambda.yml">
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">EsIndexerFunction</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-ent">Type</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>AWS::Lambda::Function<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-ent">Properties</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC4" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">Handler</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>index.handler<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC5" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">Runtime</span>: <span class="pl-s">nodejs6.10</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC6" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">Role</span>: <span class="pl-s">!GetAtt LambdaRole.Arn</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">Code</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC8" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">ZipFile</span>: <span class="pl-s">|</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s">        exports.handler = (event, context, callback) =&gt; {</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          event.Records.forEach(record =&gt; {</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s">            console.log(record);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          });</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-02-cf-lambda-yml-L13" class="blob-num js-line-number js-code-nav-line-number" data-line-number="13"></td>
+          <td id="file-ddb2es-02-cf-lambda-yml-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
           <td id="file-ddb2es-02-cf-lambda-yml-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s">        }</span></td>
         </tr>
   </table>
 </div>
 
 
-  </div>
+    </div>
 
   </div>
 </div>
@@ -326,9 +326,9 @@
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-ddb2es-03-cf-mapping-yml" class="file my-2">
     
-  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
+    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
 
-      
+        
 <div class="js-check-bidi js-blob-code-container blob-code-content">
 
   <template class="js-file-alert-template">
@@ -343,7 +343,7 @@
     </span>
 
 
-  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">  Show hidden characters
+  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">    Show hidden characters
 </a>
 </div>
 </div></template>
@@ -354,40 +354,40 @@
 </svg>
 </span></template>
 
-  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-03-cf-mapping.yml">
+  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-03-cf-mapping.yml">
         <tr>
-          <td id="file-ddb2es-03-cf-mapping-yml-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1"></td>
+          <td id="file-ddb2es-03-cf-mapping-yml-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
           <td id="file-ddb2es-03-cf-mapping-yml-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">TableStreamLambdaMapping</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-03-cf-mapping-yml-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2"></td>
+          <td id="file-ddb2es-03-cf-mapping-yml-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
           <td id="file-ddb2es-03-cf-mapping-yml-LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-ent">Type</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>AWS::Lambda::EventSourceMapping<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-03-cf-mapping-yml-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3"></td>
+          <td id="file-ddb2es-03-cf-mapping-yml-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
           <td id="file-ddb2es-03-cf-mapping-yml-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-ent">Properties</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-03-cf-mapping-yml-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4"></td>
+          <td id="file-ddb2es-03-cf-mapping-yml-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
           <td id="file-ddb2es-03-cf-mapping-yml-LC4" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">BatchSize</span>: <span class="pl-c1">2</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-03-cf-mapping-yml-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5"></td>
+          <td id="file-ddb2es-03-cf-mapping-yml-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
           <td id="file-ddb2es-03-cf-mapping-yml-LC5" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">EventSourceArn</span>: <span class="pl-s">!GetAtt OrderTable.StreamArn</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-03-cf-mapping-yml-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6"></td>
+          <td id="file-ddb2es-03-cf-mapping-yml-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
           <td id="file-ddb2es-03-cf-mapping-yml-LC6" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">FunctionName</span>: <span class="pl-s">!GetAtt EsIndexerFunction.Arn</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-03-cf-mapping-yml-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7"></td>
+          <td id="file-ddb2es-03-cf-mapping-yml-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
           <td id="file-ddb2es-03-cf-mapping-yml-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">StartingPosition</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>LATEST<span class="pl-pds">&#39;</span></span></td>
         </tr>
   </table>
 </div>
 
 
-  </div>
+    </div>
 
   </div>
 </div>
@@ -410,9 +410,9 @@
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-ddb2es-04-cf-lambdarole-yml" class="file my-2">
     
-  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
+    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
 
-      
+        
 <div class="js-check-bidi js-blob-code-container blob-code-content">
 
   <template class="js-file-alert-template">
@@ -427,7 +427,7 @@
     </span>
 
 
-  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">  Show hidden characters
+  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">    Show hidden characters
 </a>
 </div>
 </div></template>
@@ -438,128 +438,128 @@
 </svg>
 </span></template>
 
-  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-04-cf-lambdarole.yml">
+  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-04-cf-lambdarole.yml">
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">LambdaRole</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-ent">Type</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>AWS::IAM::Role<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-ent">Properties</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC4" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">AssumeRolePolicyDocument</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC5" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">Version</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>2012-10-17<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC6" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">Statement</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC7" class="blob-code blob-code-inner js-file-line">      - <span class="pl-ent">Effect</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>Allow<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC8" class="blob-code blob-code-inner js-file-line">        <span class="pl-ent">Principal</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC9" class="blob-code blob-code-inner js-file-line">          <span class="pl-ent">Service</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>lambda.amazonaws.com<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC10" class="blob-code blob-code-inner js-file-line">        <span class="pl-ent">Action</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>sts:AssumeRole<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC11" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">Path</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>/<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC12" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">Policies</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L13" class="blob-num js-line-number js-code-nav-line-number" data-line-number="13"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC13" class="blob-code blob-code-inner js-file-line">      - <span class="pl-ent">PolicyName</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>LambdaRolePolicy<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L14" class="blob-num js-line-number js-code-nav-line-number" data-line-number="14"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC14" class="blob-code blob-code-inner js-file-line">        <span class="pl-ent">PolicyDocument</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L15" class="blob-num js-line-number js-code-nav-line-number" data-line-number="15"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC15" class="blob-code blob-code-inner js-file-line">          <span class="pl-ent">Version</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>2012-10-17<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L16" class="blob-num js-line-number js-code-nav-line-number" data-line-number="16"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC16" class="blob-code blob-code-inner js-file-line">          <span class="pl-ent">Statement</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L17" class="blob-num js-line-number js-code-nav-line-number" data-line-number="17"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC17" class="blob-code blob-code-inner js-file-line">          - <span class="pl-ent">Effect</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>Allow<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L18" class="blob-num js-line-number js-code-nav-line-number" data-line-number="18"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC18" class="blob-code blob-code-inner js-file-line">            <span class="pl-ent">Action</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L19" class="blob-num js-line-number js-code-nav-line-number" data-line-number="19"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC19" class="blob-code blob-code-inner js-file-line">            - <span class="pl-s">logs:CreateLogGroup</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L20" class="blob-num js-line-number js-code-nav-line-number" data-line-number="20"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L20" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC20" class="blob-code blob-code-inner js-file-line">            - <span class="pl-s">logs:CreateLogStream</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L21" class="blob-num js-line-number js-code-nav-line-number" data-line-number="21"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L21" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC21" class="blob-code blob-code-inner js-file-line">            - <span class="pl-s">logs:PutLogEvents</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L22" class="blob-num js-line-number js-code-nav-line-number" data-line-number="22"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L22" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC22" class="blob-code blob-code-inner js-file-line">            <span class="pl-ent">Resource</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>arn:aws:logs:*:*:*<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L23" class="blob-num js-line-number js-code-nav-line-number" data-line-number="23"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L23" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC23" class="blob-code blob-code-inner js-file-line">          - <span class="pl-ent">Effect</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>Allow<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L24" class="blob-num js-line-number js-code-nav-line-number" data-line-number="24"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L24" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC24" class="blob-code blob-code-inner js-file-line">            <span class="pl-ent">Action</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L25" class="blob-num js-line-number js-code-nav-line-number" data-line-number="25"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L25" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC25" class="blob-code blob-code-inner js-file-line">            - <span class="pl-s">dynamodb:DescribeStream</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L26" class="blob-num js-line-number js-code-nav-line-number" data-line-number="26"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L26" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC26" class="blob-code blob-code-inner js-file-line">            - <span class="pl-s">dynamodb:GetRecords</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L27" class="blob-num js-line-number js-code-nav-line-number" data-line-number="27"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L27" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="27"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC27" class="blob-code blob-code-inner js-file-line">            - <span class="pl-s">dynamodb:GetShardIterator</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L28" class="blob-num js-line-number js-code-nav-line-number" data-line-number="28"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L28" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="28"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC28" class="blob-code blob-code-inner js-file-line">            - <span class="pl-s">dynamodb:ListStreams</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-04-cf-lambdarole-yml-L29" class="blob-num js-line-number js-code-nav-line-number" data-line-number="29"></td>
+          <td id="file-ddb2es-04-cf-lambdarole-yml-L29" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="29"></td>
           <td id="file-ddb2es-04-cf-lambdarole-yml-LC29" class="blob-code blob-code-inner js-file-line">            <span class="pl-ent">Resource</span>: <span class="pl-s">!GetAtt OrderTable.StreamArn</span></td>
         </tr>
   </table>
 </div>
 
 
-  </div>
+    </div>
 
   </div>
 </div>
@@ -582,9 +582,9 @@
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-ddb2es-05-cf-elasticsearch-yml" class="file my-2">
     
-  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
+    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
 
-      
+        
 <div class="js-check-bidi js-blob-code-container blob-code-content">
 
   <template class="js-file-alert-template">
@@ -599,7 +599,7 @@
     </span>
 
 
-  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">  Show hidden characters
+  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">    Show hidden characters
 </a>
 </div>
 </div></template>
@@ -610,100 +610,100 @@
 </svg>
 </span></template>
 
-  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-05-cf-elasticsearch.yml">
+  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-05-cf-elasticsearch.yml">
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">ElasticsearchDomain</span>: </td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-ent">Type</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>AWS::Elasticsearch::Domain<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-ent">Properties</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC4" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">DomainName</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>es-order<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC5" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">ElasticsearchClusterConfig</span>: </td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC6" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">InstanceType</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>t2.micro.elasticsearch<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC7" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">InstanceCount</span>: <span class="pl-c1">1</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC8" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">EBSOptions</span>: </td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC9" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">EBSEnabled</span>: <span class="pl-c1">true</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC10" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">Iops</span>: <span class="pl-c1">0</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC11" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">VolumeSize</span>: <span class="pl-c1">10</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC12" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">VolumeType</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>standard<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L13" class="blob-num js-line-number js-code-nav-line-number" data-line-number="13"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC13" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">AccessPolicies</span>: </td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L14" class="blob-num js-line-number js-code-nav-line-number" data-line-number="14"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC14" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">Version</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>2012-10-17<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L15" class="blob-num js-line-number js-code-nav-line-number" data-line-number="15"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC15" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">Statement</span>: </td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L16" class="blob-num js-line-number js-code-nav-line-number" data-line-number="16"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC16" class="blob-code blob-code-inner js-file-line">        - <span class="pl-ent">Effect</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>Allow<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L17" class="blob-num js-line-number js-code-nav-line-number" data-line-number="17"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC17" class="blob-code blob-code-inner js-file-line">          <span class="pl-ent">Principal</span>: </td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L18" class="blob-num js-line-number js-code-nav-line-number" data-line-number="18"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC18" class="blob-code blob-code-inner js-file-line">            <span class="pl-ent">AWS</span>: <span class="pl-s">!GetAtt LambdaRole.Arn</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L19" class="blob-num js-line-number js-code-nav-line-number" data-line-number="19"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC19" class="blob-code blob-code-inner js-file-line">          <span class="pl-ent">Action</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>es:*<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L20" class="blob-num js-line-number js-code-nav-line-number" data-line-number="20"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L20" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC20" class="blob-code blob-code-inner js-file-line">          <span class="pl-ent">Resource</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>*<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L21" class="blob-num js-line-number js-code-nav-line-number" data-line-number="21"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L21" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC21" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">AdvancedOptions</span>: </td>
         </tr>
         <tr>
-          <td id="file-ddb2es-05-cf-elasticsearch-yml-L22" class="blob-num js-line-number js-code-nav-line-number" data-line-number="22"></td>
+          <td id="file-ddb2es-05-cf-elasticsearch-yml-L22" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22"></td>
           <td id="file-ddb2es-05-cf-elasticsearch-yml-LC22" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">rest.action.multi.allow_explicit_index</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>true<span class="pl-pds">&#39;</span></span></td>
         </tr>
   </table>
 </div>
 
 
-  </div>
+    </div>
 
   </div>
 </div>
@@ -727,9 +727,9 @@
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-ddb2es-06-cf-lambda_v2-yml" class="file my-2">
     
-  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
+    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-yaml  ">
 
-      
+        
 <div class="js-check-bidi js-blob-code-container blob-code-content">
 
   <template class="js-file-alert-template">
@@ -744,7 +744,7 @@
     </span>
 
 
-  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">  Show hidden characters
+  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">    Show hidden characters
 </a>
 </div>
 </div></template>
@@ -755,232 +755,232 @@
 </svg>
 </span></template>
 
-  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-06-cf-lambda_v2.yml">
+  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="YAML" data-tagsearch-path="ddb2es-06-cf-lambda_v2.yml">
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-ent">EsIndexerFunction</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC2" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">Type</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>AWS::Lambda::Function<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC3" class="blob-code blob-code-inner js-file-line">    <span class="pl-ent">Properties</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC4" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">Handler</span>: <span class="pl-s"><span class="pl-pds">&#39;</span>index.handler<span class="pl-pds">&#39;</span></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC5" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">Runtime</span>: <span class="pl-s">nodejs6.10</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC6" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">Role</span>: <span class="pl-s">!GetAtt LambdaRole.Arn</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC7" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">Environment</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC8" class="blob-code blob-code-inner js-file-line">        <span class="pl-ent">Variables</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC9" class="blob-code blob-code-inner js-file-line">          <span class="pl-ent">ES_ENDPOINT</span>: <span class="pl-s">!GetAtt ElasticsearchDomain.DomainEndpoint</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC10" class="blob-code blob-code-inner js-file-line">          <span class="pl-ent">ES_REGION</span>: <span class="pl-s">!Ref AWS::Region</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC11" class="blob-code blob-code-inner js-file-line">      <span class="pl-ent">Code</span>:</td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC12" class="blob-code blob-code-inner js-file-line">        <span class="pl-ent">ZipFile</span>: <span class="pl-s">|</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L13" class="blob-num js-line-number js-code-nav-line-number" data-line-number="13"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          var AWS = require(&#39;aws-sdk&#39;);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L14" class="blob-num js-line-number js-code-nav-line-number" data-line-number="14"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          var path = require(&#39;path&#39;);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L15" class="blob-num js-line-number js-code-nav-line-number" data-line-number="15"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          var creds = new AWS.EnvironmentCredentials(&#39;AWS&#39;);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L16" class="blob-num js-line-number js-code-nav-line-number" data-line-number="16"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s"></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L17" class="blob-num js-line-number js-code-nav-line-number" data-line-number="17"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          var esDomain = {</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L18" class="blob-num js-line-number js-code-nav-line-number" data-line-number="18"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              endpoint: process.env.ES_ENDPOINT,</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L19" class="blob-num js-line-number js-code-nav-line-number" data-line-number="19"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              region: process.env.ES_REGION,</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L20" class="blob-num js-line-number js-code-nav-line-number" data-line-number="20"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L20" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              index: &#39;test&#39;,</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L21" class="blob-num js-line-number js-code-nav-line-number" data-line-number="21"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L21" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              doctype: &#39;order&#39;</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L22" class="blob-num js-line-number js-code-nav-line-number" data-line-number="22"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L22" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          };</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L23" class="blob-num js-line-number js-code-nav-line-number" data-line-number="23"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L23" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC23" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          var endpoint =  new AWS.Endpoint(esDomain.endpoint);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L24" class="blob-num js-line-number js-code-nav-line-number" data-line-number="24"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L24" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-s"></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L25" class="blob-num js-line-number js-code-nav-line-number" data-line-number="25"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L25" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          exports.handler = (event, context, callback) =&gt; {</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L26" class="blob-num js-line-number js-code-nav-line-number" data-line-number="26"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L26" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC26" class="blob-code blob-code-inner js-file-line"><span class="pl-s">            event.Records.forEach(record =&gt; {</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L27" class="blob-num js-line-number js-code-nav-line-number" data-line-number="27"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L27" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="27"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC27" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              postDocumentToES(record.dynamodb.NewImage, context);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L28" class="blob-num js-line-number js-code-nav-line-number" data-line-number="28"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L28" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="28"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC28" class="blob-code blob-code-inner js-file-line"><span class="pl-s">            });</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L29" class="blob-num js-line-number js-code-nav-line-number" data-line-number="29"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L29" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="29"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC29" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          }</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L30" class="blob-num js-line-number js-code-nav-line-number" data-line-number="30"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L30" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="30"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC30" class="blob-code blob-code-inner js-file-line"><span class="pl-s"></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L31" class="blob-num js-line-number js-code-nav-line-number" data-line-number="31"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L31" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="31"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC31" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          function postDocumentToES(doc, context) {</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L32" class="blob-num js-line-number js-code-nav-line-number" data-line-number="32"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L32" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="32"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC32" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              var req = new AWS.HttpRequest(endpoint);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L33" class="blob-num js-line-number js-code-nav-line-number" data-line-number="33"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L33" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="33"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC33" class="blob-code blob-code-inner js-file-line"><span class="pl-s"></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L34" class="blob-num js-line-number js-code-nav-line-number" data-line-number="34"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L34" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="34"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC34" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              req.method = &#39;POST&#39;;</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L35" class="blob-num js-line-number js-code-nav-line-number" data-line-number="35"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L35" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="35"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC35" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              req.path = path.join(&#39;/&#39;, esDomain.index, esDomain.doctype);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L36" class="blob-num js-line-number js-code-nav-line-number" data-line-number="36"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L36" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="36"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC36" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              req.region = esDomain.region;</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L37" class="blob-num js-line-number js-code-nav-line-number" data-line-number="37"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L37" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="37"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC37" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              req.body = JSON.stringify(doc);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L38" class="blob-num js-line-number js-code-nav-line-number" data-line-number="38"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L38" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="38"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC38" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              req.headers[&#39;presigned-expires&#39;] = false;</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L39" class="blob-num js-line-number js-code-nav-line-number" data-line-number="39"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L39" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="39"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC39" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              req.headers[&#39;Host&#39;] = endpoint.host;</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L40" class="blob-num js-line-number js-code-nav-line-number" data-line-number="40"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L40" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="40"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC40" class="blob-code blob-code-inner js-file-line"><span class="pl-s"></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L41" class="blob-num js-line-number js-code-nav-line-number" data-line-number="41"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L41" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="41"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC41" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              // Sign the request (Sigv4)</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L42" class="blob-num js-line-number js-code-nav-line-number" data-line-number="42"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L42" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="42"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC42" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              var signer = new AWS.Signers.V4(req, &#39;es&#39;);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L43" class="blob-num js-line-number js-code-nav-line-number" data-line-number="43"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L43" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="43"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC43" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              signer.addAuthorization(creds, new Date());</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L44" class="blob-num js-line-number js-code-nav-line-number" data-line-number="44"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L44" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="44"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC44" class="blob-code blob-code-inner js-file-line"><span class="pl-s"></span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L45" class="blob-num js-line-number js-code-nav-line-number" data-line-number="45"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L45" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="45"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC45" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              // Post document to ES</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L46" class="blob-num js-line-number js-code-nav-line-number" data-line-number="46"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L46" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="46"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC46" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              var send = new AWS.NodeHttpClient();</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L47" class="blob-num js-line-number js-code-nav-line-number" data-line-number="47"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L47" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="47"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC47" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              send.handleRequest(req, null, function(httpResp) {</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L48" class="blob-num js-line-number js-code-nav-line-number" data-line-number="48"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L48" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="48"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC48" class="blob-code blob-code-inner js-file-line"><span class="pl-s">                  var body = &#39;&#39;;</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L49" class="blob-num js-line-number js-code-nav-line-number" data-line-number="49"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L49" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="49"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC49" class="blob-code blob-code-inner js-file-line"><span class="pl-s">                  httpResp.on(&#39;data&#39;, chunk =&gt; body += chunk);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L50" class="blob-num js-line-number js-code-nav-line-number" data-line-number="50"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L50" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="50"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC50" class="blob-code blob-code-inner js-file-line"><span class="pl-s">                  httpResp.on(&#39;end&#39;, chunk =&gt; context.succeed());</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L51" class="blob-num js-line-number js-code-nav-line-number" data-line-number="51"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L51" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="51"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC51" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              }, function(err) {</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L52" class="blob-num js-line-number js-code-nav-line-number" data-line-number="52"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L52" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="52"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC52" class="blob-code blob-code-inner js-file-line"><span class="pl-s">                  console.log(&#39;Error: &#39; + err);</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L53" class="blob-num js-line-number js-code-nav-line-number" data-line-number="53"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L53" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="53"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC53" class="blob-code blob-code-inner js-file-line"><span class="pl-s">                  context.fail();</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L54" class="blob-num js-line-number js-code-nav-line-number" data-line-number="54"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L54" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="54"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC54" class="blob-code blob-code-inner js-file-line"><span class="pl-s">              });</span></td>
         </tr>
         <tr>
-          <td id="file-ddb2es-06-cf-lambda_v2-yml-L55" class="blob-num js-line-number js-code-nav-line-number" data-line-number="55"></td>
+          <td id="file-ddb2es-06-cf-lambda_v2-yml-L55" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="55"></td>
           <td id="file-ddb2es-06-cf-lambda_v2-yml-LC55" class="blob-code blob-code-inner js-file-line"><span class="pl-s">          }</span></td>
         </tr>
   </table>
 </div>
 
 
-  </div>
+    </div>
 
   </div>
 </div>
@@ -1012,4 +1012,4 @@
       
       
       }
-      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-bfcb07a4b86b0f7301bf.js"],"app":["/app-f9a77b93ab66f9c8cab1.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-3069fb1a0c0878c134d9.js"],"component---src-pages-404-jsx":["/component---src-pages-404-jsx-6fef3010c469aeb37216.js"],"component---src-pages-categories-jsx":["/component---src-pages-categories-jsx-9d6df5f3c3520e488af0.js"],"component---src-pages-index-jsx":["/component---src-pages-index-jsx-219a36f24f7d71148115.js"],"component---src-pages-tags-jsx":["/component---src-pages-tags-jsx-fc15e79bc24e27b7db7f.js"],"component---src-templates-category-template-jsx":["/component---src-templates-category-template-jsx-846d9151af096085a6e3.js"],"component---src-templates-page-template-jsx":["/component---src-templates-page-template-jsx-63bc5768787d87919bf3.js"],"component---src-templates-post-template-jsx":["/component---src-templates-post-template-jsx-e508ae700446158f54ea.js"],"component---src-templates-tag-template-jsx":["/component---src-templates-tag-template-jsx-fe51fd78a95e8eb14acd.js"]};/*]]>*/</script><script src="/polyfill-bfcb07a4b86b0f7301bf.js" nomodule=""></script><script src="/webpack-runtime-2edc6a3027f63978a2f2.js" async=""></script><script src="/framework-5053dd469ab715e0c96e.js" async=""></script><script src="/app-f9a77b93ab66f9c8cab1.js" async=""></script><script src="/styles-e9d24b1846c7d6eb9685.js" async=""></script><script src="/81578efe5f9fea384c4e8a2e898265632e23c19a-b987d30ab7edd195dfa9.js" async=""></script><script src="/0b7ae99cce91d70f231d72c658db5866ef4f5cb8-f7175af29082d8928f4b.js" async=""></script><script src="/component---src-templates-post-template-jsx-e508ae700446158f54ea.js" async=""></script></body></html>
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/indexing-dynamodb-items-to-elasticsearch-using-aws-lambda/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-9c277e053e8176bcbcca.js"],"app":["/app-13247a88d37879f7acf7.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-894ba5f8dba066b9d808.js"],"component---src-pages-404-jsx":["/component---src-pages-404-jsx-788151f2636635358b64.js"],"component---src-pages-categories-jsx":["/component---src-pages-categories-jsx-7d21430404d388d4bff1.js"],"component---src-pages-index-jsx":["/component---src-pages-index-jsx-0ea84ee10af63abb11b8.js"],"component---src-pages-tags-jsx":["/component---src-pages-tags-jsx-1ae2fd82969f073e2b88.js"],"component---src-templates-category-template-jsx":["/component---src-templates-category-template-jsx-710e872739645324a985.js"],"component---src-templates-page-template-jsx":["/component---src-templates-page-template-jsx-0e99cb685840c827c8bd.js"],"component---src-templates-post-template-jsx":["/component---src-templates-post-template-jsx-9b161a1f7f94c9dda947.js"],"component---src-templates-tag-template-jsx":["/component---src-templates-tag-template-jsx-375f2d40dbcafc055578.js"]};/*]]>*/</script><script src="/polyfill-9c277e053e8176bcbcca.js" nomodule=""></script><script src="/webpack-runtime-9272f6e8bf267fde213d.js" async=""></script><script src="/framework-71241b133c1fca0997a7.js" async=""></script><script src="/app-13247a88d37879f7acf7.js" async=""></script><script src="/styles-29147cbc04bbc833f6a0.js" async=""></script><script src="/81578efe5f9fea384c4e8a2e898265632e23c19a-c97ef0abcc276f4aaa85.js" async=""></script><script src="/0b7ae99cce91d70f231d72c658db5866ef4f5cb8-741c20f95c96fde81cfa.js" async=""></script><script src="/component---src-templates-post-template-jsx-9b161a1f7f94c9dda947.js" async=""></script></body></html>
