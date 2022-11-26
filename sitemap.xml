@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://merictaze.com/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://merictaze.com/posts/5-tips-to-stop-multitasking-and-double-your-productivity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://merictaze.com/tags/productivity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://merictaze.com/tags/notifications/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://merictaze.com/tags/desktop/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://merictaze.com/tags/focus/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://merictaze.com/tags/productivity-apps/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://merictaze.com/categories/productivity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/posts/creating-a-unified-formik-input-field-to-support-all-input-types-seamlessly/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/react/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/formik/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -54,6 +46,14 @@
 <url> <loc>https://merictaze.com/posts/recap-of-system-design-interview-copcepts/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/scalability/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/distributed-systems/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://merictaze.com/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://merictaze.com/posts/5-tips-to-stop-multitasking-and-double-your-productivity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://merictaze.com/tags/productivity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://merictaze.com/tags/notifications/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://merictaze.com/tags/desktop/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://merictaze.com/tags/focus/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://merictaze.com/tags/productivity-apps/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://merictaze.com/categories/productivity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/categories/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
