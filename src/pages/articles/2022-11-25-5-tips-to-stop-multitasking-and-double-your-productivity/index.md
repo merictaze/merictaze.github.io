@@ -21,6 +21,8 @@ After realizing this, I implemented some changes in my workflow. The steps below
 
 While I am using these on my mac, the ideas can be applied regardless of what operating system you're using.
 
+![](./cover.jpg)<figcaption>Photo by <a href="https://unsplash.com/@carlheyerdahl">Carl Heyerdahl</a> on <a href="https://unsplash.com">Unsplash</a></figcaption>
+
 ## Only 1% of the notifications need immediate attention
 
 How many times did you have to start reading from the beginning of a paragraph again and again due to notifications showing up, or even worse, notification sound chiming continuously? And how many times those really required your immediate attention?

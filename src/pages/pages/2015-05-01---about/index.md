@@ -17,6 +17,17 @@ path: "/about"
 <div class="page__resume-section">
     <div class="page__resume-section-header">Work Experience</div>
     <div>
+        <b>Apple</b> - Senior Software Development Engineer
+        <i class="float-right">Vancouver, Canada | Sept '22-Present</i>
+    </div>
+    <div>
+        <b>Instacart</b> - Senior Software Development Engineer
+        <i class="float-right">Vancouver, Canada | Feb ‘21-Sept '22</i>
+        <ul>
+            <li>Designed and built the new Display Ads offering and Ads Integrity review flow for AdsManager</li>
+        </ul>
+    </div>
+    <div>
         <b>Amazon</b> - Senior Software Development Engineer
         <i class="float-right">Vancouver, Canada | Nov ‘16-Present</i>
         <ul>
