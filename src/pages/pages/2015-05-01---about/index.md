@@ -19,6 +19,9 @@ path: "/about"
     <div>
         <b>Apple</b> - Senior Software Development Engineer
         <i class="float-right">Vancouver, Canada | Sept '22-Present</i>
+        <ul>
+            <li>Building systems for AppStoreConnect In-App Purchases and Subscriptions</li>
+        </ul>
     </div>
     <div>
         <b>Instacart</b> - Senior Software Development Engineer
