@@ -46,7 +46,6 @@
 <url> <loc>https://merictaze.com/posts/recap-of-system-design-interview-copcepts/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/scalability/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/distributed-systems/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://merictaze.com/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/posts/5-tips-to-stop-multitasking-and-double-your-productivity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/productivity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/notifications/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -54,6 +53,7 @@
 <url> <loc>https://merictaze.com/tags/focus/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/productivity-apps/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/categories/productivity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://merictaze.com/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/categories/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://merictaze.com/tags/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
